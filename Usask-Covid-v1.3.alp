@@ -402,7 +402,7 @@
 						<Id>1760930927131</Id>
 						<Name><![CDATA[cumulativeInfectionCount]]></Name>
 						<Type>sum</Type>
-						<Expression><![CDATA[item.countTimesInfected]]></Expression>
+						<Expression><![CDATA[item.individualInfectionCount]]></Expression>
 						<Condition><![CDATA[]]></Condition>
 					</StatisticsItem>
 					<InEnvironment>true</InEnvironment>
@@ -1012,7 +1012,7 @@
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="230" Height="200">
 						<EntryAction><![CDATA[colour = salmon;
-main.cumulativeInfectionCount++;]]></EntryAction>
+individualInfectionCount++;]]></EntryAction>
 						<FillColor>-360334</FillColor>
 					</Properties>
 				</StatechartElement>
