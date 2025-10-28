@@ -1011,7 +1011,7 @@ main.currentRecovered++;]]></EntryAction>
 					<Properties Width="120" Height="33.74384236453202">
 						<EntryAction><![CDATA[colour = gold;
 main.currentExposed++;
-]]></EntryAction>
+if (currentUniLocation != null) currentUniLocation.totalInfectionTransmissionCount++;]]></EntryAction>
 						<FillColor>-10496</FillColor>
 					</Properties>
 				</StatechartElement>
