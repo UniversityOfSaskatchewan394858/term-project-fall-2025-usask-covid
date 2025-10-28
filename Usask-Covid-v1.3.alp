@@ -7,7 +7,7 @@
 <AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.6.202509050523" AlpVersion="8.9.6">
 <Model>
 	<Id>1760929735203</Id>
-	<Name><![CDATA[Usask-Covid-v1.3]]></Name>
+	<Name><![CDATA[Usask-Covid-v1]]></Name>
 	<EngineVersion>6</EngineVersion>
 	<JavaPackageName><![CDATA[usask_covid_v1]]></JavaPackageName>
 	<ModelTimeUnit><![CDATA[Hour]]></ModelTimeUnit>
@@ -112,7 +112,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1760931342435</Id>
 					<Name><![CDATA[fractionOfPopulationInfected]]></Name>
-					<X>-200</X><Y>310</Y>
+					<X>-640</X><Y>50</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -127,7 +127,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1760931644272</Id>
 					<Name><![CDATA[cumulativeInfectionCount]]></Name>
-					<X>-200</X><Y>340</Y>
+					<X>-640</X><Y>20</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -139,10 +139,58 @@
 						</InitialValue>
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1761685322754</Id>
+					<Name><![CDATA[currentSusceptible]]></Name>
+					<X>-640</X><Y>80</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1761685377159</Id>
+					<Name><![CDATA[currentInfective]]></Name>
+					<X>-640</X><Y>140</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1761685418693</Id>
+					<Name><![CDATA[currentExposed]]></Name>
+					<X>-640</X><Y>110</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1761685486773</Id>
+					<Name><![CDATA[currentRecovered]]></Name>
+					<X>-640</X><Y>170</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1760930782325</Id>
 					<Name><![CDATA[studentPopulation]]></Name>
-					<X>-160</X><Y>20</Y>
+					<X>-120</X><Y>50</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -166,7 +214,7 @@
 				<Variable Class="Parameter">
 					<Id>1761338619017</Id>
 					<Name><![CDATA[maxConnectionDistance]]></Name>
-					<X>-200</X><Y>400</Y>
+					<X>-200</X><Y>240</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -190,7 +238,7 @@
 				<Variable Class="Parameter">
 					<Id>1761339076298</Id>
 					<Name><![CDATA[contactsPerDay]]></Name>
-					<X>-200</X><Y>430</Y>
+					<X>-120</X><Y>80</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -214,7 +262,7 @@
 				<Variable Class="Parameter">
 					<Id>1761340265440</Id>
 					<Name><![CDATA[classCapacity]]></Name>
-					<X>-200</X><Y>280</Y>
+					<X>-120</X><Y>110</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -238,7 +286,7 @@
 				<Variable Class="Parameter">
 					<Id>1761521266178</Id>
 					<Name><![CDATA[schoolRadius]]></Name>
-					<X>-200</X><Y>260</Y>
+					<X>-200</X><Y>280</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>false</PresentationFlag>
@@ -262,7 +310,7 @@
 				<Variable Class="Parameter">
 					<Id>1761521273951</Id>
 					<Name><![CDATA[residentialRadius]]></Name>
-					<X>-200</X><Y>240</Y>
+					<X>-200</X><Y>260</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>false</PresentationFlag>
@@ -288,7 +336,7 @@
 				<Event>
 					<Id>1761339753959</Id>
 					<Name><![CDATA[initialInfection]]></Name>
-					<X>-110</X><Y>90</Y>
+					<X>-120</X><Y>20</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>false</PresentationFlag>
@@ -345,7 +393,7 @@
 				<EmbeddedObject>
 					<Id>1760930658496</Id>
 					<Name><![CDATA[students]]></Name>
-					<X>-200</X><Y>80</Y>
+					<X>-200</X><Y>50</Y>
 					<Label><X>-30</X><Y>-30</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -440,7 +488,7 @@
 				<EmbeddedObject>
 					<Id>1761340196723</Id>
 					<Name><![CDATA[homes]]></Name>
-					<X>-200</X><Y>130</Y>
+					<X>-200</X><Y>100</Y>
 					<Label><X>-25</X><Y>-30</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -499,7 +547,7 @@
 				<EmbeddedObject>
 					<Id>1761340216698</Id>
 					<Name><![CDATA[classrooms]]></Name>
-					<X>-200</X><Y>190</Y>
+					<X>-200</X><Y>150</Y>
 					<Label><X>-40</X><Y>-30</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -918,7 +966,8 @@
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="120" Height="33.74384236453202">
-						<EntryAction><![CDATA[colour = lime;]]></EntryAction>
+						<EntryAction><![CDATA[colour = lime;
+main.currentSusceptible++;]]></EntryAction>
 						<FillColor>-16711936</FillColor>
 					</Properties>
 				</StatechartElement>
@@ -932,7 +981,7 @@
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="111.49653121902874" Height="33.74384236453202">
 						<EntryAction><![CDATA[colour = gray;
-]]></EntryAction>
+main.currentRecovered++;]]></EntryAction>
 						<FillColor>-8355712</FillColor>
 					</Properties>
 				</StatechartElement>
@@ -946,7 +995,7 @@
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="120" Height="33.74384236453202">
 						<EntryAction><![CDATA[colour = gold;
-]]></EntryAction>
+main.currentExposed++;]]></EntryAction>
 						<FillColor>-10496</FillColor>
 					</Properties>
 				</StatechartElement>
@@ -1012,7 +1061,8 @@
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="230" Height="200">
 						<EntryAction><![CDATA[colour = salmon;
-individualInfectionCount++;]]></EntryAction>
+individualInfectionCount++;
+main.currentInfective++;]]></EntryAction>
 						<FillColor>-360334</FillColor>
 					</Properties>
 				</StatechartElement>
@@ -1611,6 +1661,23 @@ individualInfectionCount++;]]></EntryAction>
 			</ScaleRuler>
 			<CurrentLevel>1761337837889</CurrentLevel>
 			<ConnectionsId>1761337837884</ConnectionsId>
+			<Variables>
+				<Variable Class="PlainVariable">
+					<Id>1761684597603</Id>
+					<Name><![CDATA[classroomInfectionCount]]></Name>
+					<X>-160</X><Y>40</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+			</Variables>
 			<AgentLinks>
 				<AgentLink>
 					<Id>1761337837884</Id>
