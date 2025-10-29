@@ -141,7 +141,7 @@
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1761694503115</Id>
-					<Name><![CDATA[transmissionsOccurredOnCampus]]></Name>
+					<Name><![CDATA[transmissionsOccurredOnCampusCount]]></Name>
 					<X>-260</X><Y>230</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -1206,6 +1206,8 @@
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="120" Height="33.74384236453202">
 						<EntryAction><![CDATA[colour = gold;
+individualInfectionCount++;
+main.cumulativeInfectionCount++;
 if (currentUniLocation != null) {
 	currentUniLocation.cumulativeTransmissionCount++;
 	main.transmissionsOccurredOnCampusCount++;
@@ -1279,9 +1281,7 @@ currentUniLocation = null;]]></ExitAction>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="230" Height="200">
-						<EntryAction><![CDATA[colour = salmon;
-individualInfectionCount++;
-main.cumulativeInfectionCount++;]]></EntryAction>
+						<EntryAction><![CDATA[colour = salmon;]]></EntryAction>
 						<FillColor>-360334</FillColor>
 					</Properties>
 				</StatechartElement>
