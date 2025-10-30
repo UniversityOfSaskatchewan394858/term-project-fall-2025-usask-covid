@@ -169,6 +169,30 @@
 						</InitialValue>
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1761840673995</Id>
+					<Name><![CDATA[maskedInfectionCount]]></Name>
+					<X>-240</X><Y>440</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1761840697559</Id>
+					<Name><![CDATA[unmaskedInfectionCount]]></Name>
+					<X>-240</X><Y>460</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1760930782325</Id>
 					<Name><![CDATA[studentPopulation]]></Name>
@@ -342,7 +366,7 @@
 				<Variable Class="Parameter">
 					<Id>1761703703227</Id>
 					<Name><![CDATA[isMaskMandate]]></Name>
-					<X>-420</X><Y>230</Y>
+					<X>-240</X><Y>380</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -366,7 +390,7 @@
 				<Variable Class="Parameter">
 					<Id>1761703703234</Id>
 					<Name><![CDATA[maskMandateCompliance]]></Name>
-					<X>-420</X><Y>250</Y>
+					<X>-240</X><Y>400</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -376,7 +400,7 @@
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[1.0]]></Code>
+							<Code><![CDATA[0.5]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1761703703232</Id>
@@ -390,7 +414,10 @@
 				<Variable Class="Parameter">
 					<Id>1761703703238</Id>
 					<Name><![CDATA[maskEffectiveness]]></Name>
-					<X>-420</X><Y>270</Y>
+					<Description><![CDATA[1.0 meaning 100% effective (will not transmit if infective, and will protect against all transmissions if susceptible)
+
+0.0 meaning 0% effective]]></Description>
+					<X>-240</X><Y>420</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -400,7 +427,7 @@
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.50]]></Code>
+							<Code><![CDATA[1.0]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1761703703236</Id>
@@ -511,6 +538,12 @@
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[latencyPeriod]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[isMasking]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[randomTrue(maskMandateCompliance)]]></Code>
+							</Value>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>true</ReplicationFlag>
@@ -1057,7 +1090,7 @@
 				<Text>
 					<Id>1761703651430</Id>
 					<Name><![CDATA[text4]]></Name>
-					<X>-430</X><Y>180</Y>
+					<X>-250</X><Y>330</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1179,7 +1212,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1760931565315</Id>
 					<Name><![CDATA[individualInfectionCount]]></Name>
-					<X>-150</X><Y>230</Y>
+					<X>-170</X><Y>230</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1194,7 +1227,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1761337576717</Id>
 					<Name><![CDATA[currentContext]]></Name>
-					<X>-150</X><Y>270</Y>
+					<X>-170</X><Y>270</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1209,7 +1242,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1761341283864</Id>
 					<Name><![CDATA[colour]]></Name>
-					<X>-150</X><Y>250</Y>
+					<X>-170</X><Y>250</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1224,7 +1257,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1761689267017</Id>
 					<Name><![CDATA[currentUniLocation]]></Name>
-					<X>-150</X><Y>210</Y>
+					<X>-170</X><Y>210</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1239,7 +1272,7 @@
 				<Variable Class="Parameter">
 					<Id>1761338072848</Id>
 					<Name><![CDATA[classroom]]></Name>
-					<X>-150</X><Y>40</Y>
+					<X>-170</X><Y>40</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1260,7 +1293,7 @@
 				<Variable Class="Parameter">
 					<Id>1761340002234</Id>
 					<Name><![CDATA[home]]></Name>
-					<X>-150</X><Y>20</Y>
+					<X>-170</X><Y>20</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1281,7 +1314,7 @@
 				<Variable Class="Parameter">
 					<Id>1761518193381</Id>
 					<Name><![CDATA[infectivityPeriod]]></Name>
-					<X>-150</X><Y>120</Y>
+					<X>-170</X><Y>140</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1305,7 +1338,7 @@
 				<Variable Class="Parameter">
 					<Id>1761518221566</Id>
 					<Name><![CDATA[incubationPeriod]]></Name>
-					<X>-150</X><Y>140</Y>
+					<X>-170</X><Y>160</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1329,7 +1362,7 @@
 				<Variable Class="Parameter">
 					<Id>1761518270404</Id>
 					<Name><![CDATA[latencyPeriod]]></Name>
-					<X>-150</X><Y>100</Y>
+					<X>-170</X><Y>120</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1344,6 +1377,31 @@
 						<ParameterEditor>
 							<Id>1761518270402</Id>
 							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1761751552292</Id>
+					<Name><![CDATA[isMasking]]></Name>
+					<X>-170</X><Y>60</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[boolean]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[false]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1761751552290</Id>
+							<Label><![CDATA[isMasking]]></Label>
+							<EditorContolType>CHECK_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
 							<DelimeterType>NO_DELIMETER</DelimeterType>
@@ -1390,6 +1448,8 @@
 						<EntryAction><![CDATA[colour = gold;
 individualInfectionCount++;
 main.cumulativeInfectionCount++;
+if (isMasking) {main.maskedInfectionCount++;} 
+else {main.unmaskedInfectionCount++;}
 if (currentUniLocation != null) {
 	currentUniLocation.cumulativeTransmissionCount++;
 	main.transmissionsOccurredOnCampusCount++;
@@ -1520,7 +1580,7 @@ currentUniLocation = null;]]></ExitAction>
 						<DefaultTransition>true</DefaultTransition>
 						<FilterType><![CDATA[satisfies]]></FilterType>
 						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
-						<SatisfiesExpression><![CDATA[(msg == "Exposure!") && randomFalse(1.0-main.transmissionProbability)]]></SatisfiesExpression>
+						<SatisfiesExpression><![CDATA[((msg == "Exposure!") && randomTrue(getIndividualTransmissionProbability())) || ((msg == "Masked Exposure!") && randomTrue(getIndividualTransmissionProbability()*(1-main.maskEffectiveness)))]]></SatisfiesExpression>
 					</Properties>	
 				</StatechartElement>
 				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
@@ -1783,7 +1843,8 @@ currentUniLocation = null;]]></ExitAction>
 					</Points>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1761338441149" Target="1761338441149" Trigger="rate">
-						<Action><![CDATA[sendToRandomConnected("Exposure!");]]></Action>
+						<Action><![CDATA[if (isMasking) {sendToRandomConnected("Masked Exposure!");}
+else {sendToRandomConnected("Exposure!");}]]></Action>
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
@@ -1852,13 +1913,26 @@ currentUniLocation = null;]]></ExitAction>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1761338548872</Id>
 					<Name><![CDATA[connectToNearbyStudents]]></Name>
-					<X>-180</X><Y>310</Y>
+					<X>-170</X><Y>320</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[this.agentsInRange(main.students, main.maxConnectionDistance).forEach(p -> this.connectTo(p));
 ]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1761757343630</Id>
+					<Name><![CDATA[getIndividualTransmissionProbability]]></Name>
+					<X>-170</X><Y>340</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[if (isMasking) {return main.transmissionProbability*(1-main.maskEffectiveness);}
+else {return main.transmissionProbability;}]]></Body>
 				</Function>
 			</Functions>
 			<AgentLinks>
@@ -1992,6 +2066,29 @@ currentUniLocation = null;]]></ExitAction>
 			</Presentation>
 
 				</Group>
+				<Rectangle>
+					<Id>1761759056151</Id>
+					<Name><![CDATA[mask]]></Name>
+					<X>-2</X><Y>-7</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<VisibleCode><![CDATA[isMasking;]]></VisibleCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>0</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>4</Width>
+					<Height>2</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor>-14774017</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
 			</Presentation>
 
 				</Level>
