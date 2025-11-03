@@ -545,6 +545,9 @@
 								<Code><![CDATA[randomTrue(maskMandateCompliance)]]></Code>
 							</Value>
 						</Parameter>
+						<Parameter>
+							<Name><![CDATA[isMasking]]></Name>
+						</Parameter>
 					</Parameters>
 					<ReplicationFlag>true</ReplicationFlag>
 					<Replication Class="CodeValue">
@@ -1408,6 +1411,31 @@
 						</ParameterEditor>
 					</Properties>                 
 				</Variable>
+				<Variable Class="Parameter">
+					<Id>1762136622869</Id>
+					<Name><![CDATA[isMasking]]></Name>
+					<X>-170</X><Y>80</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[boolean]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[false]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1762136622867</Id>
+							<Label><![CDATA[isMasking]]></Label>
+							<EditorContolType>CHECK_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
 			</Variables>
 			<StatechartElements>
 				<StatechartElement Class="State" ParentState="ROOT_NODE">
@@ -1448,7 +1476,7 @@
 						<EntryAction><![CDATA[colour = gold;
 individualInfectionCount++;
 main.cumulativeInfectionCount++;
-if (main.isMaskMandate && isMaskUser) {main.maskedInfectionCount++;} 
+if (main.isMaskMandate && isMasking) {main.maskedInfectionCount++;} 
 else {main.unmaskedInfectionCount++;}
 if (currentUniLocation != null) {
 	currentUniLocation.cumulativeTransmissionCount++;
@@ -1469,8 +1497,10 @@ else {
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="111.49653121902874" Height="33.74384236453202">
-						<EntryAction><![CDATA[connectToNearbyStudents();]]></EntryAction>
-						<ExitAction><![CDATA[this.disconnectFromAll();]]></ExitAction>
+						<EntryAction><![CDATA[connectToNearbyStudents();
+isMasking = false;]]></EntryAction>
+						<ExitAction><![CDATA[this.disconnectFromAll();
+determineIfMasking();]]></ExitAction>
 						<FillColor/>
 					</Properties>
 				</StatechartElement>
@@ -1843,7 +1873,7 @@ currentUniLocation = null;]]></ExitAction>
 					</Points>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1761338441149" Target="1761338441149" Trigger="rate">
-						<Action><![CDATA[if (main.isMaskMandate && isMaskUser) {sendToRandomConnected("Masked Exposure!");}
+						<Action><![CDATA[if (main.isMaskMandate && isMasking) {sendToRandomConnected("Masked Exposure!");}
 else {sendToRandomConnected("Exposure!");}]]></Action>
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
@@ -1933,6 +1963,18 @@ else {sendToRandomConnected("Exposure!");}]]></Action>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[if (main.isMaskMandate && isMaskUser) {return main.transmissionProbability*(1-main.maskEffectiveness);}
 else {return main.transmissionProbability;}]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1762136753086</Id>
+					<Name><![CDATA[determineIfMasking]]></Name>
+					<X>-170</X><Y>360</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[if (main.isMaskMandate && isMaskUser) {isMasking = true;}]]></Body>
 				</Function>
 			</Functions>
 			<AgentLinks>
