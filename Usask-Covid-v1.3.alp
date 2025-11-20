@@ -1951,11 +1951,11 @@ if (this.isInfected) {
 currentUniLocation = home;
 connectToNearbyStudents();
 readyForSchool = false;
-requestTest();
-int lastTestDay = -1;
+send("requestTest", this);
+double lastTestDay = -1.0;
 if (lastTestDay != floor(time())) {
-    lastTestDay = int(time());
-    requestTest();
+    lastTestDay = floor(time());
+    send("requestTest", this);
 }]]></EntryAction>
 						<ExitAction><![CDATA[this.disconnectFromAll();
 determineIfMasking();]]></ExitAction>
@@ -2264,8 +2264,7 @@ readyForSchool = true;]]></ExitAction>
 							<Code><![CDATA[averageHoursSpentHome]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
 						</Timeout>
-						<Condition><![CDATA[readyForSchool && !isIsolated
-]]></Condition>
+						<Condition><![CDATA[readyForSchool && !isIsolated]]></Condition>
 						<Rate Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
@@ -2759,7 +2758,7 @@ readyForSchool = true;]]></ExitAction>
 					</Points>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1763612462350" Target="1763612610947" Trigger="message">
-						<Action><![CDATA[requestTest();
+						<Action><![CDATA[
 ]]></Action>
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
@@ -2957,20 +2956,13 @@ if (main.isMaskMandate || isMaskUser) {
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[if (isSymptomatic&&isInfectious) {return true;}
+					<Body><![CDATA[double transmissionProbability = 0.0;
+if (isSymptomatic&&isInfectious) {return true;}
 if (isInfectious&&uniform(0,1)<0.9) {return true;}
-return (this.isInfected = randomTrue(transmissionProbability));]]></Body>
-				</Function>
-				<Function AccessType="default" StaticFunction="false">
-					<ReturnModificator>VOID</ReturnModificator>
-					<ReturnType><![CDATA[double]]></ReturnType>
-					<Id>1763672290256</Id>
-					<Name><![CDATA[function]]></Name>
-					<X>-170</X><Y>660</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
+else {
+	transmissionProbability = getIndividualTransmissionProbability();
+	return this.isInfected = randomTrue(transmissionProbability);
+}]]></Body>
 				</Function>
 			</Functions>
 			<AgentLinks>
@@ -3132,6 +3124,52 @@ return (this.isInfected = randomTrue(transmissionProbability));]]></Body>
 					<FillColor>-14774017</FillColor>
 					<FillMaterial>null</FillMaterial>
 				</Rectangle>
+				<Oval>
+					<Id>1763679273031</Id>
+					<Name><![CDATA[oval]]></Name>
+					<X>0</X><Y>-15</Y>
+					<Label><X>0</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<VisibleCode><![CDATA[isTesting = false;]]></VisibleCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<RadiusX>2.5</RadiusX>
+					<RadiusY>40</RadiusY>
+					<Rotation>0.0</Rotation>
+					<FillColor>-65536</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Oval>
+				<Oval>
+					<Id>1763679457045</Id>
+					<Name><![CDATA[oval1]]></Name>
+					<X>0</X><Y>-15</Y>
+					<Label><X>0</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<VisibleCode><![CDATA[isTesting = true;]]></VisibleCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<RadiusX>2.5</RadiusX>
+					<RadiusY>40</RadiusY>
+					<Rotation>0.0</Rotation>
+					<FillColor>-16744448</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Oval>
 			</Presentation>
 
 				</Level>
