@@ -1538,7 +1538,22 @@ Whenever the student is not at school or in the community, the student is at hom
 				<Variable Class="PlainVariable">
 					<Id>1763670086710</Id>
 					<Name><![CDATA[isInfectious]]></Name>
-					<X>-260</X><Y>620</Y>
+					<X>-170</X><Y>640</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[boolean]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[false]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1763687125414</Id>
+					<Name><![CDATA[variable]]></Name>
+					<X>-170</X><Y>660</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1971,6 +1986,7 @@ determineIfMasking();]]></ExitAction>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="111.49653121902874" Height="33.74384236453202">
+						<EntryAction><![CDATA[moveTo(classroom);]]></EntryAction>
 						<FillColor/>
 					</Properties>
 				</StatechartElement>
@@ -2032,6 +2048,7 @@ isInfectious = false;]]></ExitAction>
 						<EntryAction><![CDATA[colour = red;
 isSymptomatic = true;
 send("requestTest", this);]]></EntryAction>
+						<ExitAction><![CDATA[isSymptomatic = false;]]></ExitAction>
 						<FillColor>-65536</FillColor>
 					</Properties>
 				</StatechartElement>
@@ -2132,9 +2149,14 @@ currentUniLocation = null;]]></ExitAction>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="120" Height="40">
-						<EntryAction><![CDATA[colour = red;
-isIsolated = true;
-readyForSchool = false;]]></EntryAction>
+						<EntryAction><![CDATA[isIsolated = true;
+readyForSchool = false;
+
+isInfectious = true;
+isInfected = true;
+if (currentUniLocation != home) {
+    moveTo(home);
+}]]></EntryAction>
 						<ExitAction><![CDATA[isIsolated = false;
 readyForSchool = true;]]></ExitAction>
 						<FillColor>-65536</FillColor>
@@ -2378,7 +2400,7 @@ readyForSchool = true;]]></ExitAction>
 					<Points>
 						<Point><X>0.7915312190286841</X><Y>0.8389999999999986</Y></Point>
 						<Point><X>29.295</X><Y>0.839</Y></Point>
-						<Point><X>29.295</X><Y>-279.161</Y></Point>
+						<Point><X>29.295</X><Y>-284.161</Y></Point>
 						<Point><X>-179.20846878097132</X><Y>-283.686</Y></Point>
 					</Points>
 					<IconOffset>20.0</IconOffset>
@@ -2951,7 +2973,7 @@ if (main.isMaskMandate || isMaskUser) {
 					<ReturnType><![CDATA[boolean]]></ReturnType>
 					<Id>1763617119112</Id>
 					<Name><![CDATA[runCovidTest]]></Name>
-					<X>-170</X><Y>640</Y>
+					<X>-170</X><Y>680</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3156,7 +3178,7 @@ else {
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<VisibleCode><![CDATA[isTesting = true;]]></VisibleCode>
+					<VisibleCode><![CDATA[readyForSchool && !isIsolated]]></VisibleCode>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
 					<ZHeight>10</ZHeight>
