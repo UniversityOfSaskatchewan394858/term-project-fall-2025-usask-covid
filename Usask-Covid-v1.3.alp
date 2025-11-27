@@ -172,7 +172,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1761840673995</Id>
 					<Name><![CDATA[maskedInfectionCount]]></Name>
-					<X>-260</X><Y>500</Y>
+					<X>-260</X><Y>510</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -187,7 +187,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1761840697559</Id>
 					<Name><![CDATA[unmaskedInfectionCount]]></Name>
-					<X>-260</X><Y>520</Y>
+					<X>-260</X><Y>530</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -387,7 +387,7 @@
 				<Variable Class="Parameter">
 					<Id>1761703703227</Id>
 					<Name><![CDATA[isMaskMandate]]></Name>
-					<X>-260</X><Y>440</Y>
+					<X>-260</X><Y>450</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -397,7 +397,7 @@
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[true]]></Code>
+							<Code><![CDATA[false]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1761703703225</Id>
@@ -411,7 +411,7 @@
 				<Variable Class="Parameter">
 					<Id>1761703703234</Id>
 					<Name><![CDATA[maskMandateCompliance]]></Name>
-					<X>-260</X><Y>460</Y>
+					<X>-260</X><Y>470</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -438,7 +438,7 @@
 					<Description><![CDATA[1.0 meaning 100% effective (will not transmit if infective, and will protect against all transmissions if susceptible)
 
 0.0 meaning 0% effective]]></Description>
-					<X>-260</X><Y>480</Y>
+					<X>-260</X><Y>490</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -448,7 +448,7 @@
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[1.0]]></Code>
+							<Code><![CDATA[0.8]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1761703703236</Id>
@@ -510,7 +510,7 @@
 				<Variable Class="Parameter">
 					<Id>1763860792106</Id>
 					<Name><![CDATA[isTestingMandate]]></Name>
-					<X>-260</X><Y>560</Y>
+					<X>-260</X><Y>580</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -520,11 +520,83 @@
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[true]]></Code>
+							<Code><![CDATA[false]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1763860792104</Id>
 							<EditorContolType>CHECK_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764213597633</Id>
+					<Name><![CDATA[isMultipleClasses]]></Name>
+					<X>-260</X><Y>620</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[boolean]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[false]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1764213597631</Id>
+							<EditorContolType>CHECK_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764213630596</Id>
+					<Name><![CDATA[maxClassAttendance]]></Name>
+					<X>-260</X><Y>640</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[1]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1764213630594</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764215777518</Id>
+					<Name><![CDATA[willingnessToIsolateFraction]]></Name>
+					<X>-260</X><Y>560</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.9]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1764215777516</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
 							<DelimeterType>NO_DELIMETER</DelimeterType>
@@ -612,7 +684,7 @@
 					</GenericParameterSubstitute>
 					<Parameters>
 						<Parameter>
-							<Name><![CDATA[classroom]]></Name>
+							<Name><![CDATA[classroom1]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[classrooms.random()]]></Code>
 							</Value>
@@ -635,11 +707,14 @@
 						<Parameter>
 							<Name><![CDATA[isMaskUser]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[randomTrue(maskMandateCompliance)]]></Code>
+								<Code><![CDATA[randomTrue(maskMandateCompliance)&&(isMaskMandate)]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[isMasking]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[isMaskMandate]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[immunePeriod]]></Name>
@@ -658,6 +733,9 @@
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[willingToIsolate]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[randomTrue(willingnessToIsolateFraction) && isTestingMandate]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[isolationChance]]></Name>
@@ -670,12 +748,42 @@
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[isTesting]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[isTestingMandate]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[isTestingEnabled]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[isTestingMandate]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[readyForSchool]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[classesAttending]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[(int)uniform(1,maxClassAttendance+0.99)]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[isMultiClasses]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[isMultipleClasses]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[classroom2]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[classrooms.random()]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[classroom3]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[classrooms.random()]]></Code>
+							</Value>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>true</ReplicationFlag>
@@ -1422,7 +1530,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1760931565315</Id>
 					<Name><![CDATA[individualInfectionCount]]></Name>
-					<X>-170</X><Y>380</Y>
+					<X>-170</X><Y>450</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1437,7 +1545,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1761337576717</Id>
 					<Name><![CDATA[currentContext]]></Name>
-					<X>-170</X><Y>460</Y>
+					<X>-170</X><Y>530</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1452,7 +1560,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1761341283864</Id>
 					<Name><![CDATA[colour]]></Name>
-					<X>-170</X><Y>440</Y>
+					<X>-170</X><Y>510</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1467,7 +1575,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1761689267017</Id>
 					<Name><![CDATA[currentUniLocation]]></Name>
-					<X>-170</X><Y>360</Y>
+					<X>-170</X><Y>430</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1482,7 +1590,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1762230799413</Id>
 					<Name><![CDATA[messageReceived]]></Name>
-					<X>-170</X><Y>480</Y>
+					<X>-170</X><Y>550</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1497,7 +1605,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1762231247635</Id>
 					<Name><![CDATA[isInfected]]></Name>
-					<X>-170</X><Y>500</Y>
+					<X>-170</X><Y>570</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1514,7 +1622,7 @@
 					<Name><![CDATA[averageHoursSpentHome]]></Name>
 					<Description><![CDATA[Time spent at school or in community is time not spent at home. 
 Whenever the student is not at school or in the community, the student is at home.]]></Description>
-					<X>-170</X><Y>560</Y>
+					<X>-170</X><Y>630</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1529,7 +1637,8 @@ Whenever the student is not at school or in the community, the student is at hom
 				<Variable Class="PlainVariable">
 					<Id>1762239971621</Id>
 					<Name><![CDATA[averageHoursSpentSchool]]></Name>
-					<X>-170</X><Y>540</Y>
+					<Description><![CDATA[If "isMultipleClasses" Scinario activated then spend 2 hours at each class at a max of 6. Otherwise just use a baseline uniform(4, 12).]]></Description>
+					<X>-170</X><Y>610</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1537,14 +1646,14 @@ Whenever the student is not at school or in the community, the student is at hom
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[double]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[uniform(4, 12)]]></Code>
+							<Code><![CDATA[(isMultiClasses ? 2*classesAttending : uniform(4,12))]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1763157381643</Id>
 					<Name><![CDATA[averageHoursSpentCommunity]]></Name>
-					<X>-170</X><Y>580</Y>
+					<X>-170</X><Y>650</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1559,7 +1668,7 @@ Whenever the student is not at school or in the community, the student is at hom
 				<Variable Class="PlainVariable">
 					<Id>1763585769613</Id>
 					<Name><![CDATA[exposureCount]]></Name>
-					<X>-170</X><Y>400</Y>
+					<X>-170</X><Y>470</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1574,7 +1683,7 @@ Whenever the student is not at school or in the community, the student is at hom
 				<Variable Class="PlainVariable">
 					<Id>1763750582398</Id>
 					<Name><![CDATA[awareWasExposed]]></Name>
-					<X>-170</X><Y>420</Y>
+					<X>-170</X><Y>490</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1589,7 +1698,7 @@ Whenever the student is not at school or in the community, the student is at hom
 				<Variable Class="PlainVariable">
 					<Id>1763761025172</Id>
 					<Name><![CDATA[isSymptomatic]]></Name>
-					<X>-170</X><Y>520</Y>
+					<X>-170</X><Y>590</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1604,7 +1713,7 @@ Whenever the student is not at school or in the community, the student is at hom
 				<Variable Class="PlainVariable">
 					<Id>1763860253692</Id>
 					<Name><![CDATA[isInfectious]]></Name>
-					<X>-170</X><Y>740</Y>
+					<X>-170</X><Y>810</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1619,7 +1728,7 @@ Whenever the student is not at school or in the community, the student is at hom
 				<Variable Class="PlainVariable">
 					<Id>1763860253694</Id>
 					<Name><![CDATA[isIsolated]]></Name>
-					<X>-170</X><Y>760</Y>
+					<X>-170</X><Y>830</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1633,7 +1742,7 @@ Whenever the student is not at school or in the community, the student is at hom
 				</Variable>
 				<Variable Class="Parameter">
 					<Id>1761338072848</Id>
-					<Name><![CDATA[classroom]]></Name>
+					<Name><![CDATA[classroom1]]></Name>
 					<X>-170</X><Y>30</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -1645,6 +1754,7 @@ Whenever the student is not at school or in the community, the student is at hom
 						<SdArray>false</SdArray>
 						<ParameterEditor>
 							<Id>1761338072846</Id>
+							<Label><![CDATA[classroom]]></Label>
 							<EditorContolType>TEXT_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
@@ -1676,7 +1786,7 @@ Whenever the student is not at school or in the community, the student is at hom
 				<Variable Class="Parameter">
 					<Id>1761518193381</Id>
 					<Name><![CDATA[infectivityPeriod]]></Name>
-					<X>-170</X><Y>230</Y>
+					<X>-170</X><Y>300</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1701,7 +1811,7 @@ Whenever the student is not at school or in the community, the student is at hom
 					<Id>1761518221566</Id>
 					<Name><![CDATA[incubationPeriod]]></Name>
 					<Description><![CDATA[Period from first exposure to the onset of showing symptoms of the disease.]]></Description>
-					<X>-170</X><Y>250</Y>
+					<X>-170</X><Y>320</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1726,7 +1836,7 @@ Whenever the student is not at school or in the community, the student is at hom
 					<Id>1761518270404</Id>
 					<Name><![CDATA[latencyPeriod]]></Name>
 					<Description><![CDATA[Period from first exposure to the onset of spreading the disease]]></Description>
-					<X>-170</X><Y>210</Y>
+					<X>-170</X><Y>280</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1750,7 +1860,7 @@ Whenever the student is not at school or in the community, the student is at hom
 				<Variable Class="Parameter">
 					<Id>1761751552292</Id>
 					<Name><![CDATA[isMaskUser]]></Name>
-					<X>-170</X><Y>110</Y>
+					<X>-170</X><Y>150</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>false</PresentationFlag>
@@ -1775,7 +1885,7 @@ Whenever the student is not at school or in the community, the student is at hom
 				<Variable Class="Parameter">
 					<Id>1762136622869</Id>
 					<Name><![CDATA[isMasking]]></Name>
-					<X>-170</X><Y>130</Y>
+					<X>-170</X><Y>170</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>false</PresentationFlag>
@@ -1800,7 +1910,7 @@ Whenever the student is not at school or in the community, the student is at hom
 				<Variable Class="Parameter">
 					<Id>1762226110302</Id>
 					<Name><![CDATA[immunePeriod]]></Name>
-					<X>-170</X><Y>270</Y>
+					<X>-170</X><Y>340</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1824,7 +1934,7 @@ Whenever the student is not at school or in the community, the student is at hom
 				<Variable Class="Parameter">
 					<Id>1763158002239</Id>
 					<Name><![CDATA[isGoingToCommunity]]></Name>
-					<X>-170</X><Y>150</Y>
+					<X>-170</X><Y>190</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1834,7 +1944,7 @@ Whenever the student is not at school or in the community, the student is at hom
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[true]]></Code>
+							<Code><![CDATA[false]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1763158002237</Id>
@@ -1848,7 +1958,7 @@ Whenever the student is not at school or in the community, the student is at hom
 				<Variable Class="Parameter">
 					<Id>1763158387729</Id>
 					<Name><![CDATA[community]]></Name>
-					<X>-170</X><Y>50</Y>
+					<X>-170</X><Y>90</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1869,7 +1979,7 @@ Whenever the student is not at school or in the community, the student is at hom
 				<Variable Class="Parameter">
 					<Id>1763649658419</Id>
 					<Name><![CDATA[willingToIsolate]]></Name>
-					<X>-170</X><Y>170</Y>
+					<X>-170</X><Y>210</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1893,7 +2003,7 @@ Whenever the student is not at school or in the community, the student is at hom
 				<Variable Class="Parameter">
 					<Id>1763649725648</Id>
 					<Name><![CDATA[isolationChance]]></Name>
-					<X>-170</X><Y>290</Y>
+					<X>-170</X><Y>360</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1917,7 +2027,7 @@ Whenever the student is not at school or in the community, the student is at hom
 				<Variable Class="Parameter">
 					<Id>1763649798597</Id>
 					<Name><![CDATA[socialDistancingFactor]]></Name>
-					<X>-170</X><Y>310</Y>
+					<X>-170</X><Y>380</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>false</PresentationFlag>
@@ -1941,7 +2051,7 @@ Whenever the student is not at school or in the community, the student is at hom
 				<Variable Class="Parameter">
 					<Id>1763750783064</Id>
 					<Name><![CDATA[exposureAwarenessChance]]></Name>
-					<X>-170</X><Y>330</Y>
+					<X>-170</X><Y>400</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1965,7 +2075,7 @@ Whenever the student is not at school or in the community, the student is at hom
 				<Variable Class="Parameter">
 					<Id>1763860253698</Id>
 					<Name><![CDATA[isTesting]]></Name>
-					<X>-170</X><Y>700</Y>
+					<X>-170</X><Y>770</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1990,7 +2100,7 @@ Whenever the student is not at school or in the community, the student is at hom
 				<Variable Class="Parameter">
 					<Id>1763860253702</Id>
 					<Name><![CDATA[readyForSchool]]></Name>
-					<X>-170</X><Y>720</Y>
+					<X>-170</X><Y>790</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2014,7 +2124,7 @@ Whenever the student is not at school or in the community, the student is at hom
 				<Variable Class="Parameter">
 					<Id>1763860253706</Id>
 					<Name><![CDATA[isTestingEnabled]]></Name>
-					<X>-170</X><Y>820</Y>
+					<X>-170</X><Y>890</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2036,13 +2146,105 @@ Whenever the student is not at school or in the community, the student is at hom
 						</ParameterEditor>
 					</Properties>                 
 				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764211253421</Id>
+					<Name><![CDATA[classesAttending]]></Name>
+					<X>-170</X><Y>110</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[1]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1764211253419</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764212359829</Id>
+					<Name><![CDATA[isMultiClasses]]></Name>
+					<X>-170</X><Y>130</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[boolean]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[false]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1764212359827</Id>
+							<EditorContolType>CHECK_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764213322764</Id>
+					<Name><![CDATA[classroom2]]></Name>
+					<X>-170</X><Y>50</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[Classroom]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<ParameterEditor>
+							<Id>1764213322762</Id>
+							<Label><![CDATA[classroom]]></Label>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764213323650</Id>
+					<Name><![CDATA[classroom3]]></Name>
+					<X>-170</X><Y>70</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[Classroom]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<ParameterEditor>
+							<Id>1764213323648</Id>
+							<Label><![CDATA[classroom]]></Label>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
 			</Variables>
 			<StatechartElements>
 				<StatechartElement Class="State" ParentState="ROOT_NODE">
 					<Id>1760929825256</Id>
 					<Name><![CDATA[Susceptible]]></Name>
 					<Description><![CDATA[Students Start as Susceptible and could become Infective if Exposed to another Student who already has the infeciton.]]></Description>
-					<X>520</X><Y>100</Y>
+					<X>650</X><Y>100</Y>
 					<Label><X>25</X><Y>15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2056,7 +2258,7 @@ Whenever the student is not at school or in the community, the student is at hom
 					<Id>1760929853378</Id>
 					<Name><![CDATA[Recovered]]></Name>
 					<Description><![CDATA[Students will recover and will have a period of immunity before their immunity wears off and they become Susceptible again.]]></Description>
-					<X>520</X><Y>600</Y>
+					<X>650</X><Y>600</Y>
 					<Label><X>20</X><Y>15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2076,7 +2278,7 @@ this.positiveDot.setVisible(false);]]></EntryAction>
 					<Name><![CDATA[Latent]]></Name>
 					<Description><![CDATA[When a Student is exposed we check whether they were exposed by someone wearing a mask "Masked Exposed" and whether the Susceptable Student is also wearing a mask. We calculate probablility of the infection successfully transfering based on a variety of factors (e.g. if they're wearing masks then this lowers the probability of infection spread.)
 We also increment the maskedInfectionCount and other contexts for our data.]]></Description>
-					<X>520</X><Y>240</Y>
+					<X>650</X><Y>240</Y>
 					<Label><X>40</X><Y>15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2090,7 +2292,7 @@ We also increment the maskedInfectionCount and other contexts for our data.]]></
 					<Id>1760929906653</Id>
 					<Name><![CDATA[AtHome]]></Name>
 					<Description><![CDATA[Students Start at Home and make their way to Class each day.]]></Description>
-					<X>80</X><Y>120</Y>
+					<X>60</X><Y>60</Y>
 					<Label><X>10</X><Y>10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2106,8 +2308,8 @@ determineIfMasking();]]></ExitAction>
 				</StatechartElement>
 				<StatechartElement Class="State" ParentState="ROOT_NODE">
 					<Id>1760929913283</Id>
-					<Name><![CDATA[InTransitToClass]]></Name>
-					<X>80</X><Y>220</Y>
+					<Name><![CDATA[InTransitToClass1]]></Name>
+					<X>60</X><Y>160</Y>
 					<Label><X>10</X><Y>10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2118,16 +2320,16 @@ determineIfMasking();]]></ExitAction>
 				</StatechartElement>
 				<StatechartElement Class="State" ParentState="ROOT_NODE">
 					<Id>1761337698281</Id>
-					<Name><![CDATA[AtClass]]></Name>
+					<Name><![CDATA[AtClass1]]></Name>
 					<Description><![CDATA[At Class we connect the Student with all other Students in the same Class. This will spread the infection.]]></Description>
-					<X>80</X><Y>321.232</Y>
+					<X>60</X><Y>240</Y>
 					<Label><X>10</X><Y>10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="111.49653121902874" Height="33.74384236453202">
-						<EntryAction><![CDATA[moveTo(classroom);
-currentUniLocation = classroom;
+						<EntryAction><![CDATA[moveTo(classroom1);
+currentUniLocation = classroom1;
 connectToNearbyStudents();]]></EntryAction>
 						<ExitAction><![CDATA[this.disconnectFromAll();
 currentUniLocation = null;]]></ExitAction>
@@ -2137,7 +2339,7 @@ currentUniLocation = null;]]></ExitAction>
 				<StatechartElement Class="State" ParentState="ROOT_NODE">
 					<Id>1761338176859</Id>
 					<Name><![CDATA[InTransitToHome]]></Name>
-					<X>260</X><Y>410</Y>
+					<X>420</X><Y>530</Y>
 					<Label><X>3.044</X><Y>9.583</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2150,7 +2352,7 @@ currentUniLocation = null;]]></ExitAction>
 					<Id>1761338441149</Id>
 					<Name><![CDATA[Infective]]></Name>
 					<Description><![CDATA["Infective" state encompasses Asymptomatic and Symptomatic substates.]]></Description>
-					<X>470</X><Y>340</Y>
+					<X>600</X><Y>340</Y>
 					<Label><X>10</X><Y>10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2165,7 +2367,7 @@ positiveDot.setVisible(true);]]></EntryAction>
 				<StatechartElement Class="State" ParentState="Infective" ParentStateId="1761338441149">
 					<Id>1760929850103</Id>
 					<Name><![CDATA[Symptomatic]]></Name>
-					<X>520</X><Y>450</Y>
+					<X>650</X><Y>450</Y>
 					<Label><X>20</X><Y>15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2179,7 +2381,7 @@ this.isSymptomatic = true;]]></EntryAction>
 				<StatechartElement Class="State" ParentState="Infective" ParentStateId="1761338441149">
 					<Id>1761602956189</Id>
 					<Name><![CDATA[Asymptomatic]]></Name>
-					<X>520</X><Y>370</Y>
+					<X>650</X><Y>370</Y>
 					<Label><X>15</X><Y>15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2191,7 +2393,7 @@ this.isSymptomatic = true;]]></EntryAction>
 				<StatechartElement Class="State" ParentState="ROOT_NODE">
 					<Id>1763156638679</Id>
 					<Name><![CDATA[InTransitToCommunity]]></Name>
-					<X>80</X><Y>460</Y>
+					<X>60</X><Y>580</Y>
 					<Label><X>10</X><Y>10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2204,7 +2406,7 @@ this.isSymptomatic = true;]]></EntryAction>
 					<Id>1763156638682</Id>
 					<Name><![CDATA[AtCommunity]]></Name>
 					<Description><![CDATA[At Community we connect the Student with all other Students in the same Community. This will spread the infection.]]></Description>
-					<X>80</X><Y>561.232</Y>
+					<X>60</X><Y>681.232</Y>
 					<Label><X>10</X><Y>10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2220,7 +2422,7 @@ currentUniLocation = null;]]></ExitAction>
 				<StatechartElement Class="Branch" ParentState="ROOT_NODE">
 					<Id>1763156873816</Id>
 					<Name><![CDATA[goToCommunity]]></Name>
-					<X>140</X><Y>420</Y>
+					<X>120</X><Y>540</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2231,7 +2433,7 @@ currentUniLocation = null;]]></ExitAction>
 				<StatechartElement Class="Branch" ParentState="ROOT_NODE">
 					<Id>1763749518772</Id>
 					<Name><![CDATA[branch]]></Name>
-					<X>580</X><Y>190</Y>
+					<X>710</X><Y>190</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2347,10 +2549,68 @@ readyForSchool = true;]]></ExitAction>
 						<FillColor/>
 					</Properties>
 				</StatechartElement>
+				<StatechartElement Class="Branch" ParentState="ROOT_NODE">
+					<Id>1764211801408</Id>
+					<Name><![CDATA[branch1]]></Name>
+					<X>120</X><Y>330</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Properties>	
+					</Properties>	
+				</StatechartElement>
+				<StatechartElement Class="State" ParentState="ROOT_NODE">
+					<Id>1764211908343</Id>
+					<Name><![CDATA[AtClass2]]></Name>
+					<Description><![CDATA[At Class we connect the Student with all other Students in the same Class. This will spread the infection.]]></Description>
+					<X>180</X><Y>320</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties Width="111.49653121902874" Height="33.74384236453202">
+						<EntryAction><![CDATA[moveTo(classroom2);
+currentUniLocation = classroom2;
+connectToNearbyStudents();]]></EntryAction>
+						<ExitAction><![CDATA[this.disconnectFromAll();
+currentUniLocation = null;]]></ExitAction>
+						<FillColor/>
+					</Properties>
+				</StatechartElement>
+				<StatechartElement Class="Branch" ParentState="ROOT_NODE">
+					<Id>1764212642292</Id>
+					<Name><![CDATA[branch2]]></Name>
+					<X>230</X><Y>400</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Properties>	
+					</Properties>	
+				</StatechartElement>
+				<StatechartElement Class="State" ParentState="ROOT_NODE">
+					<Id>1764212731281</Id>
+					<Name><![CDATA[AtClass3]]></Name>
+					<Description><![CDATA[At Class we connect the Student with all other Students in the same Class. This will spread the infection.]]></Description>
+					<X>270</X><Y>380</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties Width="111.49653121902874" Height="33.74384236453202">
+						<EntryAction><![CDATA[moveTo(classroom3);
+currentUniLocation = classroom3;
+connectToNearbyStudents();]]></EntryAction>
+						<ExitAction><![CDATA[this.disconnectFromAll();
+currentUniLocation = null;]]></ExitAction>
+						<FillColor/>
+					</Properties>
+				</StatechartElement>
 				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 					<Id>1760929889880</Id>
 					<Name><![CDATA[possibleInfection]]></Name>
-					<X>579.748</X><Y>133.743</Y>
+					<X>709.748</X><Y>133.743</Y>
 					<Label><X>10.252</X><Y>21.257</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2381,7 +2641,7 @@ readyForSchool = true;]]></ExitAction>
 				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 					<Id>1760929897100</Id>
 					<Name><![CDATA[recoveringPeriod]]></Name>
-					<X>579.092</X><Y>539.169</Y>
+					<X>709.092</X><Y>539.169</Y>
 					<Label><X>5.908</X><Y>30.831</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2411,7 +2671,7 @@ readyForSchool = true;]]></ExitAction>
 				<StatechartElement Class="EntryPoint" ParentState="ROOT_NODE">
 					<Id>1760930544300</Id>
 					<Name><![CDATA[infectionStateChart]]></Name>
-					<X>580</X><Y>60</Y>
+					<X>710</X><Y>60</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2426,7 +2686,7 @@ readyForSchool = true;]]></ExitAction>
 				<StatechartElement Class="EntryPoint" ParentState="ROOT_NODE">
 					<Id>1760930560613</Id>
 					<Name><![CDATA[locationStateChart]]></Name>
-					<X>135.749</X><Y>75.008</Y>
+					<X>115.749</X><Y>15.008</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2441,14 +2701,14 @@ readyForSchool = true;]]></ExitAction>
 				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 					<Id>1761337727069</Id>
 					<Name><![CDATA[arriveAtClass]]></Name>
-					<X>135.749</X><Y>252.744</Y>
+					<X>115.749</X><Y>192.744</Y>
 					<Label><X>10</X><Y>20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<Points>
 						<Point><X>0</X><Y>0.9998423645320145</Y></Point>
-						<Point><X>0</X><Y>68.488</Y></Point>
+						<Point><X>0</X><Y>47.256</Y></Point>
 					</Points>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1760929913283" Target="1761337698281" Trigger="timeout">
@@ -2471,14 +2731,14 @@ readyForSchool = true;]]></ExitAction>
 				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 					<Id>1761338193310</Id>
 					<Name><![CDATA[commuteToHome]]></Name>
-					<X>152</X><Y>420</Y>
+					<X>132</X><Y>540</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>108</X><Y>0</Y></Point>
+						<Point><X>288</X><Y>0</Y></Point>
 					</Points>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1763156873816" Target="1761338176859" Trigger="timeout">
@@ -2502,16 +2762,16 @@ readyForSchool = true;]]></ExitAction>
 				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 					<Id>1761338240329</Id>
 					<Name><![CDATA[arriveAtHome]]></Name>
-					<X>370.70500000000004</X><Y>419.161</Y>
+					<X>459.705</X><Y>529.1610000000001</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<Points>
-						<Point><X>0.7915312190286841</X><Y>0.8389999999999986</Y></Point>
-						<Point><X>29.295</X><Y>0.839</Y></Point>
-						<Point><X>29.295</X><Y>-289.161</Y></Point>
-						<Point><X>-179.20846878097132</X><Y>-289.161</Y></Point>
+						<Point><X>0.2950000000000159</X><Y>0.8389999999999986</Y></Point>
+						<Point><X>0.2950000000000017</X><Y>-189.161</Y></Point>
+						<Point><X>0.2950000000000017</X><Y>-459.161</Y></Point>
+						<Point><X>-288.20846878097126</X><Y>-459.161</Y></Point>
 					</Points>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1761338176859" Target="1760929906653" Trigger="arrival">
@@ -2535,7 +2795,7 @@ readyForSchool = true;]]></ExitAction>
 					<Id>1761338487668</Id>
 					<Name><![CDATA[becomeSymptomatic]]></Name>
 					<Description><![CDATA[The difference between becoming Asymptomatic (latencyPeriod) and becoming Symptomatic (incubationPeriod).]]></Description>
-					<X>579.748</X><Y>402.761</Y>
+					<X>709.748</X><Y>402.761</Y>
 					<Label><X>10.252</X><Y>22.239</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2565,7 +2825,7 @@ readyForSchool = true;]]></ExitAction>
 				<StatechartElement Class="Transition" ParentState="Infective" ParentStateId="1761338441149">
 					<Id>1761338904067</Id>
 					<Name><![CDATA[infectOthers]]></Name>
-					<X>629.197</X><Y>539.207</Y>
+					<X>759.197</X><Y>539.207</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2601,7 +2861,7 @@ readyForSchool = true;]]></ExitAction>
 				<StatechartElement Class="InitialStatePointer" ParentState="Infective" ParentStateId="1761338441149">
 					<Id>1761603282880</Id>
 					<Name><![CDATA[initialState]]></Name>
-					<X>490</X><Y>380</Y>
+					<X>620</X><Y>380</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2616,7 +2876,7 @@ readyForSchool = true;]]></ExitAction>
 				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 					<Id>1761703050918</Id>
 					<Name><![CDATA[initialInfection]]></Name>
-					<X>530</X><Y>133</Y>
+					<X>660</X><Y>133</Y>
 					<Label><X>-90</X><Y>22</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2648,7 +2908,7 @@ readyForSchool = true;]]></ExitAction>
 				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 					<Id>1762225695291</Id>
 					<Name><![CDATA[immunityPeriod]]></Name>
-					<X>631</X><Y>610</Y>
+					<X>761</X><Y>610</Y>
 					<Label><X>24</X><Y>15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2680,7 +2940,7 @@ readyForSchool = true;]]></ExitAction>
 				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 					<Id>1763156638686</Id>
 					<Name><![CDATA[arriveAtCommunity]]></Name>
-					<X>135.749</X><Y>492.744</Y>
+					<X>115.749</X><Y>612.744</Y>
 					<Label><X>10</X><Y>20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2710,7 +2970,7 @@ readyForSchool = true;]]></ExitAction>
 				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 					<Id>1763156996950</Id>
 					<Name><![CDATA[transition]]></Name>
-					<X>140</X><Y>430</Y>
+					<X>120</X><Y>550</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2741,15 +3001,15 @@ readyForSchool = true;]]></ExitAction>
 				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 					<Id>1763157013693</Id>
 					<Name><![CDATA[commuteFromCommunity]]></Name>
-					<X>191</X><Y>580</Y>
+					<X>171</X><Y>700</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<Points>
 						<Point><X>0.496531219028725</X><Y>0</Y></Point>
-						<Point><X>119</X><Y>0</Y></Point>
-						<Point><X>119</X><Y>-136.25615763546796</Y></Point>
+						<Point><X>299</X><Y>0</Y></Point>
+						<Point><X>298</X><Y>-136.25615763546796</Y></Point>
 					</Points>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1763156638682" Target="1761338176859" Trigger="timeout">
@@ -2772,20 +3032,20 @@ readyForSchool = true;]]></ExitAction>
 				</StatechartElement>
 				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 					<Id>1763157135472</Id>
-					<Name><![CDATA[commuteFromClass]]></Name>
-					<X>140</X><Y>354</Y>
+					<Name><![CDATA[timeAtClass1]]></Name>
+					<X>120</X><Y>273</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<Points>
-						<Point><X>0</X><Y>0.9758423645320704</Y></Point>
-						<Point><X>0</X><Y>56</Y></Point>
+						<Point><X>0</X><Y>0.7438423645320427</Y></Point>
+						<Point><X>0</X><Y>47</Y></Point>
 					</Points>
 					<IconOffset>20.0</IconOffset>
-					<Properties Source="1761337698281" Target="1763156873816" Trigger="timeout">
+					<Properties Source="1761337698281" Target="1764211801408" Trigger="timeout">
 						<Timeout Class="CodeUnitValue">
-							<Code><![CDATA[averageHoursSpentSchool]]></Code>
+							<Code><![CDATA[averageHoursSpentSchool/classesAttending]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
 						</Timeout>
 						<Condition><![CDATA[true]]></Condition>
@@ -2803,7 +3063,7 @@ readyForSchool = true;]]></ExitAction>
 				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 					<Id>1763749558403</Id>
 					<Name><![CDATA[wasInfected]]></Name>
-					<X>580</X><Y>200</Y>
+					<X>710</X><Y>200</Y>
 					<Label><X>5</X><Y>15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2833,7 +3093,7 @@ readyForSchool = true;]]></ExitAction>
 				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 					<Id>1763749566147</Id>
 					<Name><![CDATA[wasNotInfected]]></Name>
-					<X>592</X><Y>190</Y>
+					<X>722</X><Y>190</Y>
 					<Label><X>113</X><Y>-35</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2865,7 +3125,7 @@ readyForSchool = true;]]></ExitAction>
 				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 					<Id>1763749590701</Id>
 					<Name><![CDATA[latentPeriod]]></Name>
-					<X>580</X><Y>273</Y>
+					<X>710</X><Y>273</Y>
 					<Label><X>5</X><Y>37</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2895,7 +3155,7 @@ readyForSchool = true;]]></ExitAction>
 				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 					<Id>1763755764575</Id>
 					<Name><![CDATA[transition1]]></Name>
-					<X>140</X><Y>153</Y>
+					<X>120</X><Y>93</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2928,7 +3188,7 @@ readyForSchool = true;]]></ExitAction>
 				<StatechartElement Class="Transition" ParentState="AtHome" ParentStateId="1760929906653">
 					<Id>1763758220715</Id>
 					<Name><![CDATA[checkIfHealthyToGoOutDaily]]></Name>
-					<X>100</X><Y>153</Y>
+					<X>80</X><Y>93</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3131,6 +3391,189 @@ readyForSchool = true;]]></Condition>
 						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
 					</Properties>	
 				</StatechartElement>
+				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+					<Id>1764211814127</Id>
+					<Name><![CDATA[outOfClass1]]></Name>
+					<X>120</X><Y>340</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>0</X><Y>190</Y></Point>
+					</Points>
+					<IconOffset>20.0</IconOffset>
+					<Properties Source="1764211801408" Target="1763156873816" Trigger="timeout">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</Timeout>
+						<Condition><![CDATA[true]]></Condition>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+						</Rate>
+						<MessageType><![CDATA[Object]]></MessageType>
+						<DefaultTransition>true</DefaultTransition>
+						<FilterType><![CDATA[unconditionally]]></FilterType>
+						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
+						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
+					</Properties>	
+				</StatechartElement>
+				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+					<Id>1764211858175</Id>
+					<Name><![CDATA[goToClass2]]></Name>
+					<X>132</X><Y>330</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>48</X><Y>0</Y></Point>
+					</Points>
+					<IconOffset>20.0</IconOffset>
+					<Properties Source="1764211801408" Target="1764211908343" Trigger="timeout">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</Timeout>
+						<Condition><![CDATA[isMultiClasses && classesAttending > 1]]></Condition>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+						</Rate>
+						<MessageType><![CDATA[Object]]></MessageType>
+						<DefaultTransition>false</DefaultTransition>
+						<FilterType><![CDATA[unconditionally]]></FilterType>
+						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
+						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
+					</Properties>	
+				</StatechartElement>
+				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+					<Id>1764212654768</Id>
+					<Name><![CDATA[timeAtClass2]]></Name>
+					<X>230</X><Y>353</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Points>
+						<Point><X>0</X><Y>0.7438423645320427</Y></Point>
+						<Point><X>0</X><Y>37</Y></Point>
+					</Points>
+					<IconOffset>20.0</IconOffset>
+					<Properties Source="1764211908343" Target="1764212642292" Trigger="timeout">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[averageHoursSpentSchool/classesAttending]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</Timeout>
+						<Condition><![CDATA[true]]></Condition>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+						</Rate>
+						<MessageType><![CDATA[Object]]></MessageType>
+						<DefaultTransition>true</DefaultTransition>
+						<FilterType><![CDATA[unconditionally]]></FilterType>
+						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
+						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
+					</Properties>	
+				</StatechartElement>
+				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+					<Id>1764212716472</Id>
+					<Name><![CDATA[outOfClass2]]></Name>
+					<X>218</X><Y>400</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>-98</X><Y>0</Y></Point>
+						<Point><X>-98</X><Y>130</Y></Point>
+					</Points>
+					<IconOffset>20.0</IconOffset>
+					<Properties Source="1764212642292" Target="1763156873816" Trigger="timeout">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</Timeout>
+						<Condition><![CDATA[true]]></Condition>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+						</Rate>
+						<MessageType><![CDATA[Object]]></MessageType>
+						<DefaultTransition>true</DefaultTransition>
+						<FilterType><![CDATA[unconditionally]]></FilterType>
+						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
+						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
+					</Properties>	
+				</StatechartElement>
+				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+					<Id>1764212736657</Id>
+					<Name><![CDATA[transition6]]></Name>
+					<X>242</X><Y>400</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>28</X><Y>0</Y></Point>
+					</Points>
+					<IconOffset>20.0</IconOffset>
+					<Properties Source="1764212642292" Target="1764212731281" Trigger="timeout">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</Timeout>
+						<Condition><![CDATA[isMultiClasses && classesAttending > 2]]></Condition>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+						</Rate>
+						<MessageType><![CDATA[Object]]></MessageType>
+						<DefaultTransition>false</DefaultTransition>
+						<FilterType><![CDATA[unconditionally]]></FilterType>
+						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
+						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
+					</Properties>	
+				</StatechartElement>
+				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+					<Id>1764213227045</Id>
+					<Name><![CDATA[timeAtClass3]]></Name>
+					<X>320</X><Y>413</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Points>
+						<Point><X>0</X><Y>0.7438423645320427</Y></Point>
+						<Point><X>0</X><Y>57</Y></Point>
+						<Point><X>-200</X><Y>67</Y></Point>
+						<Point><X>-200</X><Y>117</Y></Point>
+					</Points>
+					<IconOffset>20.0</IconOffset>
+					<Properties Source="1764212731281" Target="1763156873816" Trigger="timeout">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[averageHoursSpentSchool/classesAttending]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</Timeout>
+						<Condition><![CDATA[true]]></Condition>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+						</Rate>
+						<MessageType><![CDATA[Object]]></MessageType>
+						<DefaultTransition>true</DefaultTransition>
+						<FilterType><![CDATA[unconditionally]]></FilterType>
+						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
+						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
+					</Properties>	
+				</StatechartElement>
 			</StatechartElements>
 			<Functions>
 				<Function AccessType="default" StaticFunction="false">
@@ -3138,7 +3581,7 @@ readyForSchool = true;]]></Condition>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1761338548872</Id>
 					<Name><![CDATA[connectToNearbyStudents]]></Name>
-					<X>-170</X><Y>610</Y>
+					<X>-170</X><Y>680</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3150,7 +3593,7 @@ readyForSchool = true;]]></Condition>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1761757343630</Id>
 					<Name><![CDATA[getIndividualTransmissionProbability]]></Name>
-					<X>-170</X><Y>630</Y>
+					<X>-170</X><Y>700</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3166,7 +3609,7 @@ readyForSchool = true;]]></Condition>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1762136753086</Id>
 					<Name><![CDATA[determineIfMasking]]></Name>
-					<X>-170</X><Y>650</Y>
+					<X>-170</X><Y>720</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3182,7 +3625,7 @@ if (main.isMaskMandate || isMaskUser) {
 					<ReturnType><![CDATA[boolean]]></ReturnType>
 					<Id>1763860253683</Id>
 					<Name><![CDATA[runCovidTest]]></Name>
-					<X>-170</X><Y>780</Y>
+					<X>-170</X><Y>850</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3200,7 +3643,7 @@ else {
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1763860253688</Id>
 					<Name><![CDATA[requestTest]]></Name>
-					<X>-170</X><Y>800</Y>
+					<X>-170</X><Y>870</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5152,6 +5595,18 @@ send("requestTest", this);
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[isTestingMandate]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[false]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isMultipleClasses]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[maxClassAttendance]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[willingnessToIsolateFraction]]></ParameterName>
 				</Parameter>
 			</Parameters>
 			<PresentationProperties>
@@ -5247,6 +5702,18 @@ send("requestTest", this);
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[isTestingMandate]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[false]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isMultipleClasses]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[maxClassAttendance]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[willingnessToIsolateFraction]]></ParameterName>
 				</Parameter>
 			</Parameters>
 			<PresentationProperties>
@@ -5351,6 +5818,24 @@ send("requestTest", this);
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[isTestingMandate]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[false]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isMultipleClasses]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[false]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[maxClassAttendance]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[1]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[willingnessToIsolateFraction]]></ParameterName>
 				</Parameter>
 			</Parameters>
 			<PresentationProperties>
@@ -5449,12 +5934,140 @@ send("requestTest", this);
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[isTestingMandate]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[true]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isMultipleClasses]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[maxClassAttendance]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[willingnessToIsolateFraction]]></ParameterName>
 				</Parameter>
 			</Parameters>
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
 				<ExecutionMode><![CDATA[realTimeScaled]]></ExecutionMode>
 				<Title><![CDATA[Usask-Covid-v1 : Simulation_InfectiveWillingToIsolate]]></Title>
+				<EnableDeveloperPanel>true</EnableDeveloperPanel>
+				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
+				<RealTimeScale>1.0</RealTimeScale>
+			</PresentationProperties>
+			<ModelTimeProperties>
+				<StopOption><![CDATA[Never]]></StopOption>
+				<InitialDate><![CDATA[1760918400000]]></InitialDate>
+				<InitialTime><![CDATA[0.0]]></InitialTime>
+				<FinalDate><![CDATA[1763596800000]]></FinalDate>
+				<FinalTime><![CDATA[100.0]]></FinalTime>
+			</ModelTimeProperties>
+			<BypassInitialScreen>true</BypassInitialScreen>
+		</SimulationExperiment>
+		<!--   =========   Simulation Experiment   ========  -->
+		<SimulationExperiment ActiveObjectClassId="1760929735207">
+			<Id>1764216348557</Id>
+			<Name><![CDATA[Simulation_MultipleClasses]]></Name>
+			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
+			<MaximumMemory>512</MaximumMemory>
+			<RandomNumberGenerationType>fixedSeed</RandomNumberGenerationType>
+			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
+			<SeedValue>1</SeedValue>
+			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
+			<VmArgs><![CDATA[]]></VmArgs>
+			<LoadRootFromSnapshot>false</LoadRootFromSnapshot>
+
+			<Presentation>
+				<Text>
+					<Id>1764216348559</Id>
+					<Name><![CDATA[text]]></Name>
+					<X>50</X><Y>30</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12490271</Color>
+					<Text><![CDATA[Usask-Covid-v1]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>24</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+			</Presentation>
+
+			<Parameters>
+				<Parameter>
+					<ParameterName><![CDATA[studentPopulation]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[60]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[maxConnectionDistance]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[contactsPerDay]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[classCapacity]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[schoolRadius]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[residentialRadius]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[transmissionProbability]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isMaskMandate]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[maskMandateCompliance]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[maskEffectiveness]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[goingToCommunityFraction]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[numCommunityPlaces]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isTestingMandate]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isMultipleClasses]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[true]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[maxClassAttendance]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[3]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[willingnessToIsolateFraction]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ParameterValue>
+				</Parameter>
+			</Parameters>
+			<PresentationProperties>
+				<EnableZoomAndPanning>true</EnableZoomAndPanning>
+				<ExecutionMode><![CDATA[realTimeScaled]]></ExecutionMode>
+				<Title><![CDATA[Usask-Covid-v1 : Simulation_MultipleClasses]]></Title>
 				<EnableDeveloperPanel>true</EnableDeveloperPanel>
 				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
 				<RealTimeScale>1.0</RealTimeScale>
