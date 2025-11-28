@@ -725,6 +725,31 @@
 						</ParameterEditor>
 					</Properties>                 
 				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764318961998</Id>
+					<Name><![CDATA[isTestingEnabled]]></Name>
+					<X>-260</X><Y>610</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[boolean]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[true]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1764318961996</Id>
+							<Label><![CDATA[isTestingEnabled]]></Label>
+							<EditorContolType>CHECK_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
 			</Variables>
 			<Events>
 				<Event>
@@ -852,12 +877,6 @@
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[isTesting]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[isTestingMandate]]></Code>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[isTestingEnabled]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[isTestingMandate]]></Code>
 							</Value>
@@ -2000,7 +2019,7 @@ Whenever the student is not at school or in the community, the student is at hom
 				<Variable Class="Parameter">
 					<Id>1763860253698</Id>
 					<Name><![CDATA[isTesting]]></Name>
-					<X>-170</X><Y>740</Y>
+					<X>-170</X><Y>760</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2014,7 +2033,7 @@ Whenever the student is not at school or in the community, the student is at hom
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1763860253696</Id>
-							<Label><![CDATA[isTestingEnabled]]></Label>
+							<Label><![CDATA[isTesting]]></Label>
 							<EditorContolType>CHECK_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
@@ -2025,7 +2044,7 @@ Whenever the student is not at school or in the community, the student is at hom
 				<Variable Class="Parameter">
 					<Id>1763860253702</Id>
 					<Name><![CDATA[readyForSchool]]></Name>
-					<X>-170</X><Y>760</Y>
+					<X>-170</X><Y>780</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2039,31 +2058,6 @@ Whenever the student is not at school or in the community, the student is at hom
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1763860253700</Id>
-							<EditorContolType>CHECK_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-				<Variable Class="Parameter">
-					<Id>1763860253706</Id>
-					<Name><![CDATA[isTestingEnabled]]></Name>
-					<X>-170</X><Y>820</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[boolean]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[true]]></Code>
-						</DefaultValue>
-						<ParameterEditor>
-							<Id>1763860253704</Id>
-							<Label><![CDATA[isTestingEnabled]]></Label>
 							<EditorContolType>CHECK_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
@@ -2314,7 +2308,7 @@ if (this.isInfected) {
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="120" Height="40">
-						<EntryAction><![CDATA[if (isTestingEnabled){
+						<EntryAction><![CDATA[if (main.isTestingEnabled){
 	isTesting = false;
 }]]></EntryAction>
 						<FillColor>-10496</FillColor>
@@ -3005,7 +2999,7 @@ currentUniLocation = null;]]></ExitAction>
 					</Points>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1763860218235" Target="1763860218237" Trigger="message">
-						<Action><![CDATA[if (isTestingEnabled) {
+						<Action><![CDATA[if (main.isTestingEnabled) {
 	requestTest();
 }
 ]]></Action>
@@ -3021,7 +3015,7 @@ currentUniLocation = null;]]></ExitAction>
 						<MessageType><![CDATA[String]]></MessageType>
 						<DefaultTransition>true</DefaultTransition>
 						<FilterType><![CDATA[equalsTo]]></FilterType>
-						<EqualsExpression><![CDATA["requestTest"]]></EqualsExpression>
+						<EqualsExpression><![CDATA["Request Test"]]></EqualsExpression>
 						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
 					</Properties>	
 				</StatechartElement>
@@ -3357,8 +3351,7 @@ readyForSchool = true;]]></Condition>
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
 						</Rate>
-						<Guard><![CDATA[(this.isInfected == false && this.awareWasExposed == false) ||
-(this.isInfected == true &&  !inState(Symptomatic) && this.awareWasExposed == false)]]></Guard>
+						<Guard><![CDATA[(this.awareWasExposed == false)]]></Guard>
 						<MessageType><![CDATA[Object]]></MessageType>
 						<DefaultTransition>true</DefaultTransition>
 						<FilterType><![CDATA[unconditionally]]></FilterType>
@@ -3494,7 +3487,7 @@ if (main.isMaskMandate || isMaskUser) {
 					<ReturnType><![CDATA[boolean]]></ReturnType>
 					<Id>1763860253683</Id>
 					<Name><![CDATA[runCovidTest]]></Name>
-					<X>-170</X><Y>780</Y>
+					<X>-170</X><Y>800</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3512,17 +3505,11 @@ else {
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1763860253688</Id>
 					<Name><![CDATA[requestTest]]></Name>
-					<X>-170</X><Y>800</Y>
+					<X>-170</X><Y>820</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[currentUniLocation = home;
-connectToNearbyStudents();
-readyForSchool = false;
-
-send("requestTest", this);
-]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
@@ -3718,7 +3705,7 @@ else {
 					<PresentationFlag>false</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<VisibleCode><![CDATA[main.isTestingMandate || isTesting ||isTestingEnabled]]></VisibleCode>
+					<VisibleCode><![CDATA[main.isTestingMandate || isTesting || main.isTestingEnabled]]></VisibleCode>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
 					<ZHeight>10</ZHeight>
@@ -5622,6 +5609,12 @@ else {
 				<Parameter>
 					<ParameterName><![CDATA[immunePeriod]]></ParameterName>
 				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isTestingEnabled]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[false]]></Code>
+					</ParameterValue>
+				</Parameter>
 			</Parameters>
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
@@ -5743,6 +5736,9 @@ else {
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[immunePeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isTestingEnabled]]></ParameterName>
 				</Parameter>
 			</Parameters>
 			<PresentationProperties>
@@ -5881,6 +5877,9 @@ else {
 				<Parameter>
 					<ParameterName><![CDATA[immunePeriod]]></ParameterName>
 				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isTestingEnabled]]></ParameterName>
+				</Parameter>
 			</Parameters>
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
@@ -6005,6 +6004,9 @@ else {
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[immunePeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isTestingEnabled]]></ParameterName>
 				</Parameter>
 			</Parameters>
 			<PresentationProperties>
@@ -6136,6 +6138,9 @@ else {
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[immunePeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isTestingEnabled]]></ParameterName>
 				</Parameter>
 			</Parameters>
 			<PresentationProperties>
