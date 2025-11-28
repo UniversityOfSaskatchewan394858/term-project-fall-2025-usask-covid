@@ -265,7 +265,7 @@
 				<Variable Class="Parameter">
 					<Id>1761339076298</Id>
 					<Name><![CDATA[contactsPerDay]]></Name>
-					<X>-440</X><Y>60</Y>
+					<X>-440</X><Y>150</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -361,7 +361,7 @@
 				<Variable Class="Parameter">
 					<Id>1761701167495</Id>
 					<Name><![CDATA[transmissionProbability]]></Name>
-					<X>-440</X><Y>80</Y>
+					<X>-440</X><Y>170</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>false</PresentationFlag>
@@ -627,12 +627,110 @@
 						</ParameterEditor>
 					</Properties>                 
 				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764306790275</Id>
+					<Name><![CDATA[infectivityPeriod]]></Name>
+					<X>-440</X><Y>80</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[254.4]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1764306790273</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764306790289</Id>
+					<Name><![CDATA[incubationPeriod]]></Name>
+					<Description><![CDATA[Period from first exposure to the onset of showing symptoms of the disease.]]></Description>
+					<X>-440</X><Y>100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[165.6]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1764306790287</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764306790293</Id>
+					<Name><![CDATA[latencyPeriod]]></Name>
+					<Description><![CDATA[Period from first exposure to the onset of spreading the disease]]></Description>
+					<X>-440</X><Y>60</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[132.0]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1764306790291</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764306790297</Id>
+					<Name><![CDATA[immunePeriod]]></Name>
+					<X>-440</X><Y>120</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[28]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1764306790295</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
 			</Variables>
 			<Events>
 				<Event>
 					<Id>1761339753959</Id>
 					<Name><![CDATA[initialInfection]]></Name>
-					<X>-440</X><Y>120</Y>
+					<X>-440</X><Y>200</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>false</PresentationFlag>
@@ -720,15 +818,6 @@
 							</Value>
 						</Parameter>
 						<Parameter>
-							<Name><![CDATA[infectivityPeriod]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[incubationPeriod]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[latencyPeriod]]></Name>
-						</Parameter>
-						<Parameter>
 							<Name><![CDATA[isMaskUser]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[randomTrue(maskMandateCompliance)&&(isMaskMandate)]]></Code>
@@ -739,9 +828,6 @@
 							<Value Class="CodeValue">
 								<Code><![CDATA[isMaskMandate]]></Code>
 							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[immunePeriod]]></Name>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[isGoingToCommunity]]></Name>
@@ -1808,80 +1894,6 @@ Whenever the student is not at school or in the community, the student is at hom
 					</Properties>                 
 				</Variable>
 				<Variable Class="Parameter">
-					<Id>1761518193381</Id>
-					<Name><![CDATA[infectivityPeriod]]></Name>
-					<X>-170</X><Y>300</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[double]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[254.4]]></Code>
-						</DefaultValue>
-						<ParameterEditor>
-							<Id>1761518193379</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-				<Variable Class="Parameter">
-					<Id>1761518221566</Id>
-					<Name><![CDATA[incubationPeriod]]></Name>
-					<Description><![CDATA[Period from first exposure to the onset of showing symptoms of the disease.]]></Description>
-					<X>-170</X><Y>320</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[double]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[165.6]]></Code>
-						</DefaultValue>
-						<ParameterEditor>
-							<Id>1761518221564</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-				<Variable Class="Parameter">
-					<Id>1761518270404</Id>
-					<Name><![CDATA[latencyPeriod]]></Name>
-					<Description><![CDATA[Period from first exposure to the onset of spreading the disease]]></Description>
-					<X>-170</X><Y>280</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[double]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[132.0]]></Code>
-						</DefaultValue>
-						<ParameterEditor>
-							<Id>1761518270402</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-				<Variable Class="Parameter">
 					<Id>1761751552292</Id>
 					<Name><![CDATA[isMaskUser]]></Name>
 					<X>-170</X><Y>150</Y>
@@ -1925,30 +1937,6 @@ Whenever the student is not at school or in the community, the student is at hom
 							<Id>1762136622867</Id>
 							<Label><![CDATA[isMasking]]></Label>
 							<EditorContolType>CHECK_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-				<Variable Class="Parameter">
-					<Id>1762226110302</Id>
-					<Name><![CDATA[immunePeriod]]></Name>
-					<X>-170</X><Y>340</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[int]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[28]]></Code>
-						</DefaultValue>
-						<ParameterEditor>
-							<Id>1762226110300</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
 							<DelimeterType>NO_DELIMETER</DelimeterType>
@@ -2667,7 +2655,7 @@ currentUniLocation = null;]]></ExitAction>
 					<IconOffset>40.0</IconOffset>
 					<Properties Source="1761338441149" Target="1760929853378" Trigger="timeout">
 						<Timeout Class="CodeUnitValue">
-							<Code><![CDATA[infectivityPeriod]]></Code>
+							<Code><![CDATA[main.infectivityPeriod]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
 						</Timeout>
 						<Condition><![CDATA[true]]></Condition>
@@ -2761,7 +2749,7 @@ currentUniLocation = null;]]></ExitAction>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1761602956189" Target="1760929850103" Trigger="timeout">
 						<Timeout Class="CodeUnitValue">
-							<Code><![CDATA[incubationPeriod-latencyPeriod]]></Code>
+							<Code><![CDATA[main.incubationPeriod-main.latencyPeriod]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
 						</Timeout>
 						<Condition><![CDATA[true]]></Condition>
@@ -2876,7 +2864,7 @@ currentUniLocation = null;]]></ExitAction>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1760929853378" Target="1760929825256" Trigger="timeout">
 						<Timeout Class="CodeUnitValue">
-							<Code><![CDATA[immunePeriod]]></Code>
+							<Code><![CDATA[main.immunePeriod]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 						</Timeout>
 						<Condition><![CDATA[true]]></Condition>
@@ -3062,7 +3050,7 @@ currentUniLocation = null;]]></ExitAction>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1760929866576" Target="1761338441149" Trigger="timeout">
 						<Timeout Class="CodeUnitValue">
-							<Code><![CDATA[latencyPeriod]]></Code>
+							<Code><![CDATA[main.latencyPeriod]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
 						</Timeout>
 						<Condition><![CDATA[true]]></Condition>
@@ -3237,7 +3225,7 @@ readyForSchool = true;]]></Condition>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1763860218239" Target="1763860218235" Trigger="timeout">
 						<Timeout Class="CodeUnitValue">
-							<Code><![CDATA[infectivityPeriod]]></Code>
+							<Code><![CDATA[main.infectivityPeriod]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
 						</Timeout>
 						<Condition><![CDATA[true]]></Condition>
@@ -5606,6 +5594,18 @@ else {
 				<Parameter>
 					<ParameterName><![CDATA[isSymptomaticIsolationMandated]]></ParameterName>
 				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[infectivityPeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[incubationPeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[latencyPeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[immunePeriod]]></ParameterName>
+				</Parameter>
 			</Parameters>
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
@@ -5715,6 +5715,18 @@ else {
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[isSymptomaticIsolationMandated]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[infectivityPeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[incubationPeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[latencyPeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[immunePeriod]]></ParameterName>
 				</Parameter>
 			</Parameters>
 			<PresentationProperties>
@@ -5841,6 +5853,18 @@ else {
 				<Parameter>
 					<ParameterName><![CDATA[isSymptomaticIsolationMandated]]></ParameterName>
 				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[infectivityPeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[incubationPeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[latencyPeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[immunePeriod]]></ParameterName>
+				</Parameter>
 			</Parameters>
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
@@ -5953,6 +5977,18 @@ else {
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[isSymptomaticIsolationMandated]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[infectivityPeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[incubationPeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[latencyPeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[immunePeriod]]></ParameterName>
 				</Parameter>
 			</Parameters>
 			<PresentationProperties>
@@ -6072,6 +6108,18 @@ else {
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[isSymptomaticIsolationMandated]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[infectivityPeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[incubationPeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[latencyPeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[immunePeriod]]></ParameterName>
 				</Parameter>
 			</Parameters>
 			<PresentationProperties>
