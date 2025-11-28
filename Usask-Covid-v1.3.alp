@@ -1782,21 +1782,6 @@ Whenever the student is not at school or in the community, the student is at hom
 					</Properties>
 				</Variable>
 				<Variable Class="PlainVariable">
-					<Id>1763761025172</Id>
-					<Name><![CDATA[isSymptomatic]]></Name>
-					<X>-170</X><Y>380</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[boolean]]></Type>        
-						<InitialValue Class="CodeValue">
-							<Code><![CDATA[false]]></Code>
-						</InitialValue>
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
 					<Id>1763860253692</Id>
 					<Name><![CDATA[isInfectious]]></Name>
 					<X>-170</X><Y>360</Y>
@@ -1814,7 +1799,7 @@ Whenever the student is not at school or in the community, the student is at hom
 				<Variable Class="PlainVariable">
 					<Id>1763860253694</Id>
 					<Name><![CDATA[isIsolated]]></Name>
-					<X>-170</X><Y>400</Y>
+					<X>-170</X><Y>380</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2206,7 +2191,6 @@ Whenever the student is not at school or in the community, the student is at hom
 					<Properties Width="111.49653121902874" Height="33.74384236453202">
 						<EntryAction><![CDATA[this.colour = gray;
 this.isInfected = false;
-this.isSymptomatic = false;
 this.awareWasExposed = false;
 this.isInfectious = false;
 this.positiveDot.setVisible(false);]]></EntryAction>
@@ -2255,8 +2239,7 @@ positiveDot.setVisible(true);]]></EntryAction>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="120" Height="33.74384236453202">
-						<EntryAction><![CDATA[this.colour = red;
-this.isSymptomatic = true;]]></EntryAction>
+						<EntryAction><![CDATA[this.colour = red;]]></EntryAction>
 						<FillColor>-65536</FillColor>
 					</Properties>
 				</StatechartElement>
@@ -2298,6 +2281,10 @@ if (this.messageReceived.equals("Exposure!")) {
 	if (this.isInfected) {
 		wasMaskedInfection = true;
 	}
+} else if (this.messageReceived.equals("Initial Infection!")) {
+	this.isInfected = true;
+	this.awareWasExposed = false;
+}
 
 if (this.isInfected) {
 	this.individualInfectionCount++;
@@ -2755,8 +2742,6 @@ currentUniLocation = null;]]></ExitAction>
 					</Points>
 					<IconOffset>110.0</IconOffset>
 					<Properties Source="1760929825256" Target="1760929866576" Trigger="message">
-						<Action><![CDATA[isInfected = true;
-awareWasExposed = false;]]></Action>
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
@@ -3373,7 +3358,7 @@ readyForSchool = true;]]></Condition>
 							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
 						</Rate>
 						<Guard><![CDATA[(this.isInfected == false && this.awareWasExposed == false) ||
-(this.isInfected == true && this.isSymptomatic == false && this.awareWasExposed == false)]]></Guard>
+(this.isInfected == true &&  !inState(Symptomatic) && this.awareWasExposed == false)]]></Guard>
 						<MessageType><![CDATA[Object]]></MessageType>
 						<DefaultTransition>true</DefaultTransition>
 						<FilterType><![CDATA[unconditionally]]></FilterType>
@@ -3446,7 +3431,7 @@ readyForSchool = true;]]></Condition>
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
 						</Timeout>
-						<Condition><![CDATA[!isSymptomatic]]></Condition>
+						<Condition><![CDATA[!inState(Symptomatic)]]></Condition>
 						<Rate Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
@@ -3515,7 +3500,7 @@ if (main.isMaskMandate || isMaskUser) {
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[double transmissionProbability = 0.0;
-if (isSymptomatic&&isInfectious) {return true;}
+if (inState(Symptomatic) && isInfectious) {return true;}
 if (isInfectious&&uniform(0,1)<0.9) {return true;}
 else {
 	transmissionProbability = getIndividualTransmissionProbability();
@@ -3549,10 +3534,10 @@ send("requestTest", this);
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[if (main.isSymptomaticIsolationMandated && isSymptomatic) {
+					<Body><![CDATA[if (main.isSymptomaticIsolationMandated && inState(Symptomatic)) {
 	return true;
 	}
-else if (isSymptomatic && willingToIsolate) {
+else if (inState(Symptomatic) && willingToIsolate) {
 	return true;
 	}
 else {
