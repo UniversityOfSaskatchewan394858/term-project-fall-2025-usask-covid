@@ -980,6 +980,80 @@
 						</ParameterEditor>
 					</Properties>                 
 				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764377121938</Id>
+					<Name><![CDATA[currentScheduleBlock]]></Name>
+					<X>-440</X><Y>280</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1764377121936</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764377183271</Id>
+					<Name><![CDATA[scheduleBlocksPerDay]]></Name>
+					<X>-440</X><Y>300</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[6]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1764377183269</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764377854854</Id>
+					<Name><![CDATA[scheduleBlockLengthInHours]]></Name>
+					<X>-440</X><Y>320</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[]]></Type>
+						<UnitType><![CDATA[TIME]]></UnitType>
+						<UnitOfValue Class="TimeUnits"><![CDATA[HOUR]]></UnitOfValue>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeUnitValue">
+							<Code><![CDATA[24 / scheduleBlocksPerDay]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1764377854852</Id>
+							<EditorContolType>UNIT_EDITOR</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
 			</Variables>
 			<Events>
 				<Event>
@@ -1014,6 +1088,38 @@
 					</Properties>
 					<Action><![CDATA[send("Initial Infection!", students.random())
 ]]></Action>
+				</Event>
+				<Event>
+					<Id>1764377942173</Id>
+					<Name><![CDATA[nextScheduleBlock]]></Name>
+					<X>-440</X><Y>360</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties TriggerType="timeout" Mode="cyclic">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</Timeout>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+						</Rate>
+						<Id>1764377942171</Id>
+						<OccurrenceAtTime>true</OccurrenceAtTime>
+						<OccurrenceDate>1764403200000</OccurrenceDate>
+						<OccurrenceTime Class="CodeUnitValue">
+							<Code><![CDATA[scheduleBlockLengthInHours]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</OccurrenceTime>
+						<RecurrenceCode Class="CodeUnitValue">
+							<Code><![CDATA[scheduleBlockLengthInHours]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</RecurrenceCode>
+						<Condition><![CDATA[false]]></Condition>
+					</Properties>
+					<Action><![CDATA[currentScheduleBlock = (currentScheduleBlock + 1) % scheduleBlocksPerDay]]></Action>
 				</Event>
 			</Events>
 			<AgentLinks>
@@ -1774,6 +1880,27 @@
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
 					<Text><![CDATA[Interventions]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>20</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1764377082590</Id>
+					<Name><![CDATA[text5]]></Name>
+					<X>-450</X><Y>240</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Schedule]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>20</Size>
@@ -6075,6 +6202,15 @@ else {
 				<Parameter>
 					<ParameterName><![CDATA[isSymptomaticIsolationEnabled]]></ParameterName>
 				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[currentScheduleBlock]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleBlocksPerDay]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleBlockLengthInHours]]></ParameterName>
+				</Parameter>
 			</Parameters>
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
@@ -6226,6 +6362,15 @@ else {
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[isSymptomaticIsolationEnabled]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[currentScheduleBlock]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleBlocksPerDay]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleBlockLengthInHours]]></ParameterName>
 				</Parameter>
 			</Parameters>
 			<PresentationProperties>
@@ -6394,6 +6539,15 @@ else {
 				<Parameter>
 					<ParameterName><![CDATA[isSymptomaticIsolationEnabled]]></ParameterName>
 				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[currentScheduleBlock]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleBlocksPerDay]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleBlockLengthInHours]]></ParameterName>
+				</Parameter>
 			</Parameters>
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
@@ -6548,6 +6702,15 @@ else {
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[isSymptomaticIsolationEnabled]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[currentScheduleBlock]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleBlocksPerDay]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleBlockLengthInHours]]></ParameterName>
 				</Parameter>
 			</Parameters>
 			<PresentationProperties>
@@ -6710,6 +6873,15 @@ else {
 				<Parameter>
 					<ParameterName><![CDATA[isSymptomaticIsolationEnabled]]></ParameterName>
 				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[currentScheduleBlock]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleBlocksPerDay]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleBlockLengthInHours]]></ParameterName>
+				</Parameter>
 			</Parameters>
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
@@ -6867,6 +7039,15 @@ else {
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[isSymptomaticIsolationEnabled]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[currentScheduleBlock]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleBlocksPerDay]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleBlockLengthInHours]]></ParameterName>
 				</Parameter>
 			</Parameters>
 			<PresentationProperties>
