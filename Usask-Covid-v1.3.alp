@@ -1218,12 +1218,6 @@ for (Student s : students) {
 							</Value>
 						</Parameter>
 						<Parameter>
-							<Name><![CDATA[community]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[communityPlaces.random()]]></Code>
-							</Value>
-						</Parameter>
-						<Parameter>
 							<Name><![CDATA[isSymptomaticIsolator]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[randomTrue(unmandatedIsolatesIfSymptomaticFraction)]]></Code>
@@ -1267,6 +1261,30 @@ for (Student s : students) {
 							<Value Class="CodeValue">
 								<Code><![CDATA[randomTrue(isolatesIfPositiveTestFraction)]]></Code>
 							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[timetable]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[new int[scheduleBlocksPerDay]]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[community]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[timetableHomeCode]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[timetableClassroom1Code]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[timetableClassroom2Code]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[timetableClassroom3Code]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[timetableCommunityCode]]></Name>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>true</ReplicationFlag>
@@ -2064,7 +2082,7 @@ for (Student s : students) {
 				<Variable Class="PlainVariable">
 					<Id>1761689267017</Id>
 					<Name><![CDATA[currentUniLocation]]></Name>
-					<X>-170</X><Y>210</Y>
+					<X>-170</X><Y>240</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2111,7 +2129,7 @@ for (Student s : students) {
 					<Name><![CDATA[averageHoursSpentHome]]></Name>
 					<Description><![CDATA[Time spent at school or in community is time not spent at home. 
 Whenever the student is not at school or in the community, the student is at home.]]></Description>
-					<X>-170</X><Y>170</Y>
+					<X>-170</X><Y>200</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2127,7 +2145,7 @@ Whenever the student is not at school or in the community, the student is at hom
 					<Id>1762239971621</Id>
 					<Name><![CDATA[averageHoursSpentSchool]]></Name>
 					<Description><![CDATA[If "isMultipleClasses" Scinario activated then spend 2 hours at each class at a max of 6. Otherwise just use a baseline uniform(4, 12).]]></Description>
-					<X>-170</X><Y>150</Y>
+					<X>-170</X><Y>180</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2142,7 +2160,7 @@ Whenever the student is not at school or in the community, the student is at hom
 				<Variable Class="PlainVariable">
 					<Id>1763157381643</Id>
 					<Name><![CDATA[averageHoursSpentCommunity]]></Name>
-					<X>-170</X><Y>190</Y>
+					<X>-170</X><Y>220</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2325,7 +2343,7 @@ Whenever the student is not at school or in the community, the student is at hom
 				<Variable Class="Parameter">
 					<Id>1763158002239</Id>
 					<Name><![CDATA[isGoingToCommunity]]></Name>
-					<X>-170</X><Y>130</Y>
+					<X>-170</X><Y>160</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2470,7 +2488,7 @@ Whenever the student is not at school or in the community, the student is at hom
 				<Variable Class="Parameter">
 					<Id>1764211253421</Id>
 					<Name><![CDATA[classesAttending]]></Name>
-					<X>-170</X><Y>110</Y>
+					<X>-170</X><Y>140</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2578,6 +2596,150 @@ Whenever the student is not at school or in the community, the student is at hom
 							<Id>1764342551120</Id>
 							<Label><![CDATA[isolatesIfPositiveTest]]></Label>
 							<EditorContolType>CHECK_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764383862835</Id>
+					<Name><![CDATA[timetable]]></Name>
+					<X>-170</X><Y>110</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int[]]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<ParameterEditor>
+							<Id>1764383862833</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764384039853</Id>
+					<Name><![CDATA[timetableHomeCode]]></Name>
+					<X>-380</X><Y>90</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1764384039851</Id>
+							<Label><![CDATA[timetableHomeCode]]></Label>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764384268796</Id>
+					<Name><![CDATA[timetableClassroom1Code]]></Name>
+					<X>-380</X><Y>110</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[1]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1764384268794</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764384306483</Id>
+					<Name><![CDATA[timetableClassroom2Code]]></Name>
+					<X>-380</X><Y>130</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[2]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1764384306481</Id>
+							<Label><![CDATA[timetableClassroom2Code]]></Label>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764384341593</Id>
+					<Name><![CDATA[timetableClassroom3Code]]></Name>
+					<X>-380</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[3]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1764384341591</Id>
+							<Label><![CDATA[timetableClassroom3Code]]></Label>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764384409186</Id>
+					<Name><![CDATA[timetableCommunityCode]]></Name>
+					<X>-380</X><Y>170</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[4]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1764384409184</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
 							<DelimeterType>NO_DELIMETER</DelimeterType>
