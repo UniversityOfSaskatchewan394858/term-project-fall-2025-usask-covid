@@ -2180,7 +2180,7 @@ else {
 				<Variable Class="PlainVariable">
 					<Id>1761689267017</Id>
 					<Name><![CDATA[currentUniLocation]]></Name>
-					<X>-170</X><Y>310</Y>
+					<X>300</X><Y>250</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3029,11 +3029,10 @@ if (this.isInfected) {
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="100" Height="30">
-						<EntryAction><![CDATA[//
+						<EntryAction><![CDATA[// cant use getScheduledLocation() here cause wont initialize
 currentUniLocation = home;
 connectToNearbyStudents();]]></EntryAction>
-						<ExitAction><![CDATA[this.disconnectFromAll();
-currentUniLocation = null;]]></ExitAction>
+						<ExitAction><![CDATA[disconnectFromAll();]]></ExitAction>
 						<FillColor>-983041</FillColor>
 					</Properties>
 				</StatechartElement>
@@ -3075,8 +3074,7 @@ currentUniLocation = null;]]></ExitAction>
 					<Properties Width="100" Height="30">
 						<EntryAction><![CDATA[currentUniLocation = getScheduledLocation();
 connectToNearbyStudents();]]></EntryAction>
-						<ExitAction><![CDATA[this.disconnectFromAll();
-currentUniLocation = null;]]></ExitAction>
+						<ExitAction><![CDATA[disconnectFromAll();]]></ExitAction>
 						<FillColor/>
 					</Properties>
 				</StatechartElement>
@@ -3092,8 +3090,7 @@ currentUniLocation = null;]]></ExitAction>
 					<Properties Width="100" Height="30">
 						<EntryAction><![CDATA[currentUniLocation = getScheduledLocation();
 connectToNearbyStudents();]]></EntryAction>
-						<ExitAction><![CDATA[this.disconnectFromAll();
-currentUniLocation = null;]]></ExitAction>
+						<ExitAction><![CDATA[disconnectFromAll();]]></ExitAction>
 						<FillColor/>
 					</Properties>
 				</StatechartElement>
@@ -3109,8 +3106,7 @@ currentUniLocation = null;]]></ExitAction>
 					<Properties Width="100" Height="30">
 						<EntryAction><![CDATA[currentUniLocation = getScheduledLocation();
 connectToNearbyStudents();]]></EntryAction>
-						<ExitAction><![CDATA[this.disconnectFromAll();
-currentUniLocation = null;]]></ExitAction>
+						<ExitAction><![CDATA[disconnectFromAll();]]></ExitAction>
 						<FillColor/>
 					</Properties>
 				</StatechartElement>
@@ -3233,8 +3229,7 @@ currentlyTestingDot.setVisible(false);]]></EntryAction>
 					<Properties Width="100" Height="30">
 						<EntryAction><![CDATA[currentUniLocation = getScheduledLocation();
 connectToNearbyStudents();]]></EntryAction>
-						<ExitAction><![CDATA[this.disconnectFromAll();
-currentUniLocation = null;]]></ExitAction>
+						<ExitAction><![CDATA[disconnectFromAll();]]></ExitAction>
 						<FillColor/>
 					</Properties>
 				</StatechartElement>
@@ -3249,9 +3244,56 @@ currentUniLocation = null;]]></ExitAction>
 					<Properties Width="100" Height="30">
 						<EntryAction><![CDATA[currentUniLocation = getScheduledLocation();
 connectToNearbyStudents();]]></EntryAction>
-						<ExitAction><![CDATA[this.disconnectFromAll();
-currentUniLocation = null;]]></ExitAction>
+						<ExitAction><![CDATA[disconnectFromAll();]]></ExitAction>
 						<FillColor>-983041</FillColor>
+					</Properties>
+				</StatechartElement>
+				<StatechartElement Class="State" ParentState="ROOT_NODE">
+					<Id>1764471035963</Id>
+					<Name><![CDATA[AtHome]]></Name>
+					<X>310</X><Y>50</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties Width="100" Height="30">
+						<FillColor>-983041</FillColor>
+					</Properties>
+				</StatechartElement>
+				<StatechartElement Class="State" ParentState="ROOT_NODE">
+					<Id>1764471367884</Id>
+					<Name><![CDATA[OnCampus]]></Name>
+					<X>230</X><Y>140</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties Width="260" Height="90">
+						<FillColor>-3936073</FillColor>
+					</Properties>
+				</StatechartElement>
+				<StatechartElement Class="State" ParentState="OnCampus" ParentStateId="1764471367884">
+					<Id>1764473328116</Id>
+					<Name><![CDATA[AtClass]]></Name>
+					<X>240</X><Y>180</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties Width="100" Height="30">
+						<FillColor>-1331</FillColor>
+					</Properties>
+				</StatechartElement>
+				<StatechartElement Class="State" ParentState="OnCampus" ParentStateId="1764471367884">
+					<Id>1764473554674</Id>
+					<Name><![CDATA[AtCommunity]]></Name>
+					<X>380</X><Y>180</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties Width="100" Height="30">
+						<FillColor>-9543</FillColor>
 					</Properties>
 				</StatechartElement>
 				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
@@ -3506,7 +3548,7 @@ currentUniLocation = null;]]></ExitAction>
 					</Points>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1764212731281" Target="1764444746231" Trigger="condition">
-						<Action><![CDATA[moveTo(getScheduledLocation());]]></Action>
+						<Action><![CDATA[moveToScheduledLocation();]]></Action>
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[0]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
@@ -3537,7 +3579,7 @@ currentUniLocation = null;]]></ExitAction>
 					</Points>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1764444746231" Target="1764467636265" Trigger="condition">
-						<Action><![CDATA[moveTo(getScheduledLocation());]]></Action>
+						<Action><![CDATA[moveToScheduledLocation();]]></Action>
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[averageHoursSpentCommunity]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
@@ -3568,7 +3610,7 @@ currentUniLocation = null;]]></ExitAction>
 					</Points>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1761337698281" Target="1764211908343" Trigger="condition">
-						<Action><![CDATA[moveTo(getScheduledLocation());]]></Action>
+						<Action><![CDATA[moveToScheduledLocation();]]></Action>
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[averageHoursSpentSchool/classesAttending]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
@@ -3798,7 +3840,7 @@ currentUniLocation = null;]]></ExitAction>
 					</Points>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1764211908343" Target="1764212731281" Trigger="condition">
-						<Action><![CDATA[moveTo(getScheduledLocation());]]></Action>
+						<Action><![CDATA[moveToScheduledLocation();]]></Action>
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[averageHoursSpentSchool/classesAttending]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
@@ -3829,7 +3871,7 @@ currentUniLocation = null;]]></ExitAction>
 					</Points>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1760929906653" Target="1761337698281" Trigger="condition">
-						<Action><![CDATA[moveTo(getScheduledLocation());]]></Action>
+						<Action><![CDATA[moveToScheduledLocation();]]></Action>
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[averageHoursSpentHome]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
@@ -4113,12 +4155,179 @@ currentUniLocation = null;]]></ExitAction>
 					</Points>
 					<IconOffset>180.0</IconOffset>
 					<Properties Source="1764467636265" Target="1760929906653" Trigger="condition">
-						<Action><![CDATA[moveTo(getScheduledLocation());]]></Action>
+						<Action><![CDATA[moveToScheduledLocation();]]></Action>
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[averageHoursSpentCommunity]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
 						</Timeout>
 						<Condition><![CDATA[main.currentScheduleBlock == 0]]></Condition>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+						</Rate>
+						<MessageType><![CDATA[Object]]></MessageType>
+						<DefaultTransition>true</DefaultTransition>
+						<FilterType><![CDATA[unconditionally]]></FilterType>
+						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
+						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
+					</Properties>	
+				</StatechartElement>
+				<StatechartElement Class="EntryPoint" ParentState="ROOT_NODE">
+					<Id>1764471000995</Id>
+					<Name><![CDATA[locationStateChart]]></Name>
+					<X>360</X><Y>20</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>0</X><Y>30</Y></Point>
+					</Points>
+					<Properties Target="1764471035963">
+					</Properties>	
+				</StatechartElement>
+				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+					<Id>1764471201816</Id>
+					<Name><![CDATA[wentToClassFromHome]]></Name>
+					<X>330</X><Y>80</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>0</X><Y>80</Y></Point>
+						<Point><X>-40</X><Y>100</Y></Point>
+					</Points>
+					<IconOffset>20.0</IconOffset>
+					<Properties Source="1764471035963" Target="1764473328116" Trigger="condition">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</Timeout>
+						<Condition><![CDATA[currentUniLocation == classroom1 || currentUniLocation == classroom2 || currentUniLocation == classroom3 || currentUniLocation == classroom4;]]></Condition>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+						</Rate>
+						<MessageType><![CDATA[Object]]></MessageType>
+						<DefaultTransition>true</DefaultTransition>
+						<FilterType><![CDATA[unconditionally]]></FilterType>
+						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
+						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
+					</Properties>	
+				</StatechartElement>
+				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+					<Id>1764471606186</Id>
+					<Name><![CDATA[wentHomeFromCampus]]></Name>
+					<X>360</X><Y>140</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>0</X><Y>-60</Y></Point>
+					</Points>
+					<IconOffset>30.0</IconOffset>
+					<Properties Source="1764471367884" Target="1764471035963" Trigger="condition">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</Timeout>
+						<Condition><![CDATA[currentUniLocation == home;]]></Condition>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+						</Rate>
+						<MessageType><![CDATA[Object]]></MessageType>
+						<DefaultTransition>true</DefaultTransition>
+						<FilterType><![CDATA[unconditionally]]></FilterType>
+						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
+						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
+					</Properties>	
+				</StatechartElement>
+				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+					<Id>1764473519474</Id>
+					<Name><![CDATA[wentToCommunityFromHome]]></Name>
+					<X>390</X><Y>80</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>0</X><Y>80</Y></Point>
+						<Point><X>40</X><Y>100</Y></Point>
+					</Points>
+					<IconOffset>20.0</IconOffset>
+					<Properties Source="1764471035963" Target="1764473554674" Trigger="condition">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</Timeout>
+						<Condition><![CDATA[currentUniLocation == community;]]></Condition>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+						</Rate>
+						<MessageType><![CDATA[Object]]></MessageType>
+						<DefaultTransition>true</DefaultTransition>
+						<FilterType><![CDATA[unconditionally]]></FilterType>
+						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
+						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
+					</Properties>	
+				</StatechartElement>
+				<StatechartElement Class="Transition" ParentState="OnCampus" ParentStateId="1764471367884">
+					<Id>1764473643426</Id>
+					<Name><![CDATA[wentToCommunityFromClass]]></Name>
+					<X>340</X><Y>190</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>40</X><Y>0</Y></Point>
+					</Points>
+					<IconOffset>20.0</IconOffset>
+					<Properties Source="1764473328116" Target="1764473554674" Trigger="condition">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</Timeout>
+						<Condition><![CDATA[currentUniLocation == community;]]></Condition>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+						</Rate>
+						<MessageType><![CDATA[Object]]></MessageType>
+						<DefaultTransition>true</DefaultTransition>
+						<FilterType><![CDATA[unconditionally]]></FilterType>
+						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
+						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
+					</Properties>	
+				</StatechartElement>
+				<StatechartElement Class="Transition" ParentState="OnCampus" ParentStateId="1764471367884">
+					<Id>1764473757083</Id>
+					<Name><![CDATA[wentToClassFromCommunity]]></Name>
+					<X>380</X><Y>200</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>-40</X><Y>0</Y></Point>
+					</Points>
+					<IconOffset>20.0</IconOffset>
+					<Properties Source="1764473554674" Target="1764473328116" Trigger="condition">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</Timeout>
+						<Condition><![CDATA[currentUniLocation == classroom1 || currentUniLocation == classroom2 || currentUniLocation == classroom3 || currentUniLocation == classroom4;]]></Condition>
 						<Rate Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
@@ -4422,6 +4631,20 @@ else if (locationCode == scheduleCommunityCode) {
 
 return home;]]></Body>
 				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1764470348178</Id>
+					<Name><![CDATA[moveToScheduledLocation]]></Name>
+					<X>-400</X><Y>400</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[if (currentUniLocation != getScheduledLocation()) {
+	moveTo(getScheduledLocation());
+}]]></Body>
+				</Function>
 			</Functions>
 			<AgentLinks>
 				<AgentLink>
@@ -4454,7 +4677,7 @@ return home;]]></Body>
 					<StatechartReference>
 						<PackageName><![CDATA[usask_covid_v1]]></PackageName>
 						<ClassName><![CDATA[Student]]></ClassName>
-						<ItemName><![CDATA[testingStateChart]]></ItemName>
+						<ItemName><![CDATA[locationStateChart]]></ItemName>
 					</StatechartReference>
 					<LineStyle>SOLID</LineStyle>
 					<LineWidth>1</LineWidth>
