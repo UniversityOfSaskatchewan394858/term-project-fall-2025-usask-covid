@@ -217,7 +217,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1764381667750</Id>
 					<Name><![CDATA[currentScheduleBlock]]></Name>
-					<X>-440</X><Y>330</Y>
+					<X>-440</X><Y>320</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1073,7 +1073,7 @@
 					<Id>1764386112773</Id>
 					<Name><![CDATA[varyingIndividualSchedules]]></Name>
 					<Description><![CDATA[varying schedules in terms of some students go to less classes]]></Description>
-					<X>-440</X><Y>390</Y>
+					<X>-440</X><Y>370</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1095,8 +1095,8 @@
 				<Variable Class="Parameter">
 					<Id>1764448190588</Id>
 					<Name><![CDATA[areCommunityPlacesEnabled]]></Name>
-					<Description><![CDATA[will they be generated into the timetable?]]></Description>
-					<X>-440</X><Y>410</Y>
+					<Description><![CDATA[will they be generated into the schedule?]]></Description>
+					<X>-440</X><Y>390</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1109,6 +1109,32 @@
 							<Id>1764448190577</Id>
 							<Label><![CDATA[areCommunitiesEnabled]]></Label>
 							<EditorContolType>CHECK_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764463614531</Id>
+					<Name><![CDATA[scheduleCommunityFraction]]></Name>
+					<Description><![CDATA[Fraction that community is placed in someones schedule vs their home]]></Description>
+					<X>-440</X><Y>410</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.8]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1764463614529</Id>
+							<Label><![CDATA[scheduleCommunityFraction]]></Label>
+							<EditorContolType>TEXT_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
 							<DelimeterType>NO_DELIMETER</DelimeterType>
@@ -1153,7 +1179,7 @@
 				<Event>
 					<Id>1764377942173</Id>
 					<Name><![CDATA[nextScheduleBlock]]></Name>
-					<X>-440</X><Y>360</Y>
+					<X>-440</X><Y>340</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1189,6 +1215,25 @@ for (Student s : students) {
 ]]></Action>
 				</Event>
 			</Events>
+			<Functions>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[int]]></ReturnType>
+					<Id>1764462757784</Id>
+					<Name><![CDATA[determineStudentClassesAttending]]></Name>
+					<X>-720</X><Y>120</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[if (!varyingIndividualSchedules) {
+	return maxClassAttendance;
+}
+else {
+	return (int)uniform(1,maxClassAttendance+0.99);
+}]]></Body>
+				</Function>
+			</Functions>
 			<AgentLinks>
 				<AgentLink>
 					<Id>1760929735208</Id>
@@ -1284,7 +1329,7 @@ for (Student s : students) {
 						<Parameter>
 							<Name><![CDATA[classesAttending]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[(int)uniform(1,maxClassAttendance+0.99)]]></Code>
+								<Code><![CDATA[determineStudentClassesAttending()]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -1315,28 +1360,28 @@ for (Student s : students) {
 							</Value>
 						</Parameter>
 						<Parameter>
-							<Name><![CDATA[timetableHomeCode]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[timetableClassroom1Code]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[timetableClassroom2Code]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[timetableClassroom3Code]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[timetableCommunityCode]]></Name>
-						</Parameter>
-						<Parameter>
 							<Name><![CDATA[classroom4]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[classrooms.random()]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
-							<Name><![CDATA[timetableClassroom4Code]]></Name>
+							<Name><![CDATA[scheduleHomeCode]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[scheduleClassroom1Code]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[scheduleClassroom2Code]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[scheduleClassroom3Code]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[scheduleCommunityCode]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[scheduleClassroom4Code]]></Name>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>true</ReplicationFlag>
@@ -2010,7 +2055,7 @@ for (Student s : students) {
 			<Id>1760929758588</Id>
 			<Name><![CDATA[Student]]></Name>
 			<Description><![CDATA[Student Agent with transition states. Goes from Home to School and will become Infected if exposed to another Infected Student.]]></Description>
-			<StartupCode><![CDATA[createTimetable();]]></StartupCode>
+			<StartupCode><![CDATA[createSchedule();]]></StartupCode>
 			<Generic>false</Generic>
 			<GenericParameter>
 				<Id>1760929758593</Id>
@@ -2302,8 +2347,8 @@ Whenever the student is not at school or in the community, the student is at hom
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1764385788284</Id>
-					<Name><![CDATA[timetable]]></Name>
-					<X>-170</X><Y>130</Y>
+					<Name><![CDATA[schedule]]></Name>
+					<X>-170</X><Y>150</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2553,7 +2598,7 @@ Whenever the student is not at school or in the community, the student is at hom
 				<Variable Class="Parameter">
 					<Id>1764211253421</Id>
 					<Name><![CDATA[classesAttending]]></Name>
-					<X>-170</X><Y>150</Y>
+					<X>-170</X><Y>170</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2665,129 +2710,6 @@ Whenever the student is not at school or in the community, the student is at hom
 					</Properties>                 
 				</Variable>
 				<Variable Class="Parameter">
-					<Id>1764384039853</Id>
-					<Name><![CDATA[timetableHomeCode]]></Name>
-					<X>-400</X><Y>130</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>false</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[int]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0]]></Code>
-						</DefaultValue>
-						<ParameterEditor>
-							<Id>1764384039851</Id>
-							<Label><![CDATA[timetableHomeCode]]></Label>
-							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-				<Variable Class="Parameter">
-					<Id>1764384268796</Id>
-					<Name><![CDATA[timetableClassroom1Code]]></Name>
-					<X>-400</X><Y>150</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>false</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[int]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[1]]></Code>
-						</DefaultValue>
-						<ParameterEditor>
-							<Id>1764384268794</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-				<Variable Class="Parameter">
-					<Id>1764384306483</Id>
-					<Name><![CDATA[timetableClassroom2Code]]></Name>
-					<X>-400</X><Y>170</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>false</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[int]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[2]]></Code>
-						</DefaultValue>
-						<ParameterEditor>
-							<Id>1764384306481</Id>
-							<Label><![CDATA[timetableClassroom2Code]]></Label>
-							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-				<Variable Class="Parameter">
-					<Id>1764384341593</Id>
-					<Name><![CDATA[timetableClassroom3Code]]></Name>
-					<X>-400</X><Y>190</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>false</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[int]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[3]]></Code>
-						</DefaultValue>
-						<ParameterEditor>
-							<Id>1764384341591</Id>
-							<Label><![CDATA[timetableClassroom3Code]]></Label>
-							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-				<Variable Class="Parameter">
-					<Id>1764384409186</Id>
-					<Name><![CDATA[timetableCommunityCode]]></Name>
-					<X>-400</X><Y>230</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>false</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[int]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[5]]></Code>
-						</DefaultValue>
-						<ParameterEditor>
-							<Id>1764384409184</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-				<Variable Class="Parameter">
 					<Id>1764444391694</Id>
 					<Name><![CDATA[classroom4]]></Name>
 					<X>-170</X><Y>90</Y>
@@ -2810,8 +2732,131 @@ Whenever the student is not at school or in the community, the student is at hom
 					</Properties>                 
 				</Variable>
 				<Variable Class="Parameter">
-					<Id>1764444495243</Id>
-					<Name><![CDATA[timetableClassroom4Code]]></Name>
+					<Id>1764463278182</Id>
+					<Name><![CDATA[scheduleHomeCode]]></Name>
+					<X>-400</X><Y>130</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1764463278180</Id>
+							<Label><![CDATA[scheduleHomeCode]]></Label>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764463278186</Id>
+					<Name><![CDATA[scheduleClassroom1Code]]></Name>
+					<X>-400</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[1]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1764463278184</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764463278190</Id>
+					<Name><![CDATA[scheduleClassroom2Code]]></Name>
+					<X>-400</X><Y>170</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[2]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1764463278188</Id>
+							<Label><![CDATA[scheduleClassroom2Code]]></Label>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764463278194</Id>
+					<Name><![CDATA[scheduleClassroom3Code]]></Name>
+					<X>-400</X><Y>190</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[3]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1764463278192</Id>
+							<Label><![CDATA[scheduleClassroom3Code]]></Label>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764463278198</Id>
+					<Name><![CDATA[scheduleCommunityCode]]></Name>
+					<X>-400</X><Y>230</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[5]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1764463278196</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764463278202</Id>
+					<Name><![CDATA[scheduleClassroom4Code]]></Name>
 					<X>-400</X><Y>210</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -2825,8 +2870,8 @@ Whenever the student is not at school or in the community, the student is at hom
 							<Code><![CDATA[4]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
-							<Id>1764444495241</Id>
-							<Label><![CDATA[timetableClassroom4Code]]></Label>
+							<Id>1764463278200</Id>
+							<Label><![CDATA[scheduleClassroom4Code]]></Label>
 							<EditorContolType>TEXT_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
@@ -2984,7 +3029,9 @@ if (this.isInfected) {
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="300" Height="190">
-						<EntryAction><![CDATA[isMasking = false;
+						<EntryAction><![CDATA[moveTo(home);
+
+isMasking = false;
 currentUniLocation = home;
 connectToNearbyStudents();]]></EntryAction>
 						<ExitAction><![CDATA[this.disconnectFromAll();
@@ -3300,7 +3347,6 @@ currentUniLocation = null;]]></ExitAction>
 						<Point><X>0.25099999999997635</X><Y>30</Y></Point>
 					</Points>
 					<Properties Target="1760929906653">
-						<Action><![CDATA[moveTo(home)]]></Action>
 					</Properties>	
 				</StatechartElement>
 				<StatechartElement Class="Transition" ParentState="Infective" ParentStateId="1761338441149">
@@ -3496,7 +3542,6 @@ currentUniLocation = null;]]></ExitAction>
 					</Points>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1764444746231" Target="1760929906653" Trigger="condition">
-						<Action><![CDATA[moveTo(home)]]></Action>
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[averageHoursSpentCommunity]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
@@ -4174,32 +4219,32 @@ else {
 					<ReturnModificator>VOID</ReturnModificator>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1764385990456</Id>
-					<Name><![CDATA[createTimetable]]></Name>
+					<Name><![CDATA[createSchedule]]></Name>
 					<X>-400</X><Y>270</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>false</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[timetable = new int[main.scheduleBlocksPerDay];
+					<Body><![CDATA[schedule = new int[main.scheduleBlocksPerDay];
 
 // varying schedules and community places enabled
 if (main.varyingIndividualSchedules && main.areCommunityPlacesEnabled){
-	varyingWithCommunityTimetable();
+	varyingWithCommunitySchedule();
 }
 	
 // varying schedule but no community places enabled
 else if (main.varyingIndividualSchedules && !main.areCommunityPlacesEnabled){
-	varyingNoCommunityTimetable();
+	varyingNoCommunitySchedule();
 }
 
-// just fill timetable with all classes
+// just fill schedule with all classes
 else {
-	timetable[0] = timetableHomeCode;
-	timetable[1] = timetableClassroom1Code;
-	timetable[2] = timetableClassroom2Code;
-	timetable[3] = timetableClassroom3Code;
-	timetable[4] = timetableClassroom4Code;
-	timetable[5] = timetableHomeCode;
+	schedule[0] = scheduleHomeCode;
+	schedule[1] = scheduleClassroom1Code;
+	schedule[2] = scheduleClassroom2Code;
+	schedule[3] = scheduleClassroom3Code;
+	schedule[4] = scheduleClassroom4Code;
+	schedule[5] = scheduleHomeCode;
 }
 ]]></Body>
 				</Function>
@@ -4207,15 +4252,15 @@ else {
 					<ReturnModificator>VOID</ReturnModificator>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1764448026207</Id>
-					<Name><![CDATA[varyingNoCommunityTimetable]]></Name>
+					<Name><![CDATA[varyingNoCommunitySchedule]]></Name>
 					<X>-400</X><Y>290</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>false</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[// always start and end at home
-	timetable[0] = timetableHomeCode;
-	timetable[main.scheduleBlocksPerDay - 1] = timetableHomeCode;
+	schedule[0] = scheduleHomeCode;
+	schedule[main.scheduleBlocksPerDay - 1] = scheduleHomeCode;
 	
 	// blocks that arent for home
 	int possibleClassBlocks = main.scheduleBlocksPerDay - 2;
@@ -4225,9 +4270,9 @@ else {
 	int remainigClassesToAssign = classesAttending;
 
 	// classCodes to assign
-	int[] classCodes = {timetableClassroom1Code, timetableClassroom2Code, timetableClassroom3Code, timetableClassroom4Code};
+	int[] classCodes = {scheduleClassroom1Code, scheduleClassroom2Code, scheduleClassroom3Code, scheduleClassroom4Code};
 	 
-	// for the middle timetable blocks in day
+	// for the middle schedule blocks in day
 	// can be home or class
 	for (int b = 1; b <= possibleClassBlocks; b++) {
 		
@@ -4243,16 +4288,16 @@ else {
 		
 		// if this block is a class
 		// and we have not assigned all classes yet
-		// assign that classCode into the timetable
+		// assign that classCode into the schedule
 		if (makeThisBlockClass && assignedClasses < classesAttending) {
-			timetable[b] = classCodes[b - 1];
+			schedule[b] = classCodes[b - 1];
 			assignedClasses++;
 			remainigClassesToAssign--;
 		}
 		
 		// if its not a class block then has to be home
 		else {
-			timetable[b] = timetableHomeCode;
+			schedule[b] = scheduleHomeCode;
 		}
 	}]]></Body>
 				</Function>
@@ -4260,15 +4305,15 @@ else {
 					<ReturnModificator>VOID</ReturnModificator>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1764449067046</Id>
-					<Name><![CDATA[varyingWithCommunityTimetable]]></Name>
+					<Name><![CDATA[varyingWithCommunitySchedule]]></Name>
 					<X>-400</X><Y>310</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>false</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[// always start and end at home
-	timetable[0] = timetableHomeCode;
-	timetable[main.scheduleBlocksPerDay - 1] = timetableHomeCode;
+	schedule[0] = scheduleHomeCode;
+	schedule[main.scheduleBlocksPerDay - 1] = scheduleHomeCode;
 	
 	// blocks that arent for home
 	int possibleClassBlocks = main.scheduleBlocksPerDay - 2;
@@ -4278,9 +4323,9 @@ else {
 	int remainigClassesToAssign = classesAttending;
 
 	// classCodes to assign
-	int[] classCodes = {timetableClassroom1Code, timetableClassroom2Code, timetableClassroom3Code, timetableClassroom4Code};
+	int[] classCodes = {scheduleClassroom1Code, scheduleClassroom2Code, scheduleClassroom3Code, scheduleClassroom4Code};
 	 
-	// for the middle timetable blocks in day
+	// for the middle schedule blocks in day
 	// can be home, class, or community
 	for (int b = 1; b <= possibleClassBlocks; b++) {
 		
@@ -4296,25 +4341,47 @@ else {
 		
 		// if this block is a class
 		// and we have not assigned all classes yet
-		// assign that classCode into the timetable
+		// assign that classCode into the schedule
 		if (makeThisBlockClass && assignedClasses < classesAttending) {
-			timetable[b] = classCodes[b - 1];
+			schedule[b] = classCodes[b - 1];
 			assignedClasses++;
 			remainigClassesToAssign--;
 		}
 		
 		// if its not a class block
 		else {
-			// 50% chance of assigned community or home
-			// can change to parameter later 
-			if (randomTrue(0.5)) {
-				timetable[b] = timetableCommunityCode;
+			// chance of assigned community over home
+			if (randomTrue(main.scheduleCommunityFraction)) {
+				schedule[b] = scheduleCommunityCode;
 			}
 			else {
-				timetable[b] = timetableHomeCode;
+				schedule[b] = scheduleHomeCode;
 			}
 		}
 	}]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[int]]></ReturnType>
+					<Id>1764451431587</Id>
+					<Name><![CDATA[getScheduledLocationCode]]></Name>
+					<X>-400</X><Y>380</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[return schedule[main.currentScheduleBlock];]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1764461179931</Id>
+					<Name><![CDATA[getScheduledLocation]]></Name>
+					<X>-400</X><Y>400</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
 				</Function>
 			</Functions>
 			<AgentLinks>
@@ -4666,7 +4733,28 @@ else {
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Timetable Creation]]></Text>
+					<Text><![CDATA[Schedule Creation]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>20</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1764460434435</Id>
+					<Name><![CDATA[text10]]></Name>
+					<X>-410</X><Y>340</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Location Control]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>20</Size>
@@ -6462,6 +6550,9 @@ else {
 				<Parameter>
 					<ParameterName><![CDATA[areCommunityPlacesEnabled]]></ParameterName>
 				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleCommunityFraction]]></ParameterName>
+				</Parameter>
 			</Parameters>
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
@@ -6628,6 +6719,9 @@ else {
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[areCommunityPlacesEnabled]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleCommunityFraction]]></ParameterName>
 				</Parameter>
 			</Parameters>
 			<PresentationProperties>
@@ -6811,6 +6905,9 @@ else {
 				<Parameter>
 					<ParameterName><![CDATA[areCommunityPlacesEnabled]]></ParameterName>
 				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleCommunityFraction]]></ParameterName>
+				</Parameter>
 			</Parameters>
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
@@ -6980,6 +7077,9 @@ else {
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[areCommunityPlacesEnabled]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleCommunityFraction]]></ParameterName>
 				</Parameter>
 			</Parameters>
 			<PresentationProperties>
@@ -7157,6 +7257,9 @@ else {
 				<Parameter>
 					<ParameterName><![CDATA[areCommunityPlacesEnabled]]></ParameterName>
 				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleCommunityFraction]]></ParameterName>
+				</Parameter>
 			</Parameters>
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
@@ -7330,6 +7433,9 @@ else {
 				<Parameter>
 					<ParameterName><![CDATA[areCommunityPlacesEnabled]]></ParameterName>
 				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleCommunityFraction]]></ParameterName>
+				</Parameter>
 			</Parameters>
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
@@ -7499,6 +7605,9 @@ else {
 					<ParameterValue Class="CodeValue">
 						<Code><![CDATA[false]]></Code>
 					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleCommunityFraction]]></ParameterName>
 				</Parameter>
 			</Parameters>
 			<PresentationProperties>
@@ -7670,6 +7779,9 @@ else {
 						<Code><![CDATA[false]]></Code>
 					</ParameterValue>
 				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleCommunityFraction]]></ParameterName>
+				</Parameter>
 			</Parameters>
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
@@ -7839,6 +7951,9 @@ else {
 					<ParameterValue Class="CodeValue">
 						<Code><![CDATA[true]]></Code>
 					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleCommunityFraction]]></ParameterName>
 				</Parameter>
 			</Parameters>
 			<PresentationProperties>
