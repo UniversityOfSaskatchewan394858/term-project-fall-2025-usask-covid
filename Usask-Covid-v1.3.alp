@@ -424,30 +424,6 @@
 					</Properties>                 
 				</Variable>
 				<Variable Class="Parameter">
-					<Id>1761703703234</Id>
-					<Name><![CDATA[maskMandateCompliance]]></Name>
-					<X>-260</X><Y>470</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[double]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.90]]></Code>
-						</DefaultValue>
-						<ParameterEditor>
-							<Id>1761703703232</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-				<Variable Class="Parameter">
 					<Id>1761703703238</Id>
 					<Name><![CDATA[maskEffectiveness]]></Name>
 					<Description><![CDATA[1.0 meaning 100% effective (will not transmit if infective, and will protect against all transmissions if susceptible)
@@ -463,7 +439,7 @@
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.8]]></Code>
+							<Code><![CDATA[0.5]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1761703703236</Id>
@@ -477,7 +453,7 @@
 				<Variable Class="Parameter">
 					<Id>1763158240602</Id>
 					<Name><![CDATA[goingToCommunityFraction]]></Name>
-					<X>-260</X><Y>420</Y>
+					<X>-470</X><Y>560</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -525,7 +501,7 @@
 				<Variable Class="Parameter">
 					<Id>1763860792106</Id>
 					<Name><![CDATA[isTestingMandate]]></Name>
-					<X>-260</X><Y>740</Y>
+					<X>-260</X><Y>780</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -550,7 +526,7 @@
 				<Variable Class="Parameter">
 					<Id>1764213597633</Id>
 					<Name><![CDATA[isMultipleClasses]]></Name>
-					<X>-260</X><Y>840</Y>
+					<X>-260</X><Y>880</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -574,7 +550,7 @@
 				<Variable Class="Parameter">
 					<Id>1764213630596</Id>
 					<Name><![CDATA[maxClassAttendance]]></Name>
-					<X>-260</X><Y>860</Y>
+					<X>-260</X><Y>900</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -598,7 +574,7 @@
 				<Variable Class="Parameter">
 					<Id>1764215777518</Id>
 					<Name><![CDATA[unmandatedIsolatesIfSymptomaticFraction]]></Name>
-					<X>-260</X><Y>580</Y>
+					<X>-260</X><Y>620</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -608,7 +584,7 @@
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.0]]></Code>
+							<Code><![CDATA[0.3]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1764215777516</Id>
@@ -623,7 +599,7 @@
 				<Variable Class="Parameter">
 					<Id>1764300019873</Id>
 					<Name><![CDATA[isSymptomaticIsolationMandated]]></Name>
-					<X>-260</X><Y>560</Y>
+					<X>-260</X><Y>600</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -745,7 +721,7 @@
 				<Variable Class="Parameter">
 					<Id>1764318961998</Id>
 					<Name><![CDATA[isTestingEnabled]]></Name>
-					<X>-260</X><Y>610</Y>
+					<X>-260</X><Y>650</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>false</PresentationFlag>
@@ -770,7 +746,7 @@
 				<Variable Class="Parameter">
 					<Id>1764342487015</Id>
 					<Name><![CDATA[isolatesIfPositiveTestFraction]]></Name>
-					<X>-260</X><Y>630</Y>
+					<X>-260</X><Y>670</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -794,7 +770,7 @@
 				<Variable Class="Parameter">
 					<Id>1764342862752</Id>
 					<Name><![CDATA[unmandatedRegularTesterFraction]]></Name>
-					<X>-260</X><Y>650</Y>
+					<X>-260</X><Y>690</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -818,7 +794,7 @@
 				<Variable Class="Parameter">
 					<Id>1764345020989</Id>
 					<Name><![CDATA[testingMandateCompliance]]></Name>
-					<X>-260</X><Y>780</Y>
+					<X>-260</X><Y>820</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -843,7 +819,7 @@
 				<Variable Class="Parameter">
 					<Id>1764345436880</Id>
 					<Name><![CDATA[testingAccuracy]]></Name>
-					<X>-260</X><Y>690</Y>
+					<X>-260</X><Y>730</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -867,7 +843,7 @@
 				<Variable Class="Parameter">
 					<Id>1764345771326</Id>
 					<Name><![CDATA[testingMandateRequiredEveryXDays]]></Name>
-					<X>-260</X><Y>760</Y>
+					<X>-260</X><Y>800</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -894,7 +870,7 @@
 				<Variable Class="Parameter">
 					<Id>1764346000317</Id>
 					<Name><![CDATA[daysTestResultAccepted]]></Name>
-					<X>-260</X><Y>800</Y>
+					<X>-260</X><Y>840</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -920,7 +896,7 @@
 				<Variable Class="Parameter">
 					<Id>1764347008521</Id>
 					<Name><![CDATA[unmandatedRegularTesterWeeklyTestRate]]></Name>
-					<X>-260</X><Y>670</Y>
+					<X>-260</X><Y>710</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -947,7 +923,7 @@
 				<Variable Class="Parameter">
 					<Id>1764349230559</Id>
 					<Name><![CDATA[testResultDelay]]></Name>
-					<X>-260</X><Y>820</Y>
+					<X>-260</X><Y>860</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -973,7 +949,7 @@
 				<Variable Class="Parameter">
 					<Id>1764352160134</Id>
 					<Name><![CDATA[isSymptomaticIsolationEnabled]]></Name>
-					<X>-260</X><Y>880</Y>
+					<X>-260</X><Y>580</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1082,6 +1058,9 @@
 						<Type><![CDATA[boolean]]></Type>
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[true]]></Code>
+						</DefaultValue>
 						<ParameterEditor>
 							<Id>1764386112771</Id>
 							<Label><![CDATA[varyingIndividualSchedules]]></Label>
@@ -1105,6 +1084,9 @@
 						<Type><![CDATA[boolean]]></Type>
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[true]]></Code>
+						</DefaultValue>
 						<ParameterEditor>
 							<Id>1764448190577</Id>
 							<Label><![CDATA[areCommunitiesEnabled]]></Label>
@@ -1134,6 +1116,54 @@
 						<ParameterEditor>
 							<Id>1764463614529</Id>
 							<Label><![CDATA[scheduleCommunityFraction]]></Label>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764547509204</Id>
+					<Name><![CDATA[isMaskingEnabled]]></Name>
+					<X>-260</X><Y>430</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[boolean]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[false]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1764547509202</Id>
+							<EditorContolType>CHECK_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764547626797</Id>
+					<Name><![CDATA[unmandatedMaskerFraction]]></Name>
+					<X>-260</X><Y>470</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.2]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1764547626795</Id>
 							<EditorContolType>TEXT_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
@@ -1210,7 +1240,7 @@
 
 // needed or else students never change/update schedyule
 for (Student s : students) {
-	s.onChange();
+	send("Next Block", s);
 }
 ]]></Action>
 				</Event>
@@ -1291,16 +1321,13 @@ else {
 							</Value>
 						</Parameter>
 						<Parameter>
-							<Name><![CDATA[isMaskUser]]></Name>
+							<Name><![CDATA[usesMaskOutsideMandate]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[randomTrue(maskMandateCompliance)&&(isMaskMandate)]]></Code>
+								<Code><![CDATA[randomTrue(unmandatedMaskerFraction)]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
-							<Name><![CDATA[isMasking]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[isMaskMandate]]></Code>
-							</Value>
+							<Name><![CDATA[isCurrentlyMasking]]></Name>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[isGoingToCommunity]]></Name>
@@ -1309,7 +1336,7 @@ else {
 							</Value>
 						</Parameter>
 						<Parameter>
-							<Name><![CDATA[isSymptomaticIsolator]]></Name>
+							<Name><![CDATA[willSymptomaticIsolateOutsideMandate]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[randomTrue(unmandatedIsolatesIfSymptomaticFraction)]]></Code>
 							</Value>
@@ -2055,7 +2082,8 @@ else {
 			<Id>1760929758588</Id>
 			<Name><![CDATA[Student]]></Name>
 			<Description><![CDATA[Student Agent with transition states. Goes from Home to School and will become Infected if exposed to another Infected Student.]]></Description>
-			<StartupCode><![CDATA[createSchedule();]]></StartupCode>
+			<StartupCode><![CDATA[createSchedule();
+moveToScheduledLocation();]]></StartupCode>
 			<Generic>false</Generic>
 			<GenericParameter>
 				<Id>1760929758593</Id>
@@ -2402,7 +2430,8 @@ Whenever the student is not at school or in the community, the student is at hom
 				</Variable>
 				<Variable Class="Parameter">
 					<Id>1761751552292</Id>
-					<Name><![CDATA[isMaskUser]]></Name>
+					<Name><![CDATA[usesMaskOutsideMandate]]></Name>
+					<Description><![CDATA[Specifically for unmandated simulations]]></Description>
 					<X>-170</X><Y>540</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -2417,7 +2446,7 @@ Whenever the student is not at school or in the community, the student is at hom
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1761751552290</Id>
-							<Label><![CDATA[isMasking]]></Label>
+							<Label><![CDATA[usesMaskOutsideMandate]]></Label>
 							<EditorContolType>CHECK_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
@@ -2427,7 +2456,7 @@ Whenever the student is not at school or in the community, the student is at hom
 				</Variable>
 				<Variable Class="Parameter">
 					<Id>1762136622869</Id>
-					<Name><![CDATA[isMasking]]></Name>
+					<Name><![CDATA[isCurrentlyMasking]]></Name>
 					<X>-170</X><Y>560</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -2442,7 +2471,7 @@ Whenever the student is not at school or in the community, the student is at hom
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1762136622867</Id>
-							<Label><![CDATA[isMasking]]></Label>
+							<Label><![CDATA[isCurrentlyMasking]]></Label>
 							<EditorContolType>CHECK_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
@@ -2497,7 +2526,7 @@ Whenever the student is not at school or in the community, the student is at hom
 				</Variable>
 				<Variable Class="Parameter">
 					<Id>1763649658419</Id>
-					<Name><![CDATA[isSymptomaticIsolator]]></Name>
+					<Name><![CDATA[willSymptomaticIsolateOutsideMandate]]></Name>
 					<Description><![CDATA[Specifically during unmandated symptomatic isolation scenario]]></Description>
 					<X>-170</X><Y>750</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -2513,7 +2542,7 @@ Whenever the student is not at school or in the community, the student is at hom
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1763649658417</Id>
-							<Label><![CDATA[isSymptomaticIsolator]]></Label>
+							<Label><![CDATA[willSymptomaticIsolateOutsideMandate]]></Label>
 							<EditorContolType>CHECK_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
@@ -3020,32 +3049,16 @@ if (this.isInfected) {
 					</Properties>	
 				</StatechartElement>
 				<StatechartElement Class="State" ParentState="ROOT_NODE">
-					<Id>1760929906653</Id>
-					<Name><![CDATA[Block0]]></Name>
-					<Description><![CDATA[Students Start at Home and make their way to Class each day.]]></Description>
-					<X>50</X><Y>50</Y>
-					<Label><X>10</X><Y>15</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties Width="100" Height="30">
-						<EntryAction><![CDATA[// cant use getScheduledLocation() here cause wont initialize
-currentUniLocation = home;
-connectToNearbyStudents();]]></EntryAction>
-						<ExitAction><![CDATA[disconnectFromAll();]]></ExitAction>
-						<FillColor>-983041</FillColor>
-					</Properties>
-				</StatechartElement>
-				<StatechartElement Class="State" ParentState="ROOT_NODE">
 					<Id>1764299566752</Id>
 					<Name><![CDATA[SymptomaticIsolation]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>320</X><Y>-80</Y>
-					<Label><X>10</X><Y>10</Y></Label>
+					<X>20</X><Y>170</Y>
+					<Label><X>15</X><Y>25</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Properties Width="140" Height="30">
+					<Properties Width="150" Height="50">
+						<EntryAction><![CDATA[connectToNearbyStudents();]]></EntryAction>
+						<ExitAction><![CDATA[disconnectFromAll();]]></ExitAction>
 						<FillColor>-65536</FillColor>
 					</Properties>
 				</StatechartElement>
@@ -3059,54 +3072,6 @@ connectToNearbyStudents();]]></EntryAction>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="100" Height="30">
-						<FillColor/>
-					</Properties>
-				</StatechartElement>
-				<StatechartElement Class="State" ParentState="ROOT_NODE">
-					<Id>1764212731281</Id>
-					<Name><![CDATA[Block3]]></Name>
-					<Description><![CDATA[At Class we connect the Student with all other Students in the same Class. This will spread the infection.]]></Description>
-					<X>50</X><Y>260</Y>
-					<Label><X>10</X><Y>10</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties Width="100" Height="30">
-						<EntryAction><![CDATA[currentUniLocation = getScheduledLocation();
-connectToNearbyStudents();]]></EntryAction>
-						<ExitAction><![CDATA[disconnectFromAll();]]></ExitAction>
-						<FillColor/>
-					</Properties>
-				</StatechartElement>
-				<StatechartElement Class="State" ParentState="ROOT_NODE">
-					<Id>1764211908343</Id>
-					<Name><![CDATA[Block2]]></Name>
-					<Description><![CDATA[At Class we connect the Student with all other Students in the same Class. This will spread the infection.]]></Description>
-					<X>50</X><Y>190</Y>
-					<Label><X>10</X><Y>10</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties Width="100" Height="30">
-						<EntryAction><![CDATA[currentUniLocation = getScheduledLocation();
-connectToNearbyStudents();]]></EntryAction>
-						<ExitAction><![CDATA[disconnectFromAll();]]></ExitAction>
-						<FillColor/>
-					</Properties>
-				</StatechartElement>
-				<StatechartElement Class="State" ParentState="ROOT_NODE">
-					<Id>1761337698281</Id>
-					<Name><![CDATA[Block1]]></Name>
-					<Description><![CDATA[At Class we connect the Student with all other Students in the same Class. This will spread the infection.]]></Description>
-					<X>50</X><Y>120</Y>
-					<Label><X>10</X><Y>10</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties Width="100" Height="30">
-						<EntryAction><![CDATA[currentUniLocation = getScheduledLocation();
-connectToNearbyStudents();]]></EntryAction>
-						<ExitAction><![CDATA[disconnectFromAll();]]></ExitAction>
 						<FillColor/>
 					</Properties>
 				</StatechartElement>
@@ -3126,7 +3091,7 @@ connectToNearbyStudents();]]></EntryAction>
 				<StatechartElement Class="State" ParentState="ROOT_NODE">
 					<Id>1764355130750</Id>
 					<Name><![CDATA[BetweenTests]]></Name>
-					<X>30</X><Y>760</Y>
+					<X>30</X><Y>550</Y>
 					<Label><X>10</X><Y>10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3138,7 +3103,7 @@ connectToNearbyStudents();]]></EntryAction>
 				<StatechartElement Class="State" ParentState="BetweenTests" ParentStateId="1764355130750">
 					<Id>1764349549148</Id>
 					<Name><![CDATA[KnowsTestResult]]></Name>
-					<X>70</X><Y>880</Y>
+					<X>70</X><Y>670</Y>
 					<Label><X>10</X><Y>10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3150,7 +3115,7 @@ connectToNearbyStudents();]]></EntryAction>
 				<StatechartElement Class="State" ParentState="KnowsTestResult" ParentStateId="1764349549148">
 					<Id>1763860218239</Id>
 					<Name><![CDATA[PositiveResult]]></Name>
-					<X>80</X><Y>920</Y>
+					<X>80</X><Y>710</Y>
 					<Label><X>20</X><Y>20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3167,7 +3132,7 @@ isTestPositive = false;]]></EntryAction>
 				<StatechartElement Class="State" ParentState="KnowsTestResult" ParentStateId="1764349549148">
 					<Id>1763860218241</Id>
 					<Name><![CDATA[NegativeResult]]></Name>
-					<X>240</X><Y>920</Y>
+					<X>240</X><Y>710</Y>
 					<Label><X>20</X><Y>20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3181,7 +3146,7 @@ isTestPositive = false;]]></EntryAction>
 				<StatechartElement Class="Branch" ParentState="KnowsTestResult" ParentStateId="1764349549148">
 					<Id>1764349201598</Id>
 					<Name><![CDATA[branch3]]></Name>
-					<X>220</X><Y>980</Y>
+					<X>220</X><Y>770</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3192,7 +3157,7 @@ isTestPositive = false;]]></EntryAction>
 				<StatechartElement Class="State" ParentState="ROOT_NODE">
 					<Id>1763860218237</Id>
 					<Name><![CDATA[Testing]]></Name>
-					<X>160</X><Y>1120</Y>
+					<X>160</X><Y>910</Y>
 					<Label><X>40</X><Y>20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3206,7 +3171,7 @@ currentlyTestingDot.setVisible(true);]]></EntryAction>
 				<StatechartElement Class="State" ParentState="BetweenTests" ParentStateId="1764355130750">
 					<Id>1763860218235</Id>
 					<Name><![CDATA[NotTested]]></Name>
-					<X>160</X><Y>780</Y>
+					<X>160</X><Y>570</Y>
 					<Label><X>30</X><Y>20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3218,37 +3183,6 @@ currentlyTestingDot.setVisible(false);]]></EntryAction>
 					</Properties>
 				</StatechartElement>
 				<StatechartElement Class="State" ParentState="ROOT_NODE">
-					<Id>1764444746231</Id>
-					<Name><![CDATA[Block4]]></Name>
-					<Description><![CDATA[At Class we connect the Student with all other Students in the same Class. This will spread the infection.]]></Description>
-					<X>50</X><Y>330</Y>
-					<Label><X>10</X><Y>10</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties Width="100" Height="30">
-						<EntryAction><![CDATA[currentUniLocation = getScheduledLocation();
-connectToNearbyStudents();]]></EntryAction>
-						<ExitAction><![CDATA[disconnectFromAll();]]></ExitAction>
-						<FillColor/>
-					</Properties>
-				</StatechartElement>
-				<StatechartElement Class="State" ParentState="ROOT_NODE">
-					<Id>1764467636265</Id>
-					<Name><![CDATA[Block5]]></Name>
-					<X>50</X><Y>400</Y>
-					<Label><X>10</X><Y>10</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties Width="100" Height="30">
-						<EntryAction><![CDATA[currentUniLocation = getScheduledLocation();
-connectToNearbyStudents();]]></EntryAction>
-						<ExitAction><![CDATA[disconnectFromAll();]]></ExitAction>
-						<FillColor>-983041</FillColor>
-					</Properties>
-				</StatechartElement>
-				<StatechartElement Class="State" ParentState="ROOT_NODE">
 					<Id>1764471035963</Id>
 					<Name><![CDATA[AtHome]]></Name>
 					<X>310</X><Y>50</Y>
@@ -3257,6 +3191,8 @@ connectToNearbyStudents();]]></EntryAction>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="100" Height="30">
+						<EntryAction><![CDATA[isCurrentlyMasking = false;]]></EntryAction>
+						<ExitAction><![CDATA[determineIfMasking();]]></ExitAction>
 						<FillColor>-983041</FillColor>
 					</Properties>
 				</StatechartElement>
@@ -3269,7 +3205,7 @@ connectToNearbyStudents();]]></EntryAction>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="260" Height="90">
-						<FillColor>-3936073</FillColor>
+						<FillColor>-1331</FillColor>
 					</Properties>
 				</StatechartElement>
 				<StatechartElement Class="State" ParentState="OnCampus" ParentStateId="1764471367884">
@@ -3281,7 +3217,7 @@ connectToNearbyStudents();]]></EntryAction>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="100" Height="30">
-						<FillColor>-1331</FillColor>
+						<FillColor/>
 					</Properties>
 				</StatechartElement>
 				<StatechartElement Class="State" ParentState="OnCampus" ParentStateId="1764471367884">
@@ -3293,7 +3229,22 @@ connectToNearbyStudents();]]></EntryAction>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="100" Height="30">
-						<FillColor>-9543</FillColor>
+						<FillColor/>
+					</Properties>
+				</StatechartElement>
+				<StatechartElement Class="State" ParentState="ROOT_NODE">
+					<Id>1764493293436</Id>
+					<Name><![CDATA[FollowingSchedule]]></Name>
+					<X>20</X><Y>50</Y>
+					<Label><X>25</X><Y>25</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties Width="150" Height="50">
+						<EntryAction><![CDATA[currentUniLocation = getScheduledLocation();
+connectToNearbyStudents();]]></EntryAction>
+						<ExitAction><![CDATA[disconnectFromAll();]]></ExitAction>
+						<FillColor>-3936073</FillColor>
 					</Properties>
 				</StatechartElement>
 				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
@@ -3384,8 +3335,7 @@ connectToNearbyStudents();]]></EntryAction>
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>0.25099999999997635</X><Y>30</Y></Point>
 					</Points>
-					<Properties Target="1760929906653">
-						<Action><![CDATA[moveTo(home);]]></Action>
+					<Properties Target="1764493293436">
 					</Properties>	
 				</StatechartElement>
 				<StatechartElement Class="Transition" ParentState="Infective" ParentStateId="1761338441149">
@@ -3434,7 +3384,7 @@ connectToNearbyStudents();]]></EntryAction>
 					</Points>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1761338441149" Target="1761338441149" Trigger="rate">
-						<Action><![CDATA[if (main.isMaskMandate || isMasking) {
+						<Action><![CDATA[if (main.isMaskingEnabled && (main.isMaskMandate || isCurrentlyMasking)) {
 	sendToRandomConnected("Masked Exposure!");
 } else {
 	sendToRandomConnected("Exposure!");
@@ -3523,99 +3473,6 @@ connectToNearbyStudents();]]></EntryAction>
 							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 						</Timeout>
 						<Condition><![CDATA[true]]></Condition>
-						<Rate Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
-						</Rate>
-						<MessageType><![CDATA[Object]]></MessageType>
-						<DefaultTransition>true</DefaultTransition>
-						<FilterType><![CDATA[unconditionally]]></FilterType>
-						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
-						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
-					</Properties>	
-				</StatechartElement>
-				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-					<Id>1763156996950</Id>
-					<Name><![CDATA[goToBlock4]]></Name>
-					<X>100</X><Y>290</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>0</X><Y>40</Y></Point>
-					</Points>
-					<IconOffset>20.0</IconOffset>
-					<Properties Source="1764212731281" Target="1764444746231" Trigger="condition">
-						<Action><![CDATA[moveToScheduledLocation();]]></Action>
-						<Timeout Class="CodeUnitValue">
-							<Code><![CDATA[0]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
-						</Timeout>
-						<Condition><![CDATA[main.currentScheduleBlock == 4]]></Condition>
-						<Rate Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
-						</Rate>
-						<MessageType><![CDATA[Object]]></MessageType>
-						<DefaultTransition>false</DefaultTransition>
-						<FilterType><![CDATA[unconditionally]]></FilterType>
-						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
-						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
-					</Properties>	
-				</StatechartElement>
-				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-					<Id>1763157013693</Id>
-					<Name><![CDATA[goToBlock5]]></Name>
-					<X>100</X><Y>360</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>0</X><Y>40</Y></Point>
-					</Points>
-					<IconOffset>20.0</IconOffset>
-					<Properties Source="1764444746231" Target="1764467636265" Trigger="condition">
-						<Action><![CDATA[moveToScheduledLocation();]]></Action>
-						<Timeout Class="CodeUnitValue">
-							<Code><![CDATA[averageHoursSpentCommunity]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
-						</Timeout>
-						<Condition><![CDATA[main.currentScheduleBlock == 5]]></Condition>
-						<Rate Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
-						</Rate>
-						<MessageType><![CDATA[Object]]></MessageType>
-						<DefaultTransition>true</DefaultTransition>
-						<FilterType><![CDATA[unconditionally]]></FilterType>
-						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
-						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
-					</Properties>	
-				</StatechartElement>
-				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-					<Id>1763157135472</Id>
-					<Name><![CDATA[goToBlock2]]></Name>
-					<X>100</X><Y>150</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>0</X><Y>40</Y></Point>
-					</Points>
-					<IconOffset>20.0</IconOffset>
-					<Properties Source="1761337698281" Target="1764211908343" Trigger="condition">
-						<Action><![CDATA[moveToScheduledLocation();]]></Action>
-						<Timeout Class="CodeUnitValue">
-							<Code><![CDATA[averageHoursSpentSchool/classesAttending]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
-						</Timeout>
-						<Condition><![CDATA[main.currentScheduleBlock == 2]]></Condition>
 						<Rate Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
@@ -3722,7 +3579,7 @@ connectToNearbyStudents();]]></EntryAction>
 				<StatechartElement Class="EntryPoint" ParentState="ROOT_NODE">
 					<Id>1763860218243</Id>
 					<Name><![CDATA[testingStateChart]]></Name>
-					<X>220</X><Y>720</Y>
+					<X>220</X><Y>510</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3737,7 +3594,7 @@ connectToNearbyStudents();]]></EntryAction>
 				<StatechartElement Class="Transition" ParentState="KnowsTestResult" ParentStateId="1764349549148">
 					<Id>1763860218247</Id>
 					<Name><![CDATA[testedPos]]></Name>
-					<X>208</X><Y>980</Y>
+					<X>208</X><Y>770</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3768,7 +3625,7 @@ connectToNearbyStudents();]]></EntryAction>
 				<StatechartElement Class="Transition" ParentState="KnowsTestResult" ParentStateId="1764349549148">
 					<Id>1763860218249</Id>
 					<Name><![CDATA[testedNeg]]></Name>
-					<X>232</X><Y>980</Y>
+					<X>232</X><Y>770</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3799,7 +3656,7 @@ connectToNearbyStudents();]]></EntryAction>
 				<StatechartElement Class="Transition" ParentState="BetweenTests" ParentStateId="1764355130750">
 					<Id>1763860218253</Id>
 					<Name><![CDATA[BackToNotTested]]></Name>
-					<X>220</X><Y>880</Y>
+					<X>220</X><Y>670</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3815,68 +3672,6 @@ connectToNearbyStudents();]]></EntryAction>
 							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 						</Timeout>
 						<Condition><![CDATA[true]]></Condition>
-						<Rate Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
-						</Rate>
-						<MessageType><![CDATA[Object]]></MessageType>
-						<DefaultTransition>true</DefaultTransition>
-						<FilterType><![CDATA[unconditionally]]></FilterType>
-						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
-						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
-					</Properties>	
-				</StatechartElement>
-				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-					<Id>1764212654768</Id>
-					<Name><![CDATA[goToBlock3]]></Name>
-					<X>100</X><Y>220</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>0</X><Y>40</Y></Point>
-					</Points>
-					<IconOffset>20.0</IconOffset>
-					<Properties Source="1764211908343" Target="1764212731281" Trigger="condition">
-						<Action><![CDATA[moveToScheduledLocation();]]></Action>
-						<Timeout Class="CodeUnitValue">
-							<Code><![CDATA[averageHoursSpentSchool/classesAttending]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
-						</Timeout>
-						<Condition><![CDATA[main.currentScheduleBlock == 3]]></Condition>
-						<Rate Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
-						</Rate>
-						<MessageType><![CDATA[Object]]></MessageType>
-						<DefaultTransition>true</DefaultTransition>
-						<FilterType><![CDATA[unconditionally]]></FilterType>
-						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
-						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
-					</Properties>	
-				</StatechartElement>
-				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-					<Id>1764298726605</Id>
-					<Name><![CDATA[goToBlock1]]></Name>
-					<X>100</X><Y>80</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>0</X><Y>40</Y></Point>
-					</Points>
-					<IconOffset>20.0</IconOffset>
-					<Properties Source="1760929906653" Target="1761337698281" Trigger="condition">
-						<Action><![CDATA[moveToScheduledLocation();]]></Action>
-						<Timeout Class="CodeUnitValue">
-							<Code><![CDATA[averageHoursSpentHome]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
-						</Timeout>
-						<Condition><![CDATA[main.currentScheduleBlock == 1]]></Condition>
 						<Rate Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
@@ -3906,25 +3701,24 @@ connectToNearbyStudents();]]></EntryAction>
 				</StatechartElement>
 				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 					<Id>1764301122503</Id>
-					<Name><![CDATA[transitionToSymptomaticIsolation]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>300</X><Y>-120</Y>
+					<Name><![CDATA[startSymptomaticIsolation]]></Name>
+					<X>60</X><Y>100</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>90</X><Y>0</Y></Point>
-						<Point><X>90</X><Y>40</Y></Point>
+						<Point><X>0</X><Y>70</Y></Point>
 					</Points>
-					<IconOffset>100.0</IconOffset>
-					<Properties Source="1764299602389" Target="1764299566752" Trigger="condition">
+					<IconOffset>35.0</IconOffset>
+					<Properties Source="1764493293436" Target="1764299566752" Trigger="condition">
+						<Action><![CDATA[moveTo(home);]]></Action>
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
 						</Timeout>
-						<Condition><![CDATA[determineIfSymptomaticIsolation() && main.isSymptomaticIsolationEnabled;]]></Condition>
+						<Condition><![CDATA[main.isSymptomaticIsolationEnabled && determineIfSymptomaticIsolation();]]></Condition>
 						<Rate Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
@@ -3938,20 +3732,19 @@ connectToNearbyStudents();]]></EntryAction>
 				</StatechartElement>
 				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 					<Id>1764302523193</Id>
-					<Name><![CDATA[transition1]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>320</X><Y>-60</Y>
+					<Name><![CDATA[leaveSymptomaticIsolation]]></Name>
+					<X>130</X><Y>170</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-30</X><Y>0</Y></Point>
-						<Point><X>-30</X><Y>-50</Y></Point>
+						<Point><X>0</X><Y>-70</Y></Point>
 					</Points>
 					<IconOffset>30.0</IconOffset>
-					<Properties Source="1764299566752" Target="1764299602389" Trigger="condition">
+					<Properties Source="1764299566752" Target="1764493293436" Trigger="condition">
+						<Action><![CDATA[moveTo(getScheduledLocation());]]></Action>
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
@@ -4035,7 +3828,7 @@ connectToNearbyStudents();]]></EntryAction>
 				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 					<Id>1764345398652</Id>
 					<Name><![CDATA[mandatedTest]]></Name>
-					<X>180</X><Y>1060</Y>
+					<X>180</X><Y>850</Y>
 					<Label><X>-90</X><Y>30</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4066,7 +3859,7 @@ connectToNearbyStudents();]]></EntryAction>
 				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 					<Id>1764346902464</Id>
 					<Name><![CDATA[regularTesterTest]]></Name>
-					<X>260</X><Y>1060</Y>
+					<X>260</X><Y>850</Y>
 					<Label><X>10</X><Y>30</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4097,7 +3890,7 @@ connectToNearbyStudents();]]></EntryAction>
 				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 					<Id>1764349310849</Id>
 					<Name><![CDATA[getTestResultTransition]]></Name>
-					<X>220</X><Y>1120</Y>
+					<X>220</X><Y>910</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4127,7 +3920,7 @@ connectToNearbyStudents();]]></EntryAction>
 				<StatechartElement Class="InitialStatePointer" ParentState="BetweenTests" ParentStateId="1764355130750">
 					<Id>1764355694555</Id>
 					<Name><![CDATA[initialState2]]></Name>
-					<X>110</X><Y>800</Y>
+					<X>110</X><Y>590</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4137,39 +3930,6 @@ connectToNearbyStudents();]]></EntryAction>
 						<Point><X>50</X><Y>0</Y></Point>
 					</Points>
 					<Properties Target="1763860218235">
-					</Properties>	
-				</StatechartElement>
-				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-					<Id>1764467672827</Id>
-					<Name><![CDATA[goToBlock0]]></Name>
-					<X>150</X><Y>410</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>50</X><Y>0</Y></Point>
-						<Point><X>50</X><Y>-340</Y></Point>
-						<Point><X>0</X><Y>-340</Y></Point>
-					</Points>
-					<IconOffset>180.0</IconOffset>
-					<Properties Source="1764467636265" Target="1760929906653" Trigger="condition">
-						<Action><![CDATA[moveToScheduledLocation();]]></Action>
-						<Timeout Class="CodeUnitValue">
-							<Code><![CDATA[averageHoursSpentCommunity]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
-						</Timeout>
-						<Condition><![CDATA[main.currentScheduleBlock == 0]]></Condition>
-						<Rate Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
-						</Rate>
-						<MessageType><![CDATA[Object]]></MessageType>
-						<DefaultTransition>true</DefaultTransition>
-						<FilterType><![CDATA[unconditionally]]></FilterType>
-						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
-						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
 					</Properties>	
 				</StatechartElement>
 				<StatechartElement Class="EntryPoint" ParentState="ROOT_NODE">
@@ -4339,6 +4099,38 @@ connectToNearbyStudents();]]></EntryAction>
 						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
 					</Properties>	
 				</StatechartElement>
+				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+					<Id>1764497250124</Id>
+					<Name><![CDATA[goToScheduledBlock]]></Name>
+					<X>170</X><Y>90</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>30</X><Y>-10</Y></Point>
+						<Point><X>0</X><Y>-30</Y></Point>
+					</Points>
+					<IconOffset>50.0</IconOffset>
+					<Properties Source="1764493293436" Target="1764493293436" Trigger="message">
+						<Action><![CDATA[moveTo(getScheduledLocation());]]></Action>
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[averageHoursSpentHome]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</Timeout>
+						<Condition><![CDATA[main.currentScheduleBlock == 1]]></Condition>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+						</Rate>
+						<MessageType><![CDATA[Object]]></MessageType>
+						<DefaultTransition>true</DefaultTransition>
+						<FilterType><![CDATA[equalsTo]]></FilterType>
+						<EqualsExpression><![CDATA["Next Block"]]></EqualsExpression>
+						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
+					</Properties>	
+				</StatechartElement>
 			</StatechartElements>
 			<Functions>
 				<Function AccessType="default" StaticFunction="false">
@@ -4363,7 +4155,7 @@ connectToNearbyStudents();]]></EntryAction>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[if (main.isMaskMandate || isMaskUser) {
+					<Body><![CDATA[if (main.isMaskMandate || usesMaskOutsideMandate) {
 	return (main.transmissionProbability * (1-main.maskEffectiveness));
 } else {
 	return main.transmissionProbability;
@@ -4379,10 +4171,10 @@ connectToNearbyStudents();]]></EntryAction>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[// If masks required, they wear a mask
-// If the user uses masks, for whatever reason, they wear a mask
-if (main.isMaskMandate || isMaskUser) {
-	isMasking = true;
+					<Body><![CDATA[// If masks required or they use mask outside mandate
+// they wear a mask
+if (main.isMaskMandate || usesMaskOutsideMandate) {
+	isCurrentlyMasking = true;
 }]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
@@ -4428,8 +4220,8 @@ else {
 if (main.isSymptomaticIsolationMandated && inState(Symptomatic)) {
 	return true;
 	}
-// if not mandated but is symtpmatic and isSymtpmaticIsolator, isolate
-else if (inState(Symptomatic) && isSymptomaticIsolator) {
+// if not mandated but is symtpmatic and willSymptomaticIsolateOutsideMandate, isolate
+else if (inState(Symptomatic) && willSymptomaticIsolateOutsideMandate) {
 	return true;
 	}
 else {
@@ -4608,7 +4400,13 @@ else {
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>false</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[int locationCode = schedule[main.currentScheduleBlock];
+					<Body><![CDATA[if (schedule == null) {
+	return home;
+}
+
+// get the schedule location code for the current schedule block
+// return the actual location of whatever that location code is
+int locationCode = schedule[main.currentScheduleBlock];
 
 if (locationCode == scheduleHomeCode) {
 	return home;
@@ -4641,7 +4439,9 @@ return home;]]></Body>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[if (currentUniLocation != getScheduledLocation()) {
+					<Body><![CDATA[// if the current location is different from where you need to go
+// move there
+if (currentUniLocation != getScheduledLocation()) {
 	moveTo(getScheduledLocation());
 }]]></Body>
 				</Function>
@@ -4796,7 +4596,7 @@ return home;]]></Body>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<VisibleCode><![CDATA[main.isMaskMandate && isMaskUser;]]></VisibleCode>
+					<VisibleCode><![CDATA[main.isMaskingEnabled && (main.isMaskMandate || usesMaskOutsideMandate)]]></VisibleCode>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
 					<ZHeight>10</ZHeight>
@@ -6659,184 +6459,8 @@ return home;]]></Body>
 	<Experiments>
 		<!--   =========   Simulation Experiment   ========  -->
 		<SimulationExperiment ActiveObjectClassId="1760929735207">
-			<Id>1760929735225</Id>
-			<Name><![CDATA[Simulation_NoMaskMandate]]></Name>
-			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
-			<MaximumMemory>512</MaximumMemory>
-			<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
-			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
-			<SeedValue>1</SeedValue>
-			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
-			<VmArgs><![CDATA[]]></VmArgs>
-			<LoadRootFromSnapshot>false</LoadRootFromSnapshot>
-
-			<Presentation>
-				<Text>
-					<Id>1760929735227</Id>
-					<Name><![CDATA[text]]></Name>
-					<X>50</X><Y>30</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-12490271</Color>
-					<Text><![CDATA[Usask-Covid-v1]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>24</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
-			</Presentation>
-
-			<Parameters>
-				<Parameter>
-					<ParameterName><![CDATA[studentPopulation]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[maxConnectionDistance]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[contactsPerDay]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[classCapacity]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[schoolRadius]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[residentialRadius]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[transmissionProbability]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[isMaskMandate]]></ParameterName>
-					<ParameterValue Class="CodeValue">
-						<Code><![CDATA[false]]></Code>
-					</ParameterValue>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[maskMandateCompliance]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[maskEffectiveness]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[goingToCommunityFraction]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[numCommunityPlaces]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[isTestingMandate]]></ParameterName>
-					<ParameterValue Class="CodeValue">
-						<Code><![CDATA[false]]></Code>
-					</ParameterValue>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[isMultipleClasses]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[maxClassAttendance]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[unmandatedIsolatesIfSymptomaticFraction]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[isSymptomaticIsolationMandated]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[infectivityPeriod]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[incubationPeriod]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[latencyPeriod]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[immunePeriod]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[isTestingEnabled]]></ParameterName>
-					<ParameterValue Class="CodeValue">
-						<Code><![CDATA[false]]></Code>
-					</ParameterValue>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[isolatesIfPositiveTestFraction]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[unmandatedRegularTesterFraction]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[testingMandateCompliance]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[testingAccuracy]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[testingMandateRequiredEveryXDays]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[daysTestResultAccepted]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[unmandatedRegularTesterWeeklyTestRate]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[testResultDelay]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[isSymptomaticIsolationEnabled]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[scheduleBlocksPerDay]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[scheduleBlockLengthInHours]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[numClassrooms]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[varyingIndividualSchedules]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[areCommunityPlacesEnabled]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[scheduleCommunityFraction]]></ParameterName>
-				</Parameter>
-			</Parameters>
-			<PresentationProperties>
-				<EnableZoomAndPanning>true</EnableZoomAndPanning>
-				<ExecutionMode><![CDATA[realTimeScaled]]></ExecutionMode>
-				<Title><![CDATA[Usask-Covid-v1 : Simulation]]></Title>
-				<EnableDeveloperPanel>true</EnableDeveloperPanel>
-				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
-				<RealTimeScale>1.0</RealTimeScale>
-			</PresentationProperties>
-			<ModelTimeProperties>
-				<StopOption><![CDATA[Never]]></StopOption>
-				<InitialDate><![CDATA[1760918400000]]></InitialDate>
-				<InitialTime><![CDATA[0.0]]></InitialTime>
-				<FinalDate><![CDATA[1763596800000]]></FinalDate>
-				<FinalTime><![CDATA[100.0]]></FinalTime>
-			</ModelTimeProperties>
-			<BypassInitialScreen>true</BypassInitialScreen>
-		</SimulationExperiment>
-		<!--   =========   Simulation Experiment   ========  -->
-		<SimulationExperiment ActiveObjectClassId="1760929735207">
 			<Id>1762224494503</Id>
-			<Name><![CDATA[Simulation_MaskMandated]]></Name>
+			<Name><![CDATA[Simulation_2Masking2_MaskMandated]]></Name>
 			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
 			<MaximumMemory>512</MaximumMemory>
 			<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
@@ -6894,9 +6518,9 @@ return home;]]></Body>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[isMaskMandate]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[maskMandateCompliance]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[true]]></Code>
+					</ParameterValue>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[maskEffectiveness]]></ParameterName>
@@ -6984,197 +6608,21 @@ return home;]]></Body>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[scheduleCommunityFraction]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isMaskingEnabled]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[true]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[unmandatedMaskerFraction]]></ParameterName>
 				</Parameter>
 			</Parameters>
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
 				<ExecutionMode><![CDATA[realTimeScaled]]></ExecutionMode>
 				<Title><![CDATA[Usask-Covid-v1 : Simulation_MaskMandated]]></Title>
-				<EnableDeveloperPanel>true</EnableDeveloperPanel>
-				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
-				<RealTimeScale>1.0</RealTimeScale>
-			</PresentationProperties>
-			<ModelTimeProperties>
-				<StopOption><![CDATA[Never]]></StopOption>
-				<InitialDate><![CDATA[1760918400000]]></InitialDate>
-				<InitialTime><![CDATA[0.0]]></InitialTime>
-				<FinalDate><![CDATA[1763596800000]]></FinalDate>
-				<FinalTime><![CDATA[100.0]]></FinalTime>
-			</ModelTimeProperties>
-			<BypassInitialScreen>true</BypassInitialScreen>
-		</SimulationExperiment>
-		<!--   =========   Simulation Experiment   ========  -->
-		<SimulationExperiment ActiveObjectClassId="1760929735207">
-			<Id>1763188136120</Id>
-			<Name><![CDATA[Simulation_CommunityPlace]]></Name>
-			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
-			<MaximumMemory>512</MaximumMemory>
-			<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
-			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
-			<SeedValue>1</SeedValue>
-			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
-			<VmArgs><![CDATA[]]></VmArgs>
-			<LoadRootFromSnapshot>false</LoadRootFromSnapshot>
-
-			<Presentation>
-				<Text>
-					<Id>1763188136122</Id>
-					<Name><![CDATA[text]]></Name>
-					<X>50</X><Y>30</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-12490271</Color>
-					<Text><![CDATA[Usask-Covid-v1]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>24</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
-			</Presentation>
-
-			<Parameters>
-				<Parameter>
-					<ParameterName><![CDATA[studentPopulation]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[maxConnectionDistance]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[contactsPerDay]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[classCapacity]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[schoolRadius]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[residentialRadius]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[transmissionProbability]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[isMaskMandate]]></ParameterName>
-					<ParameterValue Class="CodeValue">
-						<Code><![CDATA[false]]></Code>
-					</ParameterValue>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[maskMandateCompliance]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[maskEffectiveness]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[goingToCommunityFraction]]></ParameterName>
-					<ParameterValue Class="CodeValue">
-						<Code><![CDATA[0.8]]></Code>
-					</ParameterValue>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[numCommunityPlaces]]></ParameterName>
-					<ParameterValue Class="CodeValue">
-						<Code><![CDATA[1]]></Code>
-					</ParameterValue>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[isTestingMandate]]></ParameterName>
-					<ParameterValue Class="CodeValue">
-						<Code><![CDATA[false]]></Code>
-					</ParameterValue>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[isMultipleClasses]]></ParameterName>
-					<ParameterValue Class="CodeValue">
-						<Code><![CDATA[false]]></Code>
-					</ParameterValue>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[maxClassAttendance]]></ParameterName>
-					<ParameterValue Class="CodeValue">
-						<Code><![CDATA[1]]></Code>
-					</ParameterValue>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[unmandatedIsolatesIfSymptomaticFraction]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[isSymptomaticIsolationMandated]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[infectivityPeriod]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[incubationPeriod]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[latencyPeriod]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[immunePeriod]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[isTestingEnabled]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[isolatesIfPositiveTestFraction]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[unmandatedRegularTesterFraction]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[testingMandateCompliance]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[testingAccuracy]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[testingMandateRequiredEveryXDays]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[daysTestResultAccepted]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[unmandatedRegularTesterWeeklyTestRate]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[testResultDelay]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[isSymptomaticIsolationEnabled]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[scheduleBlocksPerDay]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[scheduleBlockLengthInHours]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[numClassrooms]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[varyingIndividualSchedules]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[areCommunityPlacesEnabled]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[scheduleCommunityFraction]]></ParameterName>
-				</Parameter>
-			</Parameters>
-			<PresentationProperties>
-				<EnableZoomAndPanning>true</EnableZoomAndPanning>
-				<ExecutionMode><![CDATA[realTimeScaled]]></ExecutionMode>
-				<Title><![CDATA[Usask-Covid-v1 : Simulation_CommunityPlace]]></Title>
 				<EnableDeveloperPanel>true</EnableDeveloperPanel>
 				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
 				<RealTimeScale>1.0</RealTimeScale>
@@ -7252,9 +6700,6 @@ return home;]]></Body>
 					<ParameterValue Class="CodeValue">
 						<Code><![CDATA[false]]></Code>
 					</ParameterValue>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[maskMandateCompliance]]></ParameterName>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[maskEffectiveness]]></ParameterName>
@@ -7343,6 +6788,12 @@ return home;]]></Body>
 				<Parameter>
 					<ParameterName><![CDATA[scheduleCommunityFraction]]></ParameterName>
 				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isMaskingEnabled]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[unmandatedMaskerFraction]]></ParameterName>
+				</Parameter>
 			</Parameters>
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
@@ -7425,9 +6876,6 @@ return home;]]></Body>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[isMaskMandate]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[maskMandateCompliance]]></ParameterName>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[maskEffectiveness]]></ParameterName>
@@ -7522,6 +6970,12 @@ return home;]]></Body>
 				<Parameter>
 					<ParameterName><![CDATA[scheduleCommunityFraction]]></ParameterName>
 				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isMaskingEnabled]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[unmandatedMaskerFraction]]></ParameterName>
+				</Parameter>
 			</Parameters>
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
@@ -7601,9 +7055,6 @@ return home;]]></Body>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[isMaskMandate]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[maskMandateCompliance]]></ParameterName>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[maskEffectiveness]]></ParameterName>
@@ -7698,6 +7149,12 @@ return home;]]></Body>
 				<Parameter>
 					<ParameterName><![CDATA[scheduleCommunityFraction]]></ParameterName>
 				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isMaskingEnabled]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[unmandatedMaskerFraction]]></ParameterName>
+				</Parameter>
 			</Parameters>
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
@@ -7719,7 +7176,7 @@ return home;]]></Body>
 		<!--   =========   Simulation Experiment   ========  -->
 		<SimulationExperiment ActiveObjectClassId="1760929735207">
 			<Id>1764387138000</Id>
-			<Name><![CDATA[Simulation_0_PreBaseline1_SameScheduleNoCommunty]]></Name>
+			<Name><![CDATA[Simulation_0PreBaseline1_SameScheduleNoCommunty]]></Name>
 			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
 			<MaximumMemory>512</MaximumMemory>
 			<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
@@ -7779,9 +7236,6 @@ return home;]]></Body>
 					<ParameterName><![CDATA[isMaskMandate]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[maskMandateCompliance]]></ParameterName>
-				</Parameter>
-				<Parameter>
 					<ParameterName><![CDATA[maskEffectiveness]]></ParameterName>
 				</Parameter>
 				<Parameter>
@@ -7871,11 +7325,17 @@ return home;]]></Body>
 				<Parameter>
 					<ParameterName><![CDATA[scheduleCommunityFraction]]></ParameterName>
 				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isMaskingEnabled]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[unmandatedMaskerFraction]]></ParameterName>
+				</Parameter>
 			</Parameters>
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
 				<ExecutionMode><![CDATA[realTimeScaled]]></ExecutionMode>
-				<Title><![CDATA[Usask-Covid-v1 : Simulation_0_PreBaseline1_SameScheduleNoCommunty]]></Title>
+				<Title><![CDATA[Usask-Covid-v1 : Simulation_0PreBaseline1_SameScheduleNoCommunty]]></Title>
 				<EnableDeveloperPanel>true</EnableDeveloperPanel>
 				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
 				<RealTimeScale>1.0</RealTimeScale>
@@ -7892,7 +7352,7 @@ return home;]]></Body>
 		<!--   =========   Simulation Experiment   ========  -->
 		<SimulationExperiment ActiveObjectClassId="1760929735207">
 			<Id>1764446554391</Id>
-			<Name><![CDATA[Simulation_0_Prebaseline2_VaryingScheduleNoCommunity]]></Name>
+			<Name><![CDATA[Simulation_0Prebaseline2_VaryingScheduleNoCommunity]]></Name>
 			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
 			<MaximumMemory>512</MaximumMemory>
 			<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
@@ -7952,9 +7412,6 @@ return home;]]></Body>
 					<ParameterName><![CDATA[isMaskMandate]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[maskMandateCompliance]]></ParameterName>
-				</Parameter>
-				<Parameter>
 					<ParameterName><![CDATA[maskEffectiveness]]></ParameterName>
 				</Parameter>
 				<Parameter>
@@ -8044,11 +7501,17 @@ return home;]]></Body>
 				<Parameter>
 					<ParameterName><![CDATA[scheduleCommunityFraction]]></ParameterName>
 				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isMaskingEnabled]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[unmandatedMaskerFraction]]></ParameterName>
+				</Parameter>
 			</Parameters>
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
 				<ExecutionMode><![CDATA[realTimeScaled]]></ExecutionMode>
-				<Title><![CDATA[Usask-Covid-v1 : Simulation_0_Prebaseline2_VaryingScheduleNoCommunity]]></Title>
+				<Title><![CDATA[Usask-Covid-v1 :Simulation_0Prebaseline2_VaryingScheduleNoCommunity]]></Title>
 				<EnableDeveloperPanel>true</EnableDeveloperPanel>
 				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
 				<RealTimeScale>1.0</RealTimeScale>
@@ -8065,7 +7528,7 @@ return home;]]></Body>
 		<!--   =========   Simulation Experiment   ========  -->
 		<SimulationExperiment ActiveObjectClassId="1760929735207">
 			<Id>1764448602173</Id>
-			<Name><![CDATA[Simulation_1_Baseline]]></Name>
+			<Name><![CDATA[Simulation_1Baseline_NoInterventions]]></Name>
 			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
 			<MaximumMemory>512</MaximumMemory>
 			<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
@@ -8123,9 +7586,6 @@ return home;]]></Body>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[isMaskMandate]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[maskMandateCompliance]]></ParameterName>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[maskEffectiveness]]></ParameterName>
@@ -8217,11 +7677,539 @@ return home;]]></Body>
 				<Parameter>
 					<ParameterName><![CDATA[scheduleCommunityFraction]]></ParameterName>
 				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isMaskingEnabled]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[unmandatedMaskerFraction]]></ParameterName>
+				</Parameter>
 			</Parameters>
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
 				<ExecutionMode><![CDATA[realTimeScaled]]></ExecutionMode>
-				<Title><![CDATA[Usask-Covid-v1 : Simulation_1_Baseline]]></Title>
+				<Title><![CDATA[Usask-Covid-v1 : Simulation_1Baseline_NoInterventions]]></Title>
+				<EnableDeveloperPanel>true</EnableDeveloperPanel>
+				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
+				<RealTimeScale>1.0</RealTimeScale>
+			</PresentationProperties>
+			<ModelTimeProperties>
+				<StopOption><![CDATA[Never]]></StopOption>
+				<InitialDate><![CDATA[1760918400000]]></InitialDate>
+				<InitialTime><![CDATA[0.0]]></InitialTime>
+				<FinalDate><![CDATA[1763596800000]]></FinalDate>
+				<FinalTime><![CDATA[100.0]]></FinalTime>
+			</ModelTimeProperties>
+			<BypassInitialScreen>true</BypassInitialScreen>
+		</SimulationExperiment>
+		<!--   =========   Simulation Experiment   ========  -->
+		<SimulationExperiment ActiveObjectClassId="1760929735207">
+			<Id>1764547353766</Id>
+			<Name><![CDATA[Simulation_2Masking1_NotMandated]]></Name>
+			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
+			<MaximumMemory>512</MaximumMemory>
+			<RandomNumberGenerationType>fixedSeed</RandomNumberGenerationType>
+			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
+			<SeedValue>1</SeedValue>
+			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
+			<VmArgs><![CDATA[]]></VmArgs>
+			<LoadRootFromSnapshot>false</LoadRootFromSnapshot>
+
+			<Presentation>
+				<Text>
+					<Id>1764547353768</Id>
+					<Name><![CDATA[text]]></Name>
+					<X>50</X><Y>30</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12490271</Color>
+					<Text><![CDATA[Usask-Covid-v1]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>24</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+			</Presentation>
+
+			<Parameters>
+				<Parameter>
+					<ParameterName><![CDATA[studentPopulation]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[maxConnectionDistance]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[contactsPerDay]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[classCapacity]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[schoolRadius]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[residentialRadius]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[transmissionProbability]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isMaskMandate]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[maskEffectiveness]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[goingToCommunityFraction]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[numCommunityPlaces]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isTestingMandate]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isMultipleClasses]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[maxClassAttendance]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[unmandatedIsolatesIfSymptomaticFraction]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isSymptomaticIsolationMandated]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[infectivityPeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[incubationPeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[latencyPeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[immunePeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isTestingEnabled]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isolatesIfPositiveTestFraction]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[unmandatedRegularTesterFraction]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[testingMandateCompliance]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[testingAccuracy]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[testingMandateRequiredEveryXDays]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[daysTestResultAccepted]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[unmandatedRegularTesterWeeklyTestRate]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[testResultDelay]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isSymptomaticIsolationEnabled]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleBlocksPerDay]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleBlockLengthInHours]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[numClassrooms]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[varyingIndividualSchedules]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[areCommunityPlacesEnabled]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleCommunityFraction]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isMaskingEnabled]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[true]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[unmandatedMaskerFraction]]></ParameterName>
+				</Parameter>
+			</Parameters>
+			<PresentationProperties>
+				<EnableZoomAndPanning>true</EnableZoomAndPanning>
+				<ExecutionMode><![CDATA[realTimeScaled]]></ExecutionMode>
+				<Title><![CDATA[Usask-Covid-v1 : Simulation_2Masking1_NotMandated]]></Title>
+				<EnableDeveloperPanel>true</EnableDeveloperPanel>
+				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
+				<RealTimeScale>1.0</RealTimeScale>
+			</PresentationProperties>
+			<ModelTimeProperties>
+				<StopOption><![CDATA[Never]]></StopOption>
+				<InitialDate><![CDATA[1760918400000]]></InitialDate>
+				<InitialTime><![CDATA[0.0]]></InitialTime>
+				<FinalDate><![CDATA[1763596800000]]></FinalDate>
+				<FinalTime><![CDATA[100.0]]></FinalTime>
+			</ModelTimeProperties>
+			<BypassInitialScreen>true</BypassInitialScreen>
+		</SimulationExperiment>
+		<!--   =========   Simulation Experiment   ========  -->
+		<SimulationExperiment ActiveObjectClassId="1760929735207">
+			<Id>1764550505825</Id>
+			<Name><![CDATA[Simulation_3SymptomaticIsolation1_NotMandated]]></Name>
+			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
+			<MaximumMemory>512</MaximumMemory>
+			<RandomNumberGenerationType>fixedSeed</RandomNumberGenerationType>
+			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
+			<SeedValue>1</SeedValue>
+			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
+			<VmArgs><![CDATA[]]></VmArgs>
+			<LoadRootFromSnapshot>false</LoadRootFromSnapshot>
+
+			<Presentation>
+				<Text>
+					<Id>1764550505827</Id>
+					<Name><![CDATA[text]]></Name>
+					<X>50</X><Y>30</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12490271</Color>
+					<Text><![CDATA[Usask-Covid-v1]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>24</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+			</Presentation>
+
+			<Parameters>
+				<Parameter>
+					<ParameterName><![CDATA[studentPopulation]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[maxConnectionDistance]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[contactsPerDay]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[classCapacity]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[schoolRadius]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[residentialRadius]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[transmissionProbability]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isMaskMandate]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[maskEffectiveness]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[goingToCommunityFraction]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[numCommunityPlaces]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isTestingMandate]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isMultipleClasses]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[maxClassAttendance]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[unmandatedIsolatesIfSymptomaticFraction]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isSymptomaticIsolationMandated]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[infectivityPeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[incubationPeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[latencyPeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[immunePeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isTestingEnabled]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isolatesIfPositiveTestFraction]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[unmandatedRegularTesterFraction]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[testingMandateCompliance]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[testingAccuracy]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[testingMandateRequiredEveryXDays]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[daysTestResultAccepted]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[unmandatedRegularTesterWeeklyTestRate]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[testResultDelay]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isSymptomaticIsolationEnabled]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[true]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleBlocksPerDay]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleBlockLengthInHours]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[numClassrooms]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[varyingIndividualSchedules]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[areCommunityPlacesEnabled]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleCommunityFraction]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isMaskingEnabled]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[unmandatedMaskerFraction]]></ParameterName>
+				</Parameter>
+			</Parameters>
+			<PresentationProperties>
+				<EnableZoomAndPanning>true</EnableZoomAndPanning>
+				<ExecutionMode><![CDATA[realTimeScaled]]></ExecutionMode>
+				<Title><![CDATA[Usask-Covid-v1 : Simulation_3SymptomaticIsolation1_NotMandated]]></Title>
+				<EnableDeveloperPanel>true</EnableDeveloperPanel>
+				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
+				<RealTimeScale>1.0</RealTimeScale>
+			</PresentationProperties>
+			<ModelTimeProperties>
+				<StopOption><![CDATA[Never]]></StopOption>
+				<InitialDate><![CDATA[1760918400000]]></InitialDate>
+				<InitialTime><![CDATA[0.0]]></InitialTime>
+				<FinalDate><![CDATA[1763596800000]]></FinalDate>
+				<FinalTime><![CDATA[100.0]]></FinalTime>
+			</ModelTimeProperties>
+			<BypassInitialScreen>true</BypassInitialScreen>
+		</SimulationExperiment>
+		<!--   =========   Simulation Experiment   ========  -->
+		<SimulationExperiment ActiveObjectClassId="1760929735207">
+			<Id>1764550665139</Id>
+			<Name><![CDATA[Simulation_3SymptomaticIsolation2_Mandated]]></Name>
+			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
+			<MaximumMemory>512</MaximumMemory>
+			<RandomNumberGenerationType>fixedSeed</RandomNumberGenerationType>
+			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
+			<SeedValue>1</SeedValue>
+			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
+			<VmArgs><![CDATA[]]></VmArgs>
+			<LoadRootFromSnapshot>false</LoadRootFromSnapshot>
+
+			<Presentation>
+				<Text>
+					<Id>1764550665141</Id>
+					<Name><![CDATA[text]]></Name>
+					<X>50</X><Y>30</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12490271</Color>
+					<Text><![CDATA[Usask-Covid-v1]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>24</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+			</Presentation>
+
+			<Parameters>
+				<Parameter>
+					<ParameterName><![CDATA[studentPopulation]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[maxConnectionDistance]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[contactsPerDay]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[classCapacity]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[schoolRadius]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[residentialRadius]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[transmissionProbability]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isMaskMandate]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[maskEffectiveness]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[goingToCommunityFraction]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[numCommunityPlaces]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isTestingMandate]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isMultipleClasses]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[maxClassAttendance]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[unmandatedIsolatesIfSymptomaticFraction]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isSymptomaticIsolationMandated]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[true]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[infectivityPeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[incubationPeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[latencyPeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[immunePeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isTestingEnabled]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isolatesIfPositiveTestFraction]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[unmandatedRegularTesterFraction]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[testingMandateCompliance]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[testingAccuracy]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[testingMandateRequiredEveryXDays]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[daysTestResultAccepted]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[unmandatedRegularTesterWeeklyTestRate]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[testResultDelay]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isSymptomaticIsolationEnabled]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[true]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleBlocksPerDay]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleBlockLengthInHours]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[numClassrooms]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[varyingIndividualSchedules]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[areCommunityPlacesEnabled]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleCommunityFraction]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isMaskingEnabled]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[unmandatedMaskerFraction]]></ParameterName>
+				</Parameter>
+			</Parameters>
+			<PresentationProperties>
+				<EnableZoomAndPanning>true</EnableZoomAndPanning>
+				<ExecutionMode><![CDATA[realTimeScaled]]></ExecutionMode>
+				<Title><![CDATA[Usask-Covid-v1 : Simulation_3SymptomaticIsolation2_Mandated]]></Title>
 				<EnableDeveloperPanel>true</EnableDeveloperPanel>
 				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
 				<RealTimeScale>1.0</RealTimeScale>
