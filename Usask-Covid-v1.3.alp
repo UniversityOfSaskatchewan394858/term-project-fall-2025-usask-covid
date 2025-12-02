@@ -79,7 +79,7 @@
 			<DatasetsCreationProperties>
 				<AutoCreate>true</AutoCreate>
 					<Id>1760929735206</Id>
-					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceAtTime>false</OccurrenceAtTime>
 					<OccurrenceDate>1760947200000</OccurrenceDate>
 					<OccurrenceTime Class="CodeUnitValue">
 						<Code><![CDATA[0]]></Code>
@@ -756,7 +756,7 @@
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.9]]></Code>
+							<Code><![CDATA[1.0]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1764342487013</Id>
@@ -3206,8 +3206,7 @@ timeEnteredPositiveIsolation = time();]]></EntryAction>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="120" Height="40">
-						<EntryAction><![CDATA[runCovidTest();
-currentlyTestingDot.setVisible(true);]]></EntryAction>
+						<EntryAction><![CDATA[runCovidTest();]]></EntryAction>
 						<FillColor/>
 					</Properties>
 				</StatechartElement>
@@ -3220,7 +3219,6 @@ currentlyTestingDot.setVisible(true);]]></EntryAction>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="120" Height="40">
-						<EntryAction><![CDATA[currentlyTestingDot.setVisible(false);]]></EntryAction>
 						<FillColor>-10496</FillColor>
 					</Properties>
 				</StatechartElement>
@@ -3845,7 +3843,6 @@ timeWhenFirstPositiveTestTaken = time();]]></Action>
 				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 					<Id>1764341596922</Id>
 					<Name><![CDATA[negativeResultLeaveIsolation]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
 					<X>420</X><Y>400</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -4523,6 +4520,28 @@ else {
 	return false;
 }]]></Body>
 				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1764647905802</Id>
+					<Name><![CDATA[visualizeNewTest]]></Name>
+					<Description><![CDATA[If woud like to see when a person does a new test
+- place visualizeNewTest(); in the entry action fo Testing state:
+- place startedNewTestDot.setVisible(true); in exit action of NotTested state]]></Description>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
+					<X>-400</X><Y>70</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[if (startedNewTestDot.getFillColor() == cyan) {
+	startedNewTestDot.setFillColor(blue);
+} else if (startedNewTestDot.getFillColor() == blue) {
+	startedNewTestDot.setFillColor(navy);
+} else if (startedNewTestDot.getFillColor() == navy) {
+	startedNewTestDot.setFillColor(cyan);
+}]]></Body>
+				</Function>
 			</Functions>
 			<AgentLinks>
 				<AgentLink>
@@ -4690,7 +4709,7 @@ else {
 				</Rectangle>
 				<Oval>
 					<Id>1763860710241</Id>
-					<Name><![CDATA[currentlyTestingDot]]></Name>
+					<Name><![CDATA[startedNewTestDot]]></Name>
 					<X>0</X><Y>-17</Y>
 					<Label><X>0</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -8232,15 +8251,9 @@ else {
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[isolatesIfPositiveTestFraction]]></ParameterName>
-					<ParameterValue Class="CodeValue">
-						<Code><![CDATA[1.0]]></Code>
-					</ParameterValue>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[unmandatedRegularTesterFraction]]></ParameterName>
-					<ParameterValue Class="CodeValue">
-						<Code><![CDATA[0.3]]></Code>
-					</ParameterValue>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[testingMandateCompliance]]></ParameterName>
@@ -8257,7 +8270,7 @@ else {
 				<Parameter>
 					<ParameterName><![CDATA[unmandatedRegularTesterWeeklyTestRate]]></ParameterName>
 					<ParameterValue Class="CodeUnitValue">
-						<Code><![CDATA[7]]></Code>
+						<Code><![CDATA[]]></Code>
 						<Unit Class="RateUnits"><![CDATA[PER_WEEK]]></Unit>
 					</ParameterValue>
 				</Parameter>
@@ -8299,6 +8312,185 @@ else {
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
 				<ExecutionMode><![CDATA[realTimeScaled]]></ExecutionMode>
 				<Title><![CDATA[Usask-Covid-v1 : Simulation_4Testing1_NotMandated]]></Title>
+				<EnableDeveloperPanel>true</EnableDeveloperPanel>
+				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
+				<RealTimeScale>1.0</RealTimeScale>
+			</PresentationProperties>
+			<ModelTimeProperties>
+				<StopOption><![CDATA[Never]]></StopOption>
+				<InitialDate><![CDATA[1760918400000]]></InitialDate>
+				<InitialTime><![CDATA[0.0]]></InitialTime>
+				<FinalDate><![CDATA[1763596800000]]></FinalDate>
+				<FinalTime><![CDATA[100.0]]></FinalTime>
+			</ModelTimeProperties>
+			<BypassInitialScreen>true</BypassInitialScreen>
+		</SimulationExperiment>
+		<!--   =========   Simulation Experiment   ========  -->
+		<SimulationExperiment ActiveObjectClassId="1760929735207">
+			<Id>1764647660440</Id>
+			<Name><![CDATA[Simulation_4Testing2_Mandated]]></Name>
+			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
+			<MaximumMemory>512</MaximumMemory>
+			<RandomNumberGenerationType>fixedSeed</RandomNumberGenerationType>
+			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
+			<SeedValue>1</SeedValue>
+			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
+			<VmArgs><![CDATA[]]></VmArgs>
+			<LoadRootFromSnapshot>false</LoadRootFromSnapshot>
+
+			<Presentation>
+				<Text>
+					<Id>1764647660442</Id>
+					<Name><![CDATA[text]]></Name>
+					<X>50</X><Y>30</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12490271</Color>
+					<Text><![CDATA[Usask-Covid-v1]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>24</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+			</Presentation>
+
+			<Parameters>
+				<Parameter>
+					<ParameterName><![CDATA[studentPopulation]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[maxConnectionDistance]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[contactsPerDay]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[classCapacity]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[schoolRadius]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[residentialRadius]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[transmissionProbability]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isMaskMandate]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[maskEffectiveness]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[goingToCommunityFraction]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[numCommunityPlaces]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isTestingMandate]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[true]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isMultipleClasses]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[maxClassAttendance]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[unmandatedIsolatesIfSymptomaticFraction]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isSymptomaticIsolationMandated]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[infectivityPeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[incubationPeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[latencyPeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[immunePeriod]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isTestingEnabled]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[true]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isolatesIfPositiveTestFraction]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[unmandatedRegularTesterFraction]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[testingMandateCompliance]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[testingAccuracy]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[testingMandateRequiredEveryXDays]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[daysTestResultAccepted]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[unmandatedRegularTesterWeeklyTestRate]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[testResultDelay]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isSymptomaticIsolationEnabled]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleBlocksPerDay]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleBlockLengthInHours]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[numClassrooms]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[varyingIndividualSchedules]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[areCommunityPlacesEnabled]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[scheduleCommunityFraction]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[isMaskingEnabled]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[unmandatedMaskerFraction]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[daysToIsolateAfterPosTest]]></ParameterName>
+				</Parameter>
+			</Parameters>
+			<PresentationProperties>
+				<EnableZoomAndPanning>true</EnableZoomAndPanning>
+				<ExecutionMode><![CDATA[realTimeScaled]]></ExecutionMode>
+				<Title><![CDATA[Usask-Covid-v1 : Simulation_4Testing2_Mandated]]></Title>
 				<EnableDeveloperPanel>true</EnableDeveloperPanel>
 				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
 				<RealTimeScale>1.0</RealTimeScale>
