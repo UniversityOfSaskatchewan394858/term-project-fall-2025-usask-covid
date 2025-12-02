@@ -2385,7 +2385,7 @@ Whenever the student is not at school or in the community, the student is at hom
 				<Variable Class="PlainVariable">
 					<Id>1764349400886</Id>
 					<Name><![CDATA[lastCovidTestResult]]></Name>
-					<X>-170</X><Y>890</Y>
+					<X>-170</X><Y>870</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2412,7 +2412,35 @@ Whenever the student is not at school or in the community, the student is at hom
 				<Variable Class="PlainVariable">
 					<Id>1764558621937</Id>
 					<Name><![CDATA[timeOfLastPositiveCovidTest]]></Name>
+					<X>-170</X><Y>890</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1764641972251</Id>
+					<Name><![CDATA[timeWhenFirstPositiveTestTaken]]></Name>
+					<Description><![CDATA[when did the student actually take/run the covid test (esp if there was a delay)]]></Description>
 					<X>-170</X><Y>910</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1764645618832</Id>
+					<Name><![CDATA[timeEnteredPositiveIsolation]]></Name>
+					<X>-170</X><Y>970</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3098,7 +3126,8 @@ connectToNearbyStudents();]]></EntryAction>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="140" Height="30">
 						<EntryAction><![CDATA[currentUniLocation = home;
-connectToNearbyStudents();]]></EntryAction>
+connectToNearbyStudents();
+timeEnteredPositiveIsolation = time();]]></EntryAction>
 						<ExitAction><![CDATA[disconnectFromAll();]]></ExitAction>
 						<FillColor>-65536</FillColor>
 					</Properties>
@@ -3171,7 +3200,7 @@ connectToNearbyStudents();]]></EntryAction>
 				<StatechartElement Class="State" ParentState="ROOT_NODE">
 					<Id>1763860218237</Id>
 					<Name><![CDATA[Testing]]></Name>
-					<X>160</X><Y>790</Y>
+					<X>160</X><Y>770</Y>
 					<Label><X>40</X><Y>20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3573,6 +3602,9 @@ connectToNearbyStudents();]]></EntryAction>
 					</Points>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1760929866576" Target="1761338441149" Trigger="timeout">
+						<Action><![CDATA[// resetting testing timer
+// can only be set once each infective period (i.e. when at 0.0)
+timeWhenFirstPositiveTestTaken = time();]]></Action>
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[main.latencyPeriod]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
@@ -3798,7 +3830,7 @@ connectToNearbyStudents();]]></EntryAction>
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
 						</Timeout>
-						<Condition><![CDATA[main.isTestingEnabled && determineIfPositiveTestIsolation();]]></Condition>
+						<Condition><![CDATA[main.isTestingEnabled && inState(PositiveResult) && isolatesIfPositiveTest;]]></Condition>
 						<Rate Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
@@ -3853,7 +3885,7 @@ connectToNearbyStudents();]]></EntryAction>
 					<ShowLabel>true</ShowLabel>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>0</X><Y>70</Y></Point>
+						<Point><X>0</X><Y>50</Y></Point>
 					</Points>
 					<IconOffset>30.0</IconOffset>
 					<Properties Source="1764355130750" Target="1763860218237" Trigger="rate">
@@ -3884,7 +3916,7 @@ connectToNearbyStudents();]]></EntryAction>
 					<ShowLabel>true</ShowLabel>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>0</X><Y>70</Y></Point>
+						<Point><X>0</X><Y>50</Y></Point>
 					</Points>
 					<IconOffset>30.0</IconOffset>
 					<Properties Source="1764355130750" Target="1763860218237" Trigger="rate">
@@ -3908,14 +3940,14 @@ connectToNearbyStudents();]]></EntryAction>
 				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 					<Id>1764349310849</Id>
 					<Name><![CDATA[getTestResultTransition]]></Name>
-					<X>220</X><Y>790</Y>
+					<X>220</X><Y>770</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>0</X><Y>-80</Y></Point>
+						<Point><X>0</X><Y>-60</Y></Point>
 					</Points>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1763860218237" Target="1764349201598" Trigger="timeout">
@@ -4169,7 +4201,7 @@ connectToNearbyStudents();]]></EntryAction>
 							<Code><![CDATA[7]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 						</Timeout>
-						<Condition><![CDATA[(time() - timeOfLastPositiveCovidTest) >= (main.daysToIsolateAfterPosTest)]]></Condition>
+						<Condition><![CDATA[determineIfDonePositiveTestIsolation()]]></Condition>
 						<Rate Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
@@ -4232,7 +4264,7 @@ if (main.isMaskMandate || usesMaskOutsideMandate) {
 					<ReturnType><![CDATA[boolean]]></ReturnType>
 					<Id>1763860253683</Id>
 					<Name><![CDATA[runCovidTest]]></Name>
-					<X>-170</X><Y>870</Y>
+					<X>-170</X><Y>850</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4241,10 +4273,14 @@ if (main.isMaskMandate || usesMaskOutsideMandate) {
 if (inState(Infective) && randomTrue(main.testingAccuracy)) {
 	lastCovidTestResult = true;
 	timeOfLastPositiveCovidTest = time();
+	
+	if (timeWhenFirstPositiveTestTaken == 0.0) {
+		timeWhenFirstPositiveTestTaken = time();
 	}
+}
 else {
 	lastCovidTestResult = false;
-	}]]></Body>
+}]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
@@ -4262,23 +4298,6 @@ if (main.isSymptomaticIsolationMandated && inState(Symptomatic)) {
 	}
 // if not mandated but is symtpmatic and willSymptomaticIsolateOutsideMandate, isolate
 else if (inState(Symptomatic) && willSymptomaticIsolateOutsideMandate) {
-	return true;
-	}
-else {
-	return false;
-	}]]></Body>
-				</Function>
-				<Function AccessType="default" StaticFunction="false">
-					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-					<ReturnType><![CDATA[boolean]]></ReturnType>
-					<Id>1764341625362</Id>
-					<Name><![CDATA[determineIfPositiveTestIsolation]]></Name>
-					<X>-170</X><Y>850</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[if (inState(PositiveResult) && isolatesIfPositiveTest) {
 	return true;
 	}
 else {
@@ -4483,6 +4502,25 @@ return home;]]></Body>
 // move there
 if (currentUniLocation != getScheduledLocation()) {
 	moveTo(getScheduledLocation());
+}]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[boolean]]></ReturnType>
+					<Id>1764644593861</Id>
+					<Name><![CDATA[determineIfDonePositiveTestIsolation]]></Name>
+					<X>-170</X><Y>950</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[// first condition needed to prevent students leaving the second they enter state
+// then determine if it has been enough time  
+if ((time() > timeEnteredPositiveIsolation) && ((time() - timeWhenFirstPositiveTestTaken) >= main.daysToIsolateAfterPosTest)) {
+	return true;
+}
+else {
+	return false;
 }]]></Body>
 				</Function>
 			</Functions>
@@ -8219,7 +8257,7 @@ if (currentUniLocation != getScheduledLocation()) {
 				<Parameter>
 					<ParameterName><![CDATA[unmandatedRegularTesterWeeklyTestRate]]></ParameterName>
 					<ParameterValue Class="CodeUnitValue">
-						<Code><![CDATA[3]]></Code>
+						<Code><![CDATA[7]]></Code>
 						<Unit Class="RateUnits"><![CDATA[PER_WEEK]]></Unit>
 					</ParameterValue>
 				</Parameter>
