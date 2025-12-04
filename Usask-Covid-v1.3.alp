@@ -242,7 +242,7 @@
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[100]]></Code>
+							<Code><![CDATA[500]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1760930782323</Id>
@@ -290,7 +290,7 @@
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[5]]></Code>
+							<Code><![CDATA[8]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1761339076296</Id>
@@ -362,7 +362,7 @@
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[1.0]]></Code>
+							<Code><![CDATA[0.1]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1761701167493</Id>
@@ -402,7 +402,7 @@
 				<Variable Class="Parameter">
 					<Id>1761703703238</Id>
 					<Name><![CDATA[maskEffectiveness]]></Name>
-					<Description><![CDATA[1.0 meaning 100% effective (will not transmit if infective, and will protect against all transmissions if susceptible)
+					<Description><![CDATA[1.0 meaning 100% effective (will not transmit if infectious, and will protect against all transmissions if susceptible)
 
 0.0 meaning 0% effective]]></Description>
 					<X>800</X><Y>120</Y>
@@ -439,7 +439,7 @@
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[2]]></Code>
+							<Code><![CDATA[5]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1763187530331</Id>
@@ -550,22 +550,24 @@
 				</Variable>
 				<Variable Class="Parameter">
 					<Id>1764306790275</Id>
-					<Name><![CDATA[infectivityPeriod]]></Name>
+					<Name><![CDATA[averageInfectiousDays]]></Name>
 					<X>530</X><Y>360</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
+					<PresentationFlag>false</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[double]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
+						<Type><![CDATA[]]></Type>
+						<UnitType><![CDATA[TIME]]></UnitType>
+						<UnitOfValue Class="TimeUnits"><![CDATA[DAY]]></UnitOfValue>
 						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[254.4]]></Code>
+						<DefaultValue Class="CodeUnitValue">
+							<Code><![CDATA[8]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1764306790273</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
+							<EditorContolType>UNIT_EDITOR</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
 							<DelimeterType>NO_DELIMETER</DelimeterType>
@@ -574,7 +576,7 @@
 				</Variable>
 				<Variable Class="Parameter">
 					<Id>1764306790289</Id>
-					<Name><![CDATA[incubationPeriod]]></Name>
+					<Name><![CDATA[averageIncubationDays]]></Name>
 					<Description><![CDATA[Period from first exposure to the onset of showing symptoms of the disease.]]></Description>
 					<X>530</X><Y>380</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -582,15 +584,17 @@
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[double]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
+						<Type><![CDATA[]]></Type>
+						<UnitType><![CDATA[TIME]]></UnitType>
+						<UnitOfValue Class="TimeUnits"><![CDATA[DAY]]></UnitOfValue>
 						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[165.6]]></Code>
+						<DefaultValue Class="CodeUnitValue">
+							<Code><![CDATA[5]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1764306790287</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
+							<EditorContolType>UNIT_EDITOR</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
 							<DelimeterType>NO_DELIMETER</DelimeterType>
@@ -599,7 +603,7 @@
 				</Variable>
 				<Variable Class="Parameter">
 					<Id>1764306790293</Id>
-					<Name><![CDATA[latencyPeriod]]></Name>
+					<Name><![CDATA[averageLatentDays]]></Name>
 					<Description><![CDATA[Period from first exposure to the onset of spreading the disease]]></Description>
 					<X>530</X><Y>340</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -607,15 +611,17 @@
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[double]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
+						<Type><![CDATA[]]></Type>
+						<UnitType><![CDATA[TIME]]></UnitType>
+						<UnitOfValue Class="TimeUnits"><![CDATA[DAY]]></UnitOfValue>
 						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[132.0]]></Code>
+						<DefaultValue Class="CodeUnitValue">
+							<Code><![CDATA[2]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1764306790291</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
+							<EditorContolType>UNIT_EDITOR</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
 							<DelimeterType>NO_DELIMETER</DelimeterType>
@@ -624,22 +630,24 @@
 				</Variable>
 				<Variable Class="Parameter">
 					<Id>1764306790297</Id>
-					<Name><![CDATA[immunePeriod]]></Name>
+					<Name><![CDATA[averageImmuneDays]]></Name>
 					<X>530</X><Y>400</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[int]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
+						<Type><![CDATA[]]></Type>
+						<UnitType><![CDATA[TIME]]></UnitType>
+						<UnitOfValue Class="TimeUnits"><![CDATA[DAY]]></UnitOfValue>
 						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[28]]></Code>
+						<DefaultValue Class="CodeUnitValue">
+							<Code><![CDATA[90]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1764306790295</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
+							<EditorContolType>UNIT_EDITOR</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
 							<DelimeterType>NO_DELIMETER</DelimeterType>
@@ -936,7 +944,7 @@
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[6]]></Code>
+							<Code><![CDATA[10]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1764382747807</Id>
@@ -1002,7 +1010,7 @@
 				<Variable Class="Parameter">
 					<Id>1764463614531</Id>
 					<Name><![CDATA[scheduleCommunityFraction]]></Name>
-					<Description><![CDATA[Fraction that community is placed in someones schedule vs their home]]></Description>
+					<Description><![CDATA[Fraction that community is placed in someones schedule vs their home (other than first and last block of the day)]]></Description>
 					<X>1070</X><Y>200</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -1192,6 +1200,18 @@ else {
 	return (int)uniform(1,maxClassAttendance+0.99);
 }]]></Body>
 				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1764817844124</Id>
+					<Name><![CDATA[getNumInfectious]]></Name>
+					<X>540</X><Y>-240</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[return students.infectious();]]></Body>
+				</Function>
 			</Functions>
 			<AgentLinks>
 				<AgentLink>
@@ -1352,10 +1372,10 @@ else {
 					</StatisticsItem>
 					<StatisticsItem>
 						<Id>1761695193932</Id>
-						<Name><![CDATA[infectives]]></Name>
+						<Name><![CDATA[infectious]]></Name>
 						<Type>count</Type>
 						<Expression><![CDATA[]]></Expression>
-						<Condition><![CDATA[agent.inState(Student.Infective)]]></Condition>
+						<Condition><![CDATA[agent.inState(Student.Infectious)]]></Condition>
 					</StatisticsItem>
 					<StatisticsItem>
 						<Id>1761695225156</Id>
@@ -1375,7 +1395,7 @@ else {
 						<Id>1760930903348</Id>
 						<Name><![CDATA[fractionOfPopulationInfected]]></Name>
 						<Type>average</Type>
-						<Expression><![CDATA[agent.inState(Student.Infective) ? 1.0 : 0.0
+						<Expression><![CDATA[agent.inState(Student.Infectious) ? 1.0 : 0.0
 ]]></Expression>
 						<Condition><![CDATA[]]></Condition>
 					</StatisticsItem>
@@ -1774,11 +1794,11 @@ else {
 						<LineWidth>2.0</LineWidth>
 					</DatasetExpression>
 					<DatasetExpression>  
-						<Title><![CDATA[Infectives]]></Title>
+						<Title><![CDATA[Infectious]]></Title>
 					<Id>1761695710682</Id>
 					<Expression><![CDATA[my_dataset2]]></Expression>
 					<Color>-65536</Color>
-					<Expression2><![CDATA[students.infectives()]]></Expression2>
+					<Expression2><![CDATA[students.infectious()]]></Expression2>
 					<Expression2Flag>true</Expression2Flag>
 						<PointStyle>NONE</PointStyle>
 						<LineWidth>2.0</LineWidth>
@@ -1850,12 +1870,12 @@ else {
 					<TimeWindowUnits>MODEL_TIME_UNIT</TimeWindowUnits>
 					<TimeWindowExpression><![CDATA[100]]></TimeWindowExpression>
 					<DatasetExpression>
-					<Id>1761695946188</Id>
-					<Expression><![CDATA[my_dataset]]></Expression>
-					<Color>-13447886</Color>
-					<Expression2><![CDATA[students.susceptibles()]]></Expression2>
+					<Id>1761696124494</Id>
+					<Expression><![CDATA[my_dataset2]]></Expression>
+					<Color>-65536</Color>
+					<Expression2><![CDATA[students.infectious()]]></Expression2>
 					<Expression2Flag>true</Expression2Flag>
-							<Title><![CDATA[Susceptibles]]></Title>
+							<Title><![CDATA[Infectious]]></Title>
 					</DatasetExpression>
 					<DatasetExpression>
 					<Id>1761696107264</Id>
@@ -1866,20 +1886,20 @@ else {
 							<Title><![CDATA[Latent]]></Title>
 					</DatasetExpression>
 					<DatasetExpression>
-					<Id>1761696124494</Id>
-					<Expression><![CDATA[my_dataset2]]></Expression>
-					<Color>-65536</Color>
-					<Expression2><![CDATA[students.infectives()]]></Expression2>
-					<Expression2Flag>true</Expression2Flag>
-							<Title><![CDATA[Infectives]]></Title>
-					</DatasetExpression>
-					<DatasetExpression>
 					<Id>1761696151848</Id>
 					<Expression><![CDATA[my_dataset3]]></Expression>
 					<Color>-9404272</Color>
 					<Expression2><![CDATA[students.recovered()]]></Expression2>
 					<Expression2Flag>true</Expression2Flag>
 							<Title><![CDATA[Recovered]]></Title>
+					</DatasetExpression>
+					<DatasetExpression>
+					<Id>1761695946188</Id>
+					<Expression><![CDATA[my_dataset]]></Expression>
+					<Color>-13447886</Color>
+					<Expression2><![CDATA[students.susceptibles()]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+							<Title><![CDATA[Susceptibles]]></Title>
 					</DatasetExpression>
 					<SamplesToKeep>100</SamplesToKeep>
 					<VerScaleToExpression><![CDATA[1]]></VerScaleToExpression>
@@ -2784,7 +2804,8 @@ moveToScheduledLocation();]]></StartupCode>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="120" Height="29.783">
-						<EntryAction><![CDATA[this.colour = lime;]]></EntryAction>
+						<EntryAction><![CDATA[this.colour = lime;
+]]></EntryAction>
 						<FillColor>-16711936</FillColor>
 					</Properties>
 				</StatechartElement>
@@ -2822,8 +2843,8 @@ We also increment the maskedInfectionCount and other contexts for our data.]]></
 				</StatechartElement>
 				<StatechartElement Class="State" ParentState="ROOT_NODE">
 					<Id>1761338441149</Id>
-					<Name><![CDATA[Infective]]></Name>
-					<Description><![CDATA["Infective" state encompasses Asymptomatic and Symptomatic substates.]]></Description>
+					<Name><![CDATA[Infectious]]></Name>
+					<Description><![CDATA["Infectious" state encompasses Asymptomatic and Symptomatic substates.]]></Description>
 					<X>360</X><Y>240</Y>
 					<Label><X>10</X><Y>10</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -2837,7 +2858,7 @@ isInfectious = true;]]></EntryAction>
 						<FillColor>-360334</FillColor>
 					</Properties>
 				</StatechartElement>
-				<StatechartElement Class="State" ParentState="Infective" ParentStateId="1761338441149">
+				<StatechartElement Class="State" ParentState="Infectious" ParentStateId="1761338441149">
 					<Id>1760929850103</Id>
 					<Name><![CDATA[Symptomatic]]></Name>
 					<X>410</X><Y>331.73</Y>
@@ -2850,7 +2871,7 @@ isInfectious = true;]]></EntryAction>
 						<FillColor>-65536</FillColor>
 					</Properties>
 				</StatechartElement>
-				<StatechartElement Class="State" ParentState="Infective" ParentStateId="1761338441149">
+				<StatechartElement Class="State" ParentState="Infectious" ParentStateId="1761338441149">
 					<Id>1761602956189</Id>
 					<Name><![CDATA[Asymptomatic]]></Name>
 					<X>410</X><Y>267.384</Y>
@@ -3131,7 +3152,7 @@ connectToNearbyStudents();]]></EntryAction>
 				</StatechartElement>
 				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 					<Id>1760929897100</Id>
-					<Name><![CDATA[recoveringPeriod]]></Name>
+					<Name><![CDATA[infectiousPeriod]]></Name>
 					<X>469.092</X><Y>400.45</Y>
 					<Label><X>10.908</X><Y>23.55</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -3142,15 +3163,15 @@ connectToNearbyStudents();]]></EntryAction>
 						<Point><X>0.9080000000000155</X><Y>49.55000000000001</Y></Point>
 					</Points>
 					<IconOffset>20.0</IconOffset>
-					<Properties Source="1761338441149" Target="1760929853378" Trigger="timeout">
+					<Properties Source="1761338441149" Target="1760929853378" Trigger="rate">
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[main.infectivityPeriod]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
 						</Timeout>
 						<Condition><![CDATA[true]]></Condition>
 						<Rate Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+							<Code><![CDATA[1 / main.averageInfectiousDays]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
 						</Rate>
 						<MessageType><![CDATA[Object]]></MessageType>
 						<DefaultTransition>true</DefaultTransition>
@@ -3189,7 +3210,7 @@ connectToNearbyStudents();]]></EntryAction>
 					<Properties Target="1764493293436">
 					</Properties>	
 				</StatechartElement>
-				<StatechartElement Class="Transition" ParentState="Infective" ParentStateId="1761338441149">
+				<StatechartElement Class="Transition" ParentState="Infectious" ParentStateId="1761338441149">
 					<Id>1761338487668</Id>
 					<Name><![CDATA[becomeSymptomatic]]></Name>
 					<Description><![CDATA[The difference between becoming Asymptomatic (latencyPeriod) and becoming Symptomatic (incubationPeriod).]]></Description>
@@ -3203,15 +3224,15 @@ connectToNearbyStudents();]]></EntryAction>
 						<Point><X>0.252</X><Y>37.995</Y></Point>
 					</Points>
 					<IconOffset>20.0</IconOffset>
-					<Properties Source="1761602956189" Target="1760929850103" Trigger="timeout">
+					<Properties Source="1761602956189" Target="1760929850103" Trigger="rate">
 						<Timeout Class="CodeUnitValue">
-							<Code><![CDATA[main.incubationPeriod-main.latencyPeriod]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+							<Code><![CDATA[main.averageIncubationDays-main.averageLatentDays]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 						</Timeout>
 						<Condition><![CDATA[true]]></Condition>
 						<Rate Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+							<Code><![CDATA[1 / (main.averageIncubationDays-main.averageLatentDays)]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
 						</Rate>
 						<MessageType><![CDATA[Object]]></MessageType>
 						<DefaultTransition>true</DefaultTransition>
@@ -3220,7 +3241,7 @@ connectToNearbyStudents();]]></EntryAction>
 						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
 					</Properties>	
 				</StatechartElement>
-				<StatechartElement Class="Transition" ParentState="Infective" ParentStateId="1761338441149">
+				<StatechartElement Class="Transition" ParentState="Infectious" ParentStateId="1761338441149">
 					<Id>1761338904067</Id>
 					<Name><![CDATA[infectOthers]]></Name>
 					<X>519.197</X><Y>400.481</Y>
@@ -3256,7 +3277,7 @@ connectToNearbyStudents();]]></EntryAction>
 						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
 					</Properties>	
 				</StatechartElement>
-				<StatechartElement Class="InitialStatePointer" ParentState="Infective" ParentStateId="1761338441149">
+				<StatechartElement Class="InitialStatePointer" ParentState="Infectious" ParentStateId="1761338441149">
 					<Id>1761603282880</Id>
 					<Name><![CDATA[initialState]]></Name>
 					<X>380</X><Y>275.427</Y>
@@ -3318,15 +3339,15 @@ connectToNearbyStudents();]]></EntryAction>
 						<Point><X>20</X><Y>-399.783</Y></Point>
 					</Points>
 					<IconOffset>60.0</IconOffset>
-					<Properties Source="1760929853378" Target="1760929825256" Trigger="timeout">
+					<Properties Source="1760929853378" Target="1760929825256" Trigger="rate">
 						<Timeout Class="CodeUnitValue">
-							<Code><![CDATA[main.immunePeriod]]></Code>
+							<Code><![CDATA[main.averageImmuneDays]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 						</Timeout>
 						<Condition><![CDATA[true]]></Condition>
 						<Rate Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+							<Code><![CDATA[1 / main.averageImmuneDays]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
 						</Rate>
 						<MessageType><![CDATA[Object]]></MessageType>
 						<DefaultTransition>true</DefaultTransition>
@@ -3410,18 +3431,18 @@ connectToNearbyStudents();]]></EntryAction>
 						<Point><X>0</X><Y>43.635999999999996</Y></Point>
 					</Points>
 					<IconOffset>20.0</IconOffset>
-					<Properties Source="1760929866576" Target="1761338441149" Trigger="timeout">
+					<Properties Source="1760929866576" Target="1761338441149" Trigger="rate">
 						<Action><![CDATA[// resetting testing timer
-// can only be set once each infective period (i.e. when at 0.0)
+// can only be set once each infectious period (i.e. when at 0.0)
 timeWhenFirstPositiveTestTaken = time();]]></Action>
 						<Timeout Class="CodeUnitValue">
-							<Code><![CDATA[main.latencyPeriod]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+							<Code><![CDATA[main.averageLatencyPeriodDays]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 						</Timeout>
 						<Condition><![CDATA[true]]></Condition>
 						<Rate Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+							<Code><![CDATA[1 / main.averageLatentDays]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
 						</Rate>
 						<MessageType><![CDATA[Object]]></MessageType>
 						<DefaultTransition>true</DefaultTransition>
@@ -4043,8 +4064,8 @@ if (main.isMaskMandate || usesMaskOutsideMandate) {
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[// test is only positive if infective but also depends on testingAccuracy
-if (inState(Infective) && randomTrue(main.testingAccuracy)) {
+					<Body><![CDATA[// test is only positive if infectious but also depends on testingAccuracy
+if (inState(Infectious) && randomTrue(main.testingAccuracy)) {
 	lastCovidTestResult = true;
 	timeOfLastPositiveCovidTest = time();
 	
@@ -6392,16 +6413,16 @@ else {
 					<ParameterName><![CDATA[isSymptomaticIsolationMandated]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[infectivityPeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageInfectiousDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[incubationPeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageIncubationDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[latencyPeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageLatentDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[immunePeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageImmuneDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[isTestingEnabled]]></ParameterName>
@@ -6559,16 +6580,16 @@ else {
 					<ParameterName><![CDATA[isSymptomaticIsolationMandated]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[infectivityPeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageInfectiousDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[incubationPeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageIncubationDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[latencyPeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageLatentDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[immunePeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageImmuneDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[isTestingEnabled]]></ParameterName>
@@ -6729,16 +6750,16 @@ else {
 					<ParameterName><![CDATA[isSymptomaticIsolationMandated]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[infectivityPeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageInfectiousDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[incubationPeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageIncubationDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[latencyPeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageLatentDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[immunePeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageImmuneDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[isTestingEnabled]]></ParameterName>
@@ -6896,16 +6917,16 @@ else {
 					<ParameterName><![CDATA[isSymptomaticIsolationMandated]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[infectivityPeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageInfectiousDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[incubationPeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageIncubationDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[latencyPeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageLatentDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[immunePeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageImmuneDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[isTestingEnabled]]></ParameterName>
@@ -6991,7 +7012,7 @@ else {
 			<Name><![CDATA[Simulation_2Masking1_NotMandated]]></Name>
 			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
 			<MaximumMemory>512</MaximumMemory>
-			<RandomNumberGenerationType>fixedSeed</RandomNumberGenerationType>
+			<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
 			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
 			<SeedValue>1</SeedValue>
 			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
@@ -7063,16 +7084,16 @@ else {
 					<ParameterName><![CDATA[isSymptomaticIsolationMandated]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[infectivityPeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageInfectiousDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[incubationPeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageIncubationDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[latencyPeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageLatentDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[immunePeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageImmuneDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[isTestingEnabled]]></ParameterName>
@@ -7155,7 +7176,7 @@ else {
 			<Name><![CDATA[Simulation_3SymptomaticIsolation1_NotMandated]]></Name>
 			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
 			<MaximumMemory>512</MaximumMemory>
-			<RandomNumberGenerationType>fixedSeed</RandomNumberGenerationType>
+			<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
 			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
 			<SeedValue>1</SeedValue>
 			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
@@ -7227,16 +7248,16 @@ else {
 					<ParameterName><![CDATA[isSymptomaticIsolationMandated]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[infectivityPeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageInfectiousDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[incubationPeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageIncubationDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[latencyPeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageLatentDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[immunePeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageImmuneDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[isTestingEnabled]]></ParameterName>
@@ -7319,7 +7340,7 @@ else {
 			<Name><![CDATA[Simulation_3SymptomaticIsolation2_Mandated]]></Name>
 			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
 			<MaximumMemory>512</MaximumMemory>
-			<RandomNumberGenerationType>fixedSeed</RandomNumberGenerationType>
+			<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
 			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
 			<SeedValue>1</SeedValue>
 			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
@@ -7394,16 +7415,16 @@ else {
 					</ParameterValue>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[infectivityPeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageInfectiousDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[incubationPeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageIncubationDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[latencyPeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageLatentDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[immunePeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageImmuneDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[isTestingEnabled]]></ParameterName>
@@ -7486,7 +7507,7 @@ else {
 			<Name><![CDATA[Simulation_4Testing1_NotMandated]]></Name>
 			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
 			<MaximumMemory>512</MaximumMemory>
-			<RandomNumberGenerationType>fixedSeed</RandomNumberGenerationType>
+			<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
 			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
 			<SeedValue>1</SeedValue>
 			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
@@ -7558,16 +7579,16 @@ else {
 					<ParameterName><![CDATA[isSymptomaticIsolationMandated]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[infectivityPeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageInfectiousDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[incubationPeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageIncubationDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[latencyPeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageLatentDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[immunePeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageImmuneDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[isTestingEnabled]]></ParameterName>
@@ -7654,7 +7675,7 @@ else {
 			<Name><![CDATA[Simulation_4Testing2_Mandated]]></Name>
 			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
 			<MaximumMemory>512</MaximumMemory>
-			<RandomNumberGenerationType>fixedSeed</RandomNumberGenerationType>
+			<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
 			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
 			<SeedValue>1</SeedValue>
 			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
@@ -7729,16 +7750,16 @@ else {
 					<ParameterName><![CDATA[isSymptomaticIsolationMandated]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[infectivityPeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageInfectiousDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[incubationPeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageIncubationDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[latencyPeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageLatentDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[immunePeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageImmuneDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[isTestingEnabled]]></ParameterName>
@@ -7821,7 +7842,7 @@ else {
 			<Name><![CDATA[Simulation_5All_Interventions_Masking_Isolation_Testing]]></Name>
 			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
 			<MaximumMemory>512</MaximumMemory>
-			<RandomNumberGenerationType>fixedSeed</RandomNumberGenerationType>
+			<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
 			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
 			<SeedValue>1</SeedValue>
 			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
@@ -7902,16 +7923,16 @@ else {
 					</ParameterValue>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[infectivityPeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageInfectiousDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[incubationPeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageIncubationDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[latencyPeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageLatentDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[immunePeriod]]></ParameterName>
+					<ParameterName><![CDATA[averageImmuneDays]]></ParameterName>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[isTestingEnabled]]></ParameterName>
